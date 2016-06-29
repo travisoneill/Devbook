@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :full_name, null: false
       t.string :password_digest, null: false
       t.string :session_token, null: false
+      t.string :email, null: false
       t.string :dob
       t.string :profile_pic_url
       t.string :cover_pic_url
@@ -14,6 +15,7 @@ class CreateUsers < ActiveRecord::Migration
     end
     add_index :users, :fname
     add_index :users, :lname
+    add_index :users, :email
     add_index :users, :session_token, unique: true
   end
 end
