@@ -8,7 +8,7 @@ class CreateActions < ActiveRecord::Migration
       t.timestamps null: false
     end
     add_index :actions, :initiator_id
-    add_index :action_type
+    add_index :actions, :action_type
     add_index :actions, :recipient_id
   end
 end

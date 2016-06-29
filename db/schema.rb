@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160629202012) do
+ActiveRecord::Schema.define(version: 20160629182514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,12 +19,13 @@ ActiveRecord::Schema.define(version: 20160629202012) do
   create_table "actions", force: :cascade do |t|
     t.integer  "initiator_id", null: false
     t.integer  "recipient_id"
+    t.string   "action_type",  null: false
     t.string   "subtype"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.string   "action_type"
   end
 
+  add_index "actions", ["action_type"], name: "index_actions_on_action_type", using: :btree
   add_index "actions", ["initiator_id"], name: "index_actions_on_initiator_id", using: :btree
   add_index "actions", ["recipient_id"], name: "index_actions_on_recipient_id", using: :btree
 
@@ -44,6 +45,9 @@ ActiveRecord::Schema.define(version: 20160629202012) do
     t.datetime "updated_at",   null: false
   end
 
+  add_index "requestings", ["initiator_id"], name: "index_requestings_on_initiator_id", using: :btree
+  add_index "requestings", ["recipient_id"], name: "index_requestings_on_recipient_id", using: :btree
+
   create_table "searchables", force: :cascade do |t|
     t.integer  "user_id",    null: false
     t.string   "fname",      null: false
@@ -53,21 +57,27 @@ ActiveRecord::Schema.define(version: 20160629202012) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "searchables", ["fname"], name: "index_searchables_on_fname", using: :btree
+  add_index "searchables", ["fullname"], name: "index_searchables_on_fullname", using: :btree
+  add_index "searchables", ["lname"], name: "index_searchables_on_lname", using: :btree
+  add_index "searchables", ["user_id"], name: "index_searchables_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "fname",           null: false
     t.string   "lname",           null: false
     t.string   "full_name",       null: false
     t.string   "password_digest", null: false
     t.string   "session_token",   null: false
+    t.string   "email",           null: false
     t.string   "dob"
     t.string   "profile_pic_url"
     t.string   "cover_pic_url"
     t.string   "gender"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "email"
   end
 
+  add_index "users", ["email"], name: "index_users_on_email", using: :btree
   add_index "users", ["fname"], name: "index_users_on_fname", using: :btree
   add_index "users", ["lname"], name: "index_users_on_lname", using: :btree
   add_index "users", ["session_token"], name: "index_users_on_session_token", unique: true, using: :btree
