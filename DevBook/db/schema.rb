@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160629040921) do
+ActiveRecord::Schema.define(version: 20160629202012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(version: 20160629040921) do
   create_table "actions", force: :cascade do |t|
     t.integer  "initiator_id", null: false
     t.integer  "recipient_id"
-    t.string   "type",         null: false
     t.string   "subtype"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.string   "action_type"
   end
 
   add_index "actions", ["initiator_id"], name: "index_actions_on_initiator_id", using: :btree
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20160629040921) do
 
   add_index "friendships", ["user_id1", "user_id2"], name: "index_friendships_on_user_id1_and_user_id2", unique: true, using: :btree
 
-  create_table "requests", force: :cascade do |t|
+  create_table "requestings", force: :cascade do |t|
     t.integer  "initiator_id", null: false
     t.integer  "recipient_id", null: false
     t.datetime "created_at",   null: false
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20160629040921) do
     t.string   "gender"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "email"
   end
 
   add_index "users", ["fname"], name: "index_users_on_fname", using: :btree

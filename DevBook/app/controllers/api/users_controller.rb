@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Api::UsersController < ApplicationController
   def new
   end
 
@@ -9,11 +9,13 @@ class UsersController < ApplicationController
         user_id: @user.id,
         fname: @user.fname.downcase,
         lname: @user.lname.downcase,
-        full_name: @user.full_name.downcase
+        fullname: @user.full_name.downcase
         )
-      Action.create!(initiator_id: @user.id, type: "account_creation")
+      Action.create!(initiator_id: @user.id, action_type: "account_creation")
+      render json: @user
     else
-
+      flash.now[:errors] = @user.errors.full_messages
+      redirect_to root
     end
   end
 
@@ -32,7 +34,8 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user)
-          .permit(:fname, :lname, :full_name, :password_digest, :session_token)
-          .permit!(:other)
+          .permit(:fname, :lname, :full_name,
+                  :password_digest, :password,
+                  :session_token, :email)
   end
 end

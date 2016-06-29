@@ -1,16 +1,21 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
-const Router = require('react-router').Router
-const Route = require('react-router').Route
-const IndexRoute = require('react-router').IndexRoute
+const Router = require('react-router').Router;
+const Route = require('react-router').Route;
+const IndexRoute = require('react-router').IndexRoute;
 
-
+const UserForm = require('./components/new_user_form');
+const Store = require('./stores/current_user_store');
+window.Store = Store;
 
 const App = React.createClass({
 
   render(){
     return(
-    <div>React Is Working</div>
+    <div>
+      <h3>React Is Working</h3>
+      <UserForm />
+    </div>
     );
   }
 
