@@ -9,12 +9,15 @@ const Store = require('./stores/current_user_store');
 window.Store = Store;
 
 const App = React.createClass({
-
   render(){
+    let user = Store.get().full_name;
+    let text = '';
+    if(user){text = `Logged in as ${user}`;}
     return(
     <div>
       <h3>React Is Working</h3>
-      <UserForm />
+      <UserForm /><br/>
+      <h4>{text}</h4>
     </div>
     );
   }
