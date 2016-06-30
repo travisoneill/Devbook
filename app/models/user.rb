@@ -20,13 +20,13 @@ class User < ActiveRecord::Base
     self.session_token
   end
 
-  def self.find_by_credentials(un, pw)
-    user = User.find_by(username: un)
+  def self.find_by_credentials(email, pw)
+    user = User.find_by(email: email)
     user && user.is_password?(pw) ? user : nil
   end
 
   private
-  
+
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64(16)
   end

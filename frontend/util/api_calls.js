@@ -15,5 +15,18 @@ module.exports = {
         serverAction(resp);
       }
     });
+  },
+
+  logout(serverAction){
+    $.ajax({
+      url: `api/session`,
+      type: `DELETE`,
+      dataType: `json`,
+      // data: '',
+      success(){
+        serverAction();
+      }
+    });
   }
+
 };

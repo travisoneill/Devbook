@@ -5,6 +5,14 @@ module.exports = {
 
   createUser(data){
     ApiCalls.createUser(data, ServerActions.storeCurrentUser);
+  },
+
+  // getCurrenUser(){
+  //   ApiCalls.getCurrenUser(ServerActions.storeCurrentUser);
+  // },
+
+  logout(){
+    ApiCalls.logout(ServerActions.logout);
   }
 
 };

@@ -12,7 +12,9 @@ class Api::UsersController < ApplicationController
         fullname: @user.full_name.downcase
         )
       Action.create!(initiator_id: @user.id, action_type: "account_creation")
-      render json: @user
+      sign_in(@user)
+      render :show
+      # render json: @user
     else
       flash.now[:errors] = @user.errors.full_messages
       redirect_to root

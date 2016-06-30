@@ -12,10 +12,13 @@ CurrentUserStore.get = function(){
 };
 
 CurrentUserStore.__onDispatch = function(payload){
-  console.log(payload);
   switch(payload.actionType){
     case Constants.store_current_user:
       _currentUser = payload.user;
+      this.__emitChange();
+      break;
+    case Constants.logout:
+      _currentUser = undefined;
       this.__emitChange();
       break;
   }

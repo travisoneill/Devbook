@@ -3,26 +3,54 @@ const ReactDOM = require('react-dom');
 const Router = require('react-router').Router;
 const Route = require('react-router').Route;
 const IndexRoute = require('react-router').IndexRoute;
+const ServerActions = require('./actions/server_actions');
+const Splash = require('./components/splash');
+const App = require('./components/app');
+
 
 const UserForm = require('./components/new_user_form');
-const Store = require('./stores/current_user_store');
-window.Store = Store;
+const CurrentUserStore = require('./stores/current_user_store');
+// window.CurrentUserStore = CurrentUserStore;
 
-const App = React.createClass({
+const Root = React.createClass({
+
+  getInitialState() {
+    return { user : CurrentUserStore.get() };
+  },
+
+  componentDidMount() {
+    CurrentUserStore.addListener(this._onChange);
+  },
+
+  _onChange(){
+    console.log("Change!");
+    this.setState({user: CurrentUserStore.get()});
+  },
+
   render(){
-    let user = Store.get().full_name;
     let text = '';
-    if(user){text = `Logged in as ${user}`;}
+    let Component = Splash;
+    let currentUser = this.state.user;
+    if(currentUser){
+      text = `Logged in as ${currentUser.full_name}`;
+      Component = App;
+    }
     return(
-    <div>
-      <h3>React Is Working</h3>
-      <UserForm /><br/>
+    <div className="root">
+      <Component /><br/>
       <h4>{text}</h4>
     </div>
     );
   }
 
 });
+
+const Setup = {
+  currentUser(){
+    let user = window.bootstrap.user;
+    ServerActions.storeCurrentUser(user);
+  }
+};
 
 // const routes = (
 //   <Router>
@@ -39,6 +67,7 @@ const App = React.createClass({
 
 
 document.addEventListener("DOMContentLoaded", () => {
+  Setup.currentUser();
   const content = document.getElementById('content');
-  ReactDOM.render(<App />, content);
+  ReactDOM.render(<Root />, content);
 });

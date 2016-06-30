@@ -4,13 +4,13 @@ class Api::SessionsController < ApplicationController
 
   def create
     user = User.find_by_credentials(
-      params[:user][:username],
+      params[:user][:email],
       params[:user][:password]
     )
 
     if user
       sign_in(user)
-      redirect_to root
+      render json: user
     else
       flash.now[:errors] = ["Invalid Credentials"]
       redirect_to root
@@ -18,7 +18,8 @@ class Api::SessionsController < ApplicationController
   end
 
   def destroy
+    @user = current_user
     sign_out
-    redirect_to root
+    render json: @user
   end
 end
