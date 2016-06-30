@@ -15,8 +15,7 @@
 ## NotebookForm
 ![notebook-form]
 
-[new-user]: ./wireframes/new_user.png
-[new-session]: ./wireframes/new_session.png
-[notes]: ./wireframes/root_notes.png
-[notebooks]: ./wireframes/root_notebooks.png
-[notebook-form]: ./wireframes/notebook_form.png
+[timeline tab]: ./wireframes/timeline.png
+[friends tab]: ./wireframes/friends.png
+[notes tab]: ./wireframes/photos.png
+[new-user tab]: ./wireframes/about.png

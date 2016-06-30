@@ -44,7 +44,7 @@ id          | integer   | not null, primary key
 user_id1    | integer   | not null, foreign key (references users), indexed
 user_id2    | integer   | not null, foreign key (references users), indexed
 
-## photos - PROBABLY NOT HERE
+## photos
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
