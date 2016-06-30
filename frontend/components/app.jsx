@@ -14,19 +14,25 @@ const App = React.createClass({
   render(){
     return (
       <div className="app-container">
-        <div classnName="app-titlebar">
-          <AppTitlebar />
-          <button onClick={this.logout}>Logout</button>
-        </div>
-        <div className="profile-pane">
-          <Profile />
-        </div>
-        <div className="app-sidebar">
-          <AppSidebar />
-        </div>
+        <AppTitlebar />
+        <Profile />
+        <AppSidebar />
       </div>
     );
   }
 });
+
+// <div className="app-container">
+//   <div classnName="app-titlebar">
+//     <AppTitlebar />
+//     <button onClick={this.logout}>Logout</button>
+//   </div>
+//   <div className="profile-pane">
+//     <Profile />
+//   </div>
+//   <div className="app-sidebar">
+//     <AppSidebar />
+//   </div>
+// </div>
 
 module.exports = App;

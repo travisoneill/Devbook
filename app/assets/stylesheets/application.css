@@ -29,7 +29,8 @@
 }
 
 div {
-  border: 2px solid;
+  margin: 1px;
+  border: 1px solid;
   border-color: black;
 }
 
@@ -42,6 +43,59 @@ input[type="password"], input[type="text"] {
   padding: 4px 5px;
   margin-bottom: 10px;
 }
+
+.app-container {
+  position: relative;
+  overflow: auto;
+}
+
+.app-titlebar {
+  position: absolute;
+  height: 50px;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+}
+
+.app-sidebar {
+  margin-top: 60px;
+  width: 250px;
+  float: right;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.profile-pane {
+  margin-top: 60px;
+  position: relative;
+  float: left;
+  overflow: auto;
+}
+
+.profile-header {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 200px;
+  width: 100%;
+}
+
+.profile-sidebar {
+  float: left;
+  margin-top: 210px;
+  width: 200px;
+  position: relative;
+}
+
+.profile-content {
+  margin-left: 210px;
+  margin-top: 210px;
+  width: 500px;
+
+}
+
+
 
 .login-input {
   border: 1px solid;
