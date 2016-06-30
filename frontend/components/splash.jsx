@@ -1,6 +1,7 @@
 const React = require('react');
 const NewUserForm = require('./new_user_form');
 const LoginForm = require('./login_form');
+const Demo = require('./demo_login');
 
 const Splash = React.createClass({
   render() {
@@ -11,17 +12,22 @@ const Splash = React.createClass({
             <p className="logo-text">LOGO HERE</p>
           </div>
           <div className="search-container">
-            <input className="searchbar" type="text" placeholder="Search"/>
           </div>
           <LoginForm className="login_form" />
         </div>
         <div className="left-pane">
-          <h3>Splash</h3>
+          <h3>Splash</h3><br />
+          <Demo />
         </div>
-        <NewUserForm className="new-user-form" /><br /><br />
+        <div className="new-user-form-container">
+          <NewUserForm className="new-user-form" /><br /><br />
+        </div>
       </div>
     );
   }
 });
+
+// <input className="searchbar" type="text" placeholder="Search"/>
+
 
 module.exports = Splash;

@@ -28,6 +28,11 @@
     background: transparent
 }
 
+div {
+  border: 2px solid;
+  border-color: black;
+}
+
 
 input[type="password"], input[type="text"] {
   display: block;
