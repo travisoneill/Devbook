@@ -10,6 +10,9 @@ const Splash = React.createClass({
           <div className="logo-container">
             <p className="logo-text">LOGO HERE</p>
           </div>
+          <div className="search-container">
+            <input className="searchbar" type="text" placeholder="Search"/>
+          </div>
           <LoginForm className="login_form" />
         </div>
         <div className="left-pane">

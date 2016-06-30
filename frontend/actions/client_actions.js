@@ -7,9 +7,9 @@ module.exports = {
     ApiCalls.createUser(data, ServerActions.storeCurrentUser);
   },
 
-  // getCurrenUser(){
-  //   ApiCalls.getCurrenUser(ServerActions.storeCurrentUser);
-  // },
+  login(data){
+    ApiCalls.login(data, ServerActions.storeCurrentUser);
+  },
 
   logout(){
     ApiCalls.logout(ServerActions.logout);

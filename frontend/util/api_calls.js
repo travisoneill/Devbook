@@ -22,9 +22,21 @@ module.exports = {
       url: `api/session`,
       type: `DELETE`,
       dataType: `json`,
-      // data: '',
+      data: '',
       success(){
         serverAction();
+      }
+    });
+  },
+
+  login(data, serverAction){
+    $.ajax({
+      url: `api/session`,
+      type: `POST`,
+      dataType: `json`,
+      data: data,
+      success(resp){
+        serverAction(resp);
       }
     });
   }

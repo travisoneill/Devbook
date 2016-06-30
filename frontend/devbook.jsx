@@ -30,14 +30,14 @@ const Root = React.createClass({
   render(){
     let text = '';
     let Component = Splash;
-    let currentUser = this.state.user;
-    if(currentUser){
-      text = `Logged in as ${currentUser.full_name}`;
+    let user = this.state.user;
+    if(user){
+      text = `Logged in as ${user.full_name}`;
       Component = App;
     }
     return(
     <div className="root">
-      <Component /><br/>
+      <Component user={user} /><br/>
       <h4>{text}</h4>
     </div>
     );

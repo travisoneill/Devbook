@@ -44,17 +44,29 @@ const NewUserForm = React.createClass({
 
   render(){
     return(
-      <div>
-        <h3>Create Account</h3>
-        <form onSubmit={this.handleSubmit}>
-          <label>First Name:</label>
-          <input type="text" value={this.state.fname} onChange={this.fnameChange} /><br />
-          <label>Last Name:</label>
-          <input type="text" value={this.state.lname} onChange={this.lnameChange} /><br />
-          <label>Email:</label>
-          <input type="text" value={this.state.email} onChange={this.emailChange} /><br />
-          <label>Password:</label>
-          <input type="password" value={this.state.password} onChange={this.passwordChange} /><br />
+      <div className="new-user-form-container">
+        <form className="new-user-form" onSubmit={this.handleSubmit}>
+          <label>Sign Up</label>
+          <input className="new-user-input"
+                 type="text"
+                 placeholder="First Name"
+                 value={this.state.fname}
+                 onChange={this.fnameChange} />
+          <input className="new-user-input"
+                 type="text"
+                 placeholder="Last Name"
+                 value={this.state.lname}
+                 onChange={this.lnameChange} /><br />
+          <input className="new-user-input"
+                 type="text"
+                 placeholder="email"
+                 value={this.state.email}
+                 onChange={this.emailChange} /><br />
+          <input className="new-user-input"
+                 type="password"
+                 placeholder="Password"
+                 value={this.state.password}
+                 onChange={this.passwordChange} /><br />
           <input type="submit" value="submit" />
         </form>
       </div>
