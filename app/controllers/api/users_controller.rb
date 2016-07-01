@@ -1,6 +1,6 @@
 class Api::UsersController < ApplicationController
 
-  attr_writer :user, :seed
+  attr_writer :user
 
   def new
   end
@@ -11,10 +11,12 @@ class Api::UsersController < ApplicationController
 
   def create
     if @user
+      @user.profile_pic_url = DEFAULTS[:profile_pic]
       @user.save!
       make_associated_objects
     else
       @user = User.new(user_params)
+      @user.profile_pic_url = DEFAULTS[:profile_pic]
       save_user
     end
   end
@@ -84,8 +86,12 @@ class Api::UsersController < ApplicationController
   private
   def user_params
     params.require(:user)
-          .permit(:fname, :lname, :full_name,
-                  :password_digest, :password,
-                  :session_token, :email, :dob)
+          .permit(:fname, :lname, :full_name, :password_digest,
+                  :password,:session_token, :email, :profile_pic_url,
+                  :dob, :cover_pic_url)
   end
+
+  DEFAULTS = {
+    profile_pic: 'http://res.cloudinary.com/devbook/image/upload/v1467400087/devbook/app-images/default-profile-1.png'
+  }
 end
