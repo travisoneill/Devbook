@@ -1,14 +1,14 @@
 const React = require('react');
 const ClientActions = require('../../../actions/client_actions');
 
-const ProfileSidebar = React.createClass({
+const ProfileContent = React.createClass({
   render(){
     return(
-      <div className="profile-sidebar">
-        <h4>Profile Sidebar</h4>
+      <div className="profile-content">
+        <h4>Profile Content</h4>
       </div>
     );
   }
 });
 
-module.exports = ProfileSidebar;
+module.exports = ProfileContent;

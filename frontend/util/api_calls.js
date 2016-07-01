@@ -17,6 +17,42 @@ module.exports = {
     });
   },
 
+  updateUser(data, serverAction){
+    $.ajax({
+      url: `api/users/${data.id}`,
+      type: `PATCH`,
+      dataType: `json`,
+      data: { user: data },
+      success(resp){
+        serverAction(resp);
+      }
+    });
+  },
+
+  getUser(id, serverAction){
+    $.ajax({
+      url: `api/users/${id}`,
+      type: `GET`,
+      dataType: `json`,
+      data: '',
+      success(resp){
+        serverAction(resp);
+      }
+    });
+  },
+
+  deleteUser(id, serverAction){
+    $.ajax({
+      url: `api/users/${id}`,
+      type: `DELETE`,
+      dataType: `json`,
+      data: '',
+      success(resp){
+        serverAction(resp);
+      }
+    });
+  },
+
   logout(serverAction){
     $.ajax({
       url: `api/session`,

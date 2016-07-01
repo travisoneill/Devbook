@@ -10,7 +10,10 @@ const App = require('./components/app');
 
 const UserForm = require('./components/splash_subcomponents/new_user_form');
 const CurrentUserStore = require('./stores/current_user_store');
-// window.CurrentUserStore = CurrentUserStore;
+const SelectedUserStore = require('./stores/selected_user_store');
+
+window.CurrentUserStore = CurrentUserStore;
+window.SelectedUserStore = CurrentUserStore;
 
 const Root = React.createClass({
 

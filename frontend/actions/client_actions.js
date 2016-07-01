@@ -13,6 +13,18 @@ module.exports = {
 
   logout(){
     ApiCalls.logout(ServerActions.logout);
+  },
+
+  selectUser(id){
+    ApiCalls.getUser(ServerActions.storeSelectedUser);
+  },
+
+  deleteUser(id){
+    ApiCalls.deleteUser(ServerActions.logout);
+  },
+
+  editUser(data){
+    ApiCalls.updateUser(ServerActions.storeCurrentUser);
   }
 
 };

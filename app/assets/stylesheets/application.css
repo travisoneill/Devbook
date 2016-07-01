@@ -81,20 +81,58 @@ div {
   position: absolute;
   top: 0px;
   left: 0px;
-  height: 200px;
+  height: 360px;
   width: 100%;
+}
+
+.cover-photo {
+  height: 315px;
+  /*fix width here*/
+}
+
+.profile-pic {
+  height: 168px;
+  width: 168px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.profile-tab-bar {
+  height: 40px;
+}
+
+.profile-tabs {
+  margin-right: 100px;
+  margin-left: 250px;
+  display: flex;
+  height: 100%;
+  background: white;
+}
+
+.profile-tab-button {
+  border-left: 1px solid;
+  display: flex;
+  height: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+
+}
+
+.photos-tab {
+  border-right: 1px solid;
 }
 
 .profile-sidebar {
   float: left;
-  margin-top: 210px;
-  width: 200px;
+  margin-top: 385px;
+  width: 300px;
   position: relative;
 }
 
 .profile-content {
-  margin-left: 210px;
-  margin-top: 210px;
+  margin-left: 330px;
+  margin-top: 385px;
   width: 500px;
 
 }
