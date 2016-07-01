@@ -5,7 +5,18 @@ const NewUserForm = React.createClass({
 
   getInitialState() {
     return { fname: "", lname: "", email: "", email2: "", password: "",
-            match: true, DD: "", MM: "", YYYY: ""};
+            match: true, DD: "", MM: "", YYYY: "", incomplete: true};
+  },
+
+  checkComplete(){
+    let incomplete = false;
+    if(this.state.fname.length < 1){incomplete = true;}
+    if(this.state.lname.length < 1){incomplete = true;}
+    if(this.state.email.length < 1){incomplete = true;}
+    if(this.state.email2.length < 1){incomplete = true;}
+    if(this.state.password.length < 6){incomplete = true;}
+    if(this.state.match === false){incomplete = true;}
+    return incomplete;
   },
 
   fnameChange(e){
@@ -18,25 +29,31 @@ const NewUserForm = React.createClass({
     e.preventDefault();
     let val = e.target.value;
     this.setState({lname: val});
+
   },
 
   emailChange(e){
     e.preventDefault();
     let val = e.target.value;
-    this.setState({email: val});
+    let match = this.state.email2 === val;
+    this.setState({email: val, match: match});
   },
 
   email2Change(e){
     e.preventDefault();
     let val = e.target.value;
     let match = this.state.email === val;
-    this.setState({email2: val, match: match });
+    this.setState({email2: val, match: match});
+    // let incomplete = this.checkComplete();
+    // this.setState({incomplete: incomplete});
   },
 
   passwordChange(e){
     e.preventDefault();
     let val = e.target.value;
     this.setState({password: val});
+    // let incomplete = this.checkComplete();
+    // this.setState({incomplete: incomplete});
   },
 
   monthChange(e){
@@ -127,7 +144,7 @@ const NewUserForm = React.createClass({
           <input type="radio" name="species" value="human" />
           <label>Machine: </label>
           <input type="radio" name="species" value="human" /><br />
-          <input className="signup-submit" type="submit" value="Sign Up!" />
+          <input className="signup-submit" disabled={this.checkComplete()} type="submit" value="Sign Up!" />
         </form>
       </div>
     );

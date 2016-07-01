@@ -1,25 +1,47 @@
 class Api::UsersController < ApplicationController
+
+  attr_writer :user, :seed
+
   def new
   end
 
+  def seed
+
+  end
+
   def create
-    @user = User.new(user_params)
+    if @user
+      @user.save!
+      make_associated_objects
+    else
+      @user = User.new(user_params)
+      save_user
+    end
+  end
+
+  def make_associated_objects
+    Searchable.create!(
+      user_id: @user.id,
+      fname: @user.fname.downcase,
+      lname: @user.lname.downcase,
+      fullname: @user.full_name.downcase
+      )
+    Action.create!(initiator_id: @user.id, action_type: "account_creation")
+  end
+
+  def save_user
     if @user.save!
-      Searchable.create!(
-        user_id: @user.id,
-        fname: @user.fname.downcase,
-        lname: @user.lname.downcase,
-        fullname: @user.full_name.downcase
-        )
-      Action.create!(initiator_id: @user.id, action_type: "account_creation")
+      make_associated_objects
       sign_in(@user)
       render :show
-      # render json: @user
     else
       flash.now[:errors] = @user.errors.full_messages
       redirect_to root
     end
   end
+
+
+
 
   def show
     user = User.find(params[:id])

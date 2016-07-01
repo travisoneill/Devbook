@@ -233,6 +233,10 @@ div {
   border-radius: 5px;
 }
 
+.signup-submit:disabled {
+  background: red;
+}
+
 .long {
   width: 342px;
 }

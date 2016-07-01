@@ -26,7 +26,6 @@ const Root = React.createClass({
   },
 
   _onChange(){
-    console.log("Change!");
     this.setState({user: CurrentUserStore.get()});
   },
 
@@ -72,5 +71,6 @@ const Setup = {
 document.addEventListener("DOMContentLoaded", () => {
   Setup.currentUser();
   const content = document.getElementById('content');
+  console.log("Welcome to the DevBook Console!");
   ReactDOM.render(<Root />, content);
 });
