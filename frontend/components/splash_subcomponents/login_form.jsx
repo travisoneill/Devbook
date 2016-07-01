@@ -1,7 +1,11 @@
 const React = require('react');
-const ClientActions = require('../actions/client_actions');
+const ClientActions = require('../../actions/client_actions');
 
 const LoginForm = React.createClass({
+
+  getInitialState() {
+    return { email: "", password: "" };
+  },
 
   emailChange(e){
     e.preventDefault();
@@ -21,13 +25,6 @@ const LoginForm = React.createClass({
     ClientActions.login(data);
   },
 
-  getInitialState: function() {
-    return {
-      email: "",
-      password: ""
-    };
-  },
-
   render(){
     return(
       <div className="login-form-container">
@@ -42,7 +39,7 @@ const LoginForm = React.createClass({
                  placeholder="Password"
                  value={this.state.password}
                  onChange={this.passwordChange} />
-          <input className="myButton" type="submit" value="Sign In!" />
+          <input className="login-submit" type="submit" value="Sign In!" />
         </form>
       </div>
     );

@@ -1,5 +1,5 @@
 const React = require('react');
-const ClientActions = require('../actions/client_actions');
+const ClientActions = require('../../actions/client_actions');
 
 const Demo = React.createClass({
 

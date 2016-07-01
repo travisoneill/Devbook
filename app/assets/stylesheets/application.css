@@ -28,6 +28,10 @@
     background: transparent
 }
 
+body {
+  background: #e9ebee
+}
+
 div {
   margin: 1px;
   border: 1px solid;
@@ -35,14 +39,14 @@ div {
 }
 
 
-input[type="password"], input[type="text"] {
+/*input[type="password"], input[type="text"] {
   display: block;
   margin: 2px;
   background: white;
   color: black;
   padding: 4px 5px;
   margin-bottom: 10px;
-}
+}*/
 
 .app-container {
   position: relative;
@@ -101,10 +105,19 @@ input[type="password"], input[type="text"] {
   border: 1px solid;
   border-color: #1d2a5b;
   width: 142px;
+  padding: 3px;
+  margin: 5px;
+  background: white;
 }
 
 .login-submit {
-
+  background: #4267B2;
+  border: 1px solid #29487D;
+  padding: 0 13px;
+  height: 30px;
+  align-self: center;
+  border-radius: 3px;
+  margin: 5px;
 }
 
 .login-button {
@@ -122,13 +135,20 @@ input[type="password"], input[type="text"] {
   white-space: nowrap;
 }
 
+.demo-login-button {
+  background: blue;
+  color: white;
+  border-radius: 10px;
+  font-size: 24px;
+  padding: 5px;
+}
+
 .splash-titlebar {
   height: 50px;
   background: #3B5998;
 }
 
 .login-form-container {
-  display: flex;
   float: right;
 }
 
@@ -144,26 +164,88 @@ input[type="password"], input[type="text"] {
 }
 
 .logo-text {
-  display: flex;
   float: left;
   color: white;
-  font-size: 36px;
+  font-size: 24px;
   padding: 5px;
   padding-left: 15px;
 }
 
 .new-user-form-container {
-  display: flex;
+  display: block;
 }
 
 .new-user-form {
-  display: flex;
+  display: block;
 }
 
 
 .new-user-input {
-  border: 2px solid;
+  border: 1px solid #bdc7d8;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  background: white;
 }
+
+.signup-submit {
+  border: 1px solid;
+  padding: 5px;
+  float: right;
+  border-radius: 5px;
+}
+
+.long {
+  width: 342px;
+}
+
+.short {
+  width: 60px;
+}
+
+.vshort {
+  width: 40px;
+}
+
+.titlebar-logo {
+  float:left
+}
+
+.logout-button {
+  float: right;
+  padding: 15px;
+}
+
+.splash-container {
+  display: flex;
+  background: #e9ebee
+}
+
+.splash-titlebar {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 60px;
+  width: 100%;
+}
+
+.splash-logo {
+  float: left;
+}
+
+.splash-left-pane {
+  position: relative;
+  flex: 1;
+  margin-top: 75px;
+}
+
+.splash-right-pane {
+  width: 400px;
+  position: relative;
+  margin-top: 75px;
+}
+
+
 /*.myButton {
 	-moz-box-shadow: 0px 0px 0px 2px #9fb4f2;
 	-webkit-box-shadow: 0px 0px 0px 2px #9fb4f2;

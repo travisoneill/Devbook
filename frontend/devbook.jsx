@@ -8,7 +8,7 @@ const Splash = require('./components/splash');
 const App = require('./components/app');
 
 
-const UserForm = require('./components/new_user_form');
+const UserForm = require('./components/splash_subcomponents/new_user_form');
 const CurrentUserStore = require('./stores/current_user_store');
 // window.CurrentUserStore = CurrentUserStore;
 

@@ -5,12 +5,7 @@ const AppSidebar = require('./app_subcomponents/sidebar');
 const Profile = require('./app_subcomponents/profile');
 
 const App = React.createClass({
-
-  logout(e){
-    e.preventDefault();
-    ClientActions.logout();
-  },
-
+  
   render(){
     return (
       <div className="app-container">
