@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy, :show]
   end
 
+  get '/api/posts/timeline/:id', to: 'api/posts#timeline'
+
   root "static_pages#root"
 
   # The priority is based upon order of creation: first created -> highest priority.

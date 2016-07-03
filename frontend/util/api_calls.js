@@ -91,4 +91,15 @@ module.exports = {
     });
   },
 
+  getTimeline(id, serverAction){
+    $.ajax({
+      url: `api/posts/timeline/${id}`,
+      type: `GET`,
+      dataType: `json`,
+      data: "",
+      success(resp){
+        serverAction(resp);
+      }
+    });
+  }
 };

@@ -23,17 +23,20 @@ const NewPostForm = React.createClass({
     const params = {
       body: this.state.body,
       user_id: this.state.user.id,
+      thumbnail_url: this.state.user.profile_pic_url,
       photo_url: PhotoUrlStore.get()
     };
+    this.setState({body: ""});
     ServerActions.resetUrl();
     ClientActions.createPost(params);
   },
 
   render(){
+    const profileUrl = this.state.user ? this.state.user.profile_pic_url : "";
+    const thumbnail = Transform.profilePic2(profileUrl);
     return(
       <div className="new-post-form">
-        <img className="post-form-thumbnail"
-            src={Transform.profilePic2(this.state.user.profile_pic_url)} />
+        <img className="post-form-thumbnail" src={thumbnail} />
         <PhotoUploadButton action="post" />
         <form className="post-form" onSubmit={this.handleSubmit}>
           <input type="text"

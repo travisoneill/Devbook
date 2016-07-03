@@ -37,8 +37,17 @@ module.exports = {
   },
 
   storePost(post){
-    console.log(post);
-    console.log("Now go make a post store!");
+    Dispatcher.dispatch({
+      actionType: Constants.add_post,
+      post: post
+    });
+  },
+
+  storeTimeline(posts){
+    Dispatcher.dispatch({
+      actionType: Constants.store_timeline,
+      posts: posts
+    });
   }
 
 };

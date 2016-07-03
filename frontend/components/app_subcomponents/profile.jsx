@@ -8,7 +8,7 @@ const SelectedUserStore = require('../../stores/selected_user_store');
 const Profile = React.createClass({
 
   getInitialState() {
-    return { user: SelectedUserStore.get() };
+    return { user: this.props.user };
   },
 
   componentDidMount() {
@@ -26,9 +26,9 @@ const Profile = React.createClass({
   render(){
     return(
       <div className="profile-pane">
-        <ProfileHeader user={this.state.user} />
-        <ProfileSidebar user={this.state.user} />
-        <ProfileContent user={this.state.user} />
+        <ProfileHeader user={this.props.user} />
+        <ProfileSidebar user={this.props.user} />
+        <ProfileContent user={this.props.user} />
       </div>
     );
   }

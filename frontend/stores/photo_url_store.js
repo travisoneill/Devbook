@@ -20,7 +20,6 @@ PhotoUrlStore.__onDispatch = function(payload){
       break;
     case Constants.reset_url:
       _url = undefined;
-      console.log("reset url");
       this.__emitChange();
       break;
   }

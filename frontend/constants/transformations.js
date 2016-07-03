@@ -16,6 +16,10 @@ module.exports = {
     return this.transformPic(url, 831, 317);
   },
 
+  postPic(url){
+    return this.transformPic(url, 476, 476);
+  },
+
   transformPic(url, w, h){
     const query = `/upload/w_${w},h_${h}`;
     return url.split('/upload').join(query);

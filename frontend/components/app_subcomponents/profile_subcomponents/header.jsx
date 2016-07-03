@@ -4,6 +4,7 @@ const CoverPhoto = require('./header_subcomponents/cover_photo');
 const ProfilePic = require('./header_subcomponents/profile_pic');
 
 const ProfileHeader = React.createClass({
+
   render(){
     return(
       <div className="profile-header">

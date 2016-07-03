@@ -40,16 +40,13 @@ class Api::PostsController < ApplicationController
   end
 
   def timeline
-
-  end
-
-  def method_name
-
+    @posts = User.find(params[:id]).posts
+    render json: @posts
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:body, :photo_url, :user_id)
+    params.require(:post).permit(:body, :photo_url, :user_id, :thumbnail_url)
   end
 end

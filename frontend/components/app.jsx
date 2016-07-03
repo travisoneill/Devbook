@@ -9,8 +9,10 @@ const SelectedUserStore = require('../stores/selected_user_store');
 const App = React.createClass({
 
   render(){
-    let currentUser = CurrentUserStore.get();
-    let selectedUser = SelectedUserStore.get();
+    // let currentUser = CurrentUserStore.get();
+    // let selectedUser = SelectedUserStore.get();
+    let currentUser = this.props.currentUser;
+    let selectedUser = this.props.selectedUser;
     return (
       <div className="app-container">
         <AppTitlebar user={currentUser} />

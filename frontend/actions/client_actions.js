@@ -47,6 +47,10 @@ module.exports = {
 
   createPost(post){
     ApiCalls.createPost(post, ServerActions.storePost);
+  },
+
+  getTimeline(id){
+    ApiCalls.getTimeline(id, ServerActions.storeTimeline);
   }
 
 };
