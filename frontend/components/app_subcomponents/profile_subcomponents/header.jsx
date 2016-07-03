@@ -1,23 +1,15 @@
 const React = require('react');
-const ClientActions = require('../../../actions/client_actions');
-const TabBar = require('./tab_bar');
-const Transform = require('../../../constants/transformations');
-const PhotoUploadButton = require('../../util/upload_button');
+const TabBar = require('./header_subcomponents/tab_bar');
+const CoverPhoto = require('./header_subcomponents/cover_photo');
+const ProfilePic = require('./header_subcomponents/profile_pic');
 
 const ProfileHeader = React.createClass({
   render(){
-    let url = this.props.user ? this.props.user.profile_pic_url : "";
-    let profile = Transform.profilePic(url);
     return(
       <div className="profile-header">
-        <div className="cover-photo">
-          <PhotoUploadButton profile={false} cover={true} />
-        </div>
-        <TabBar />
-        <div className="profile-pic">
-          <PhotoUploadButton profile={true} cover={false} />
-          <img src={profile} />
-        </div>
+        <CoverPhoto user={this.props.user} />
+        <TabBar user={this.props.user} />
+        <ProfilePic user={this.props.user} />
       </div>
     );
   }

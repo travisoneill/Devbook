@@ -21,7 +21,24 @@ module.exports = {
     Dispatcher.dispatch({
       actionType: Constants.logout
     });
-  }
+  },
 
+  storeUrl(img){
+    Dispatcher.dispatch({
+      actionType: Constants.store_url,
+      url: img.url
+    });
+  },
+
+  resetUrl(){
+    Dispatcher.dispatch({
+      actionType: Constants.reset_url
+    });
+  },
+
+  storePost(post){
+    console.log(post);
+    console.log("Now go make a post store!");
+  }
 
 };

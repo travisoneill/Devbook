@@ -17,6 +17,8 @@ module.exports = {
     });
   },
 
+
+
   updateUser(data, serverAction){
     $.ajax({
       url: `api/users/${data.id}`,
@@ -75,6 +77,18 @@ module.exports = {
         serverAction(resp);
       }
     });
-  }
+  },
+
+  createPost(data, serverAction){
+    $.ajax({
+      url: `api/posts`,
+      type: `POST`,
+      dataType: `json`,
+      data: {post: data},
+      success(resp){
+        serverAction(resp);
+      }
+    });
+  },
 
 };

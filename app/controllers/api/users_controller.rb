@@ -11,17 +11,17 @@ class Api::UsersController < ApplicationController
 
   def create
     if @user
-      @user.profile_pic_url = DEFAULTS[:profile_pic]
       @user.save!
       make_associated_objects
     else
       @user = User.new(user_params)
-      @user.profile_pic_url = DEFAULTS[:profile_pic]
       save_user
     end
   end
 
   def make_associated_objects
+    @user.profile_pic_url = DEFAULTS[:profile_pic]
+    @user.profile_pic_url = DEFAULTS[:cover_photo]
     Searchable.create!(
       user_id: @user.id,
       fname: @user.fname.downcase,
@@ -51,8 +51,8 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    user = User.new(user_params)
-    if user.update!
+    user = User.find(params[:id])
+    if user.update!(user_params)
       render json: user
     else
       flash.now[:errors] = @user.errors.full_messages
@@ -88,10 +88,11 @@ class Api::UsersController < ApplicationController
     params.require(:user)
           .permit(:fname, :lname, :full_name, :password_digest,
                   :password,:session_token, :email, :profile_pic_url,
-                  :dob, :cover_pic_url)
+                  :dob, :cover_pic_url, :gender)
   end
 
   DEFAULTS = {
-    profile_pic: 'http://res.cloudinary.com/devbook/image/upload/v1467400087/devbook/app-images/default-profile-1.png'
+    profile_pic: 'http://res.cloudinary.com/devbook/image/upload/v1467400087/devbook/app-images/default-profile-1.png',
+    cover_photo: 'http://res.cloudinary.com/devbook/image/upload/o_20/v1467420996/devbook/app-images/default-cover.png'
   }
 end

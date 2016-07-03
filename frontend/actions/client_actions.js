@@ -1,5 +1,6 @@
 const ApiCalls = require('../util/api_calls');
 const ServerActions = require('./server_actions');
+const CurrentUserStore = require('../stores/current_user_store');
 
 module.exports = {
 
@@ -25,6 +26,27 @@ module.exports = {
 
   editUser(data){
     ApiCalls.updateUser(ServerActions.storeCurrentUser);
+  },
+
+  postProfilePic(image){
+    let user = CurrentUserStore.get();
+    user.profile_pic_url = image.url;
+    ApiCalls.updateUser(user, ServerActions.storeCurrentUser);
+  },
+
+  postCoverPhoto(image){
+    let user = CurrentUserStore.get();
+    user.cover_pic_url = image.url;
+    ApiCalls.updateUser(user, ServerActions.storeCurrentUser);
+  },
+
+  postImage(image){
+
+  },
+
+
+  createPost(post){
+    ApiCalls.createPost(post, ServerActions.storePost);
   }
 
 };

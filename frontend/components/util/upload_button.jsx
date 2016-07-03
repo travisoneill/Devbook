@@ -1,28 +1,36 @@
 const React = require('react');
 const ClientActions = require('../../actions/client_actions');
+const ServerActions = require('../../actions/server_actions');
 const URL = require('../../constants/defaults');
-
-
-
-
+const CurrentUserStore = require('../../stores/current_user_store');
 
 const PhotoUploadButton = React.createClass({
 
-  getInitialState(){
-    let type = "general";
-    if(this.props.cover === true){ type = "cover" ;}
-    if(this.props.profile === true){ type = "profile" ;}
-    return {type: type };
-  },
+  // getInitialState(){
+  //   let type = "general";
+  //   if(this.props.cover === true){ type = "cover" ;}
+  //   if(this.props.profile === true){ type = "profile" ;}
+  //   return {type: type };
+  // },
 
-  upload(){
-
+  upload(e){
+    e.preventDefault();
+    let action = ClientActions.postImage;
+    if(this.props.action === "cover"){ action = ClientActions.postCoverPhoto;}
+    if(this.props.action === "profile"){ action = ClientActions.postProfilePic ;}
+    if(this.props.action === "post"){ action = ServerActions.storeUrl ;}
+    const button = this;
+    cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, results){
+      if(!error){
+        action(results[0]);
+      }
+    });
   },
 
   render(){
     return(
       <button className="photo-upload-button"
-              onClick={this.upload} >
+              onClick={this.upload}>
         <img src={URL.camera} />
       </button>
     );

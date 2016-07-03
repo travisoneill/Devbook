@@ -18,28 +18,33 @@ window.SelectedUserStore = CurrentUserStore;
 const Root = React.createClass({
 
   getInitialState() {
-    return { user : CurrentUserStore.get() };
+    return { user : CurrentUserStore.get(),
+      selectedUser: SelectedUserStore.get() };
   },
 
   componentDidMount() {
     CurrentUserStore.addListener(this._onChange);
+    SelectedUserStore.addListener(this._onChange);
   },
 
   _onChange(){
     this.setState({user: CurrentUserStore.get()});
+    this.setState({user: SelectedUserStore.get()});
   },
 
   render(){
     let text = '';
     let Component = Splash;
     let user = this.state.user;
+    let selectedUser = this.state.selectedUser;
     if(user){
       text = `Logged in as ${user.full_name}`;
       Component = App;
     }
+
     return(
     <div className="root">
-      <Component user={user} /><br/>
+      <Component user={user} selectedUser={selectedUser} /><br/>
       <h4>{text}</h4>
     </div>
     );
@@ -51,6 +56,8 @@ const Setup = {
   currentUser(){
     let user = window.bootstrap.user;
     ServerActions.storeCurrentUser(user);
+    //This could be a problem later!!!
+    //need to seperate from filling selscted user store.
   }
 };
 
