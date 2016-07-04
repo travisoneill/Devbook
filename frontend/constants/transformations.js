@@ -1,7 +1,7 @@
 module.exports = {
 
   profilePic(url){
-    return this.transformPic(url, 168, 168);
+    return this.transformPic(url, 160, 160);
   },
 
   profilePic2(url){

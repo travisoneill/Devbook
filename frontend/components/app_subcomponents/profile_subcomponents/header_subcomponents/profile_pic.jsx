@@ -10,7 +10,7 @@ const ProfilePic = React.createClass({
     return (
       <div className="profile-pic">
         <PhotoUploadButton action="profile" />
-        <img src={profile} />
+        <img className="profile-img" src={profile} />
       </div>
     );
   }

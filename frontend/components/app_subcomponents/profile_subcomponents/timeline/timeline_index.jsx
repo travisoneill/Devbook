@@ -27,7 +27,6 @@ const TimelineIndex = React.createClass({
     });
     return(
       <div className="timeline-index">
-        <h4>Timeline Index</h4>
         {index}
       </div>
     );

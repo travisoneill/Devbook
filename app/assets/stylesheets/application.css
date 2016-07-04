@@ -29,13 +29,13 @@
 }
 
 body {
-  background: #e9ebee
+  background: #EAEBEE
 }
 
 div {
-  margin: 1px;
+  /*margin: 1px;
   border: 1px solid;
-  border-color: black;
+  border-color: black;*/
 }
 
 
@@ -55,14 +55,17 @@ div {
 
 .app-titlebar {
   position: absolute;
-  height: 50px;
+  height: 42px;
   top: 0px;
   left: 0px;
   width: 100%;
+  background: #445D92;
+  color: white;
+  border: 1px solid #334B78;
 }
 
 .app-sidebar {
-  margin-top: 60px;
+  margin-top: 44px;
   width: 250px;
   float: right;
   position: absolute;
@@ -71,7 +74,7 @@ div {
 }
 
 .profile-pane {
-  margin-top: 60px;
+  margin-top: 44px;
   margin-left: 50px;
   position: relative;
   float: left;
@@ -84,6 +87,9 @@ div {
   left: 0px;
   height: 360px;
   width: 100%;
+  background: white;
+  border: 1px solid #D4D6DA;
+  border-top: 0px;
 }
 
 .cover-photo {
@@ -95,13 +101,19 @@ div {
   height: 168px;
   width: 168px;
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: 15px;
+  left: 15px;
+  box-shadow: 0px 0px 1px 0px #000;
+}
+
+.profile-img {
+  border: 4px solid #fff;
+  border-radius: 3px;
 }
 
 .profile-tab-bar {
-  height: 40px;
-  background: white;
+  height: 43px;
+  margin-top: 2px;
 }
 
 .profile-tabs {
@@ -109,20 +121,20 @@ div {
   margin-left: 250px;
   display: flex;
   height: 100%;
-  background: white;
 }
 
 .profile-tab-button {
-  border-left: 1px solid;
+  border-left: 1px solid #E9EAED;
   display: flex;
   height: 100%;
   padding-left: 30px;
   padding-right: 30px;
+  color: #445D92;
 
 }
 
 .photos-tab {
-  border-right: 1px solid;
+  border-right: 1px solid #E9EAED;
 }
 
 .profile-sidebar {
@@ -257,6 +269,9 @@ div {
 .logout-button {
   float: right;
   padding: 15px;
+  background: #4D6BAB;
+  border: 1px solid #334B78;
+  border-radius: 2px;
 }
 
 .splash-container {
@@ -307,6 +322,8 @@ div {
   top: 0px;
   right: 0px;
   background-color: white;
+  border: 1px solid #E5E6E9;
+  border-bottom: 1px solid #D0D1D4;
 }
 
 .post-form-thumbnail {
@@ -316,22 +333,72 @@ div {
 }
 
 .post-form {
-  margin-left: 45px;
+  margin-left: 50px;
   margin-right: 45px;
   margin-bottom: 5px;
 }
 
 .post-form-input {
   height: 38px;
-  border: 1px solid;
+  border: 1px solid #E9EAED;
   margin-top: 5px;
   width: 100%;
-  border-radius: 3px;
 }
 
 .post-form-submit {
 
 }
+
+.timeline-index-item {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.post-display {
+  background: white;
+  border: 1px solid #DFE0E2;
+}
+
+.comment {
+  background: #f6f7f9;
+  border: 1px solid #DFE0E2;
+  border-bottom: 1px solid #D0D1D4;
+  overflow: auto;
+}
+
+.post-header-pic {
+  float: left;
+  margin: 12px;
+}
+
+.post-text {
+  padding: 22px;
+}
+
+.post-photo {
+  margin-left: 12px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+
+.comment-thumbnail {
+  float: left;
+  margin: 8px;
+}
+
+.comment-form {
+
+}
+
+.comment-form-input {
+  padding: 7px;
+  border: 1px solid #DEDFE2;
+  width: 425px;
+  margin: 8px;
+  margin-left: 0px;
+  background: white;
+}
+
 /*.myButton {
 	-moz-box-shadow: 0px 0px 0px 2px #9fb4f2;
 	-webkit-box-shadow: 0px 0px 0px 2px #9fb4f2;
