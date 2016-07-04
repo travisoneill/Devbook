@@ -51,7 +51,11 @@ module.exports = {
   },
 
   storeSearchResults(results){
-    console.log(results);
+    // debugger;
+    Dispatcher.dispatch({
+      actionType: Constants.store_matches,
+      results: results
+    });
   }
 
 };

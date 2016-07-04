@@ -5,9 +5,15 @@ const Route = require('react-router').Route;
 const IndexRoute = require('react-router').IndexRoute;
 const hashHistory = require('react-router').hashHistory;
 const ServerActions = require('./actions/server_actions');
+
 const Splash = require('./components/splash');
 const App = require('./components/app');
-// const Timeline = require('.')
+
+const Profile = require('./components/app_subcomponents/profile');
+const Timeline = require('./components/app_subcomponents/profile_subcomponents/timeline');
+const About = require('./components/app_subcomponents/profile_subcomponents/about');
+const Photos = require('./components/app_subcomponents/profile_subcomponents/photos');
+const Friends = require('./components/app_subcomponents/profile_subcomponents/friends');
 
 
 // const UserForm = require('./components/splash_subcomponents/new_user_form');
@@ -50,7 +56,7 @@ const Root = React.createClass({
     let selectedUser = this.state.selectedUser;
     if(user){
       text = `Logged in as ${user.full_name}`;
-      component = <App user={user} selectedUser={selectedUser} />;
+      component = AppRouter;
     }
 
     return(
@@ -72,19 +78,19 @@ const Setup = {
   }
 };
 //
-// const AppRouter = (
-//   <Router history={hashHistory}>
-//     <Route path="/" component={Root} >
-//       <IndexRoute component={Profile} />
-//       <Route path="/profile" component={profile}>
-//         <Route path="/timeline/(:id)" component={Timeline} />
-//         <Route path="/about/(:id)" component={About} />
-//         <Route path="/friends/(:id)" component={Friends} />
-//         <Route path="/photos/(:id)" component={Photos} />
-//         </Route >
-//     </Route>
-//   </Router>
-// );
+const AppRouter = (
+  <Router history={hashHistory}>
+    <Route path="/" component={App} >
+      <Route component={Profile} >
+        <IndexRoute component={Timeline}/>
+        <Route path="/timeline/(:id)" component={Timeline} />
+        <Route path="/about/(:id)" component={About} />
+        <Route path="/friends/(:id)" component={Friends} />
+        <Route path="/photos/(:id)" component={Photos} />
+        </Route>
+    </Route>
+  </Router>
+);
 
 
 document.addEventListener("DOMContentLoaded", () => {

@@ -1,6 +1,6 @@
 const React = require('react');
 const ClientActions = require('../../actions/client_actions');
-
+const SearchStore = require('../../stores/search_store');
 const SearchBar = React.createClass({
 
   getInitialState() {
@@ -10,6 +10,7 @@ const SearchBar = React.createClass({
   search(e){
     e.preventDefault();
     const val = e.target.value;
+    // debugger;
     if(val.length > 0){ClientActions.userSearch(val);}
     this.setState({text: val});
   },

@@ -54,6 +54,7 @@ module.exports = {
   },
 
   userSearch(str){
+    // debugger;
     ApiCalls.userSearch(str, ServerActions.storeSearchResults);
   }
 

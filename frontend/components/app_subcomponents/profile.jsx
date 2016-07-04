@@ -24,16 +24,20 @@ const Profile = React.createClass({
   },
 
   render(){
+    debugger;
     return(
       <div className="profile-pane">
         <ProfileHeader user={this.props.user} />
         <ProfileSidebar user={this.props.user} />
-        <ProfileContent user={this.props.user} />
+        {React.cloneElement(this.props.children, {user: this.props.user})}
       </div>
     );
   }
 });
 
+// {React.cloneElement(this.props.children), {user: this.state.user}}
+
+// <ProfileContent user={this.props.user} />
 module.exports = Profile;
 // <div className="profile-pane">
 //   <div className="profile-header">

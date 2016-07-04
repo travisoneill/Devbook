@@ -6,34 +6,32 @@ const Profile = require('./app_subcomponents/profile');
 const CurrentUserStore = require('../stores/current_user_store');
 const SelectedUserStore = require('../stores/selected_user_store');
 
+const Timeline = require('./app_subcomponents/timeline');
+const About = require('./app_subcomponents/about');
+const Photos = require('./app_subcomponents/photos');
+const Friends = require('./app_subcomponents/friends');
+
+
 const App = React.createClass({
 
   render(){
-    // let currentUser = CurrentUserStore.get();
-    // let selectedUser = SelectedUserStore.get();
-    let currentUser = this.props.currentUser;
-    let selectedUser = this.props.selectedUser;
+    let currentUser = CurrentUserStore.get();
+    let selectedUser = SelectedUserStore.get();
+    // let currentUser = this.props.currentUser;
+    // let selectedUser = this.props.selectedUser;
+    debugger;
     return (
       <div className="app-container">
         <AppTitlebar user={currentUser} />
-        <Profile user={selectedUser} />
+        {React.cloneElement(this.props.children, {user: selectedUser})}
         <AppSidebar user={currentUser} />
       </div>
     );
   }
 });
 
-// <div className="app-container">
-//   <div classnName="app-titlebar">
-//     <AppTitlebar />
-//     <button onClick={this.logout}>Logout</button>
-//   </div>
-//   <div className="profile-pane">
-//     <Profile />
-//   </div>
-//   <div className="app-sidebar">
-//     <AppSidebar />
-//   </div>
-// </div>
+// <Profile user={selectedUser} />
+//
+
 
 module.exports = App;

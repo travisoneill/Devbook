@@ -104,12 +104,14 @@ module.exports = {
   },
 
   userSearch(query, serverAction){
+    // debugger;
     $.ajax({
       url: `api/search/${query}`,
       type: `GET`,
       dataType: `json`,
       data: "",
       success(resp){
+        console.log(resp);
         serverAction(resp);
       }
     });
