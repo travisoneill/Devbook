@@ -101,5 +101,17 @@ module.exports = {
         serverAction(resp);
       }
     });
+  },
+
+  userSearch(query, serverAction){
+    $.ajax({
+      url: `api/search/${query}`,
+      type: `GET`,
+      dataType: `json`,
+      data: "",
+      success(resp){
+        serverAction(resp);
+      }
+    });
   }
 };

@@ -48,6 +48,10 @@ module.exports = {
       actionType: Constants.store_timeline,
       posts: posts
     });
+  },
+
+  storeSearchResults(results){
+    console.log(results);
   }
 
 };

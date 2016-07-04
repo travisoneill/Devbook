@@ -51,6 +51,11 @@ module.exports = {
 
   getTimeline(id){
     ApiCalls.getTimeline(id, ServerActions.storeTimeline);
+  },
+
+  userSearch(str){
+    ApiCalls.userSearch(str, ServerActions.storeSearchResults);
   }
+
 
 };

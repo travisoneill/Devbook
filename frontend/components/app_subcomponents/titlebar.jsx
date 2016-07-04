@@ -1,8 +1,8 @@
 const React = require('react');
 const ClientActions = require('../../actions/client_actions');
+const SearchBar = require('./search_bar');
 
 const AppTitlebar = React.createClass({
-
 
   logout(e){
     e.preventDefault();
@@ -13,6 +13,7 @@ const AppTitlebar = React.createClass({
     return(
       <div className="app-titlebar">
         <h4 className="titlebar-logo">App-Titlebar</h4>
+        <SearchBar />
         <button className="logout-button" onClick={this.logout}>Logout</button>
       </div>
     );

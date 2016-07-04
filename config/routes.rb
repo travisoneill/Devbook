@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-
-
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:create, :update, :destroy, :show]
     resources :posts, only: [:create, :update, :destroy, :index]
@@ -9,6 +7,8 @@ Rails.application.routes.draw do
   end
 
   get '/api/posts/timeline/:id', to: 'api/posts#timeline'
+
+  get '/api/search/:query', to: 'api/searchables#search'
 
   root "static_pages#root"
 
