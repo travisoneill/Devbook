@@ -11,22 +11,25 @@ class Api::UsersController < ApplicationController
 
   def create
     if @user
+      @user.profile_pic_url = DEFAULTS[:profile_pic]
+      @user.cover_pic_url = DEFAULTS[:cover_photo]
       @user.save!
       make_associated_objects
     else
       @user = User.new(user_params)
+      @user.profile_pic_url = DEFAULTS[:profile_pic]
+      @user.cover_pic_url = DEFAULTS[:cover_photo]
       save_user
     end
   end
 
   def make_associated_objects
-    @user.profile_pic_url = DEFAULTS[:profile_pic]
-    @user.profile_pic_url = DEFAULTS[:cover_photo]
     Searchable.create!(
       user_id: @user.id,
       fname: @user.fname.downcase,
       lname: @user.lname.downcase,
-      fullname: @user.full_name.downcase
+      fullname: @user.full_name.downcase,
+      profile_pic_url: @user.profile_pic_url
       )
     Action.create!(initiator_id: @user.id, action_type: "account_creation")
   end

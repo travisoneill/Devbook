@@ -1,17 +1,31 @@
 const React = require('react');
 const ClientActions = require('../../actions/client_actions');
 const SearchStore = require('../../stores/search_store');
+const SearchIndexItem = require('./search_index_item');
+
 const SearchBar = React.createClass({
 
   getInitialState() {
-    return { text: "" };
+    return { text: "", results: [] };
+  },
+
+  componentDidMount(){
+    this.listener = SearchStore.addListener(this._onChange);
+  },
+
+  _onChange(){
+    this.setState({results: SearchStore.all()});
+  },
+
+  componentWillUnmount(){
+    this.listener.remove();
   },
 
   search(e){
     e.preventDefault();
     const val = e.target.value;
-    // debugger;
-    if(val.length > 0){ClientActions.userSearch(val);}
+    if(val.length > 0) {ClientActions.userSearch(val);}
+    else {ClientActions.clearSearch();}
     this.setState({text: val});
   },
 
@@ -23,6 +37,9 @@ const SearchBar = React.createClass({
   },
 
   render(){
+    let dropdown = this.state.results.map( (result) => {
+      return <SearchIndexItem key={result.id} result={result} />;
+    });
     return(
       <div className="search-bar">
         <form className="search-form" onSubmit={this.handleSubmit}>
@@ -33,6 +50,9 @@ const SearchBar = React.createClass({
                 value={this.state.text}/>
 
         </form>
+        <div className="search-dropdown" >
+          <ul className="search-list">{dropdown}</ul>
+        </div>
       </div>
     );
   }

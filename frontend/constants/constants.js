@@ -7,6 +7,7 @@ module.exports = {
   reset_url: "RESET_URL",
   store_timeline: "STORE_TIMELINE",
   add_post: "ADD_POST",
-  store_matches: "STORE_MATCHES"
+  store_matches: "STORE_MATCHES",
+  clear_search: "CLEAR_SEARCH"
 
 };

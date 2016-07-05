@@ -32,8 +32,8 @@ const NewPostForm = React.createClass({
   },
 
   render(){
-    const profileUrl = this.state.user ? this.state.user.profile_pic_url : "";
-    const thumbnail = Transform.profilePic2(profileUrl);
+    const profileUrl = this.state.user ? this.state.user.profile_pic_url : undefined;
+    const thumbnail = profileUrl ? Transform.profilePic2(profileUrl) : "";
     return(
       <div className="new-post-form">
         <img className="post-form-thumbnail" src={thumbnail} />

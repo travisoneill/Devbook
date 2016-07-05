@@ -4,7 +4,7 @@ const About = React.createClass({
 
   render(){
     return(
-      <div className="about-content">
+      <div className="profile-content">
         <h4>About</h4>
       </div>
     );

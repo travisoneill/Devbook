@@ -17,7 +17,7 @@ module.exports = {
   },
 
   selectUser(id){
-    ApiCalls.getUser(ServerActions.storeSelectedUser);
+    ApiCalls.getUser(id, ServerActions.storeSelectedUser);
   },
 
   deleteUser(id){
@@ -56,6 +56,10 @@ module.exports = {
   userSearch(str){
     // debugger;
     ApiCalls.userSearch(str, ServerActions.storeSearchResults);
+  },
+
+  clearSearch(){
+    ServerActions.clearSearch();
   }
 
 

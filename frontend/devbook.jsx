@@ -87,7 +87,7 @@ const AppRouter = (
         <Route path="/about/(:id)" component={About} />
         <Route path="/friends/(:id)" component={Friends} />
         <Route path="/photos/(:id)" component={Photos} />
-        </Route>
+      </Route>
     </Route>
   </Router>
 );

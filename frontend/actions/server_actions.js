@@ -56,6 +56,12 @@ module.exports = {
       actionType: Constants.store_matches,
       results: results
     });
+  },
+
+  clearSearch(){
+    Dispatcher.dispatch({
+      actionType: Constants.clear_search,
+    });
   }
 
 };

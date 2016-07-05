@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160703230907) do
+ActiveRecord::Schema.define(version: 20160704222546) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,12 +60,13 @@ ActiveRecord::Schema.define(version: 20160703230907) do
   add_index "requestings", ["recipient_id"], name: "index_requestings_on_recipient_id", using: :btree
 
   create_table "searchables", force: :cascade do |t|
-    t.integer  "user_id",    null: false
-    t.string   "fname",      null: false
-    t.string   "lname",      null: false
-    t.string   "fullname",   null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "user_id",         null: false
+    t.string   "fname",           null: false
+    t.string   "lname",           null: false
+    t.string   "fullname",        null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "profile_pic_url"
   end
 
   add_index "searchables", ["fname"], name: "index_searchables_on_fname", using: :btree

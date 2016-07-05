@@ -20,9 +20,11 @@ const TimelineIndexItem = React.createClass({
   },
 
   render(){
+    const url = this.props.post.photo_url;
+    const profilePic = CurrentUserStore.get().profile_pic_url;
     const thumbnail = Transform.profilePic2(this.props.post.thumbnail_url);
-    const photo = Transform.postPic(this.props.post.photo_url);
-    const comment = Transform.profilePic3(CurrentUserStore.get().profile_pic_url);
+    const photo = url ? Transform.postPic(url) : '';
+    const comment = Transform.profilePic3(profilePic);
     return(
       <div className="timeline-index-item">
         <div className="post-display">
