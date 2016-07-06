@@ -15,12 +15,13 @@ SelectedUserStore.__onDispatch = function(payload){
   switch(payload.actionType){
     case Constants.store_selected_user:
       _selectedUser = payload.user;
+      console.log(_selectedUser);
       this.__emitChange();
       break;
-    case Constants.store_current_user:
-      _selectedUser = payload.user;
-      this.__emitChange();
-      break;
+    // case Constants.store_current_user:
+    //   _selectedUser = payload.user;
+    //   this.__emitChange();
+    //   break;
     case Constants.logout:
       _selectedUser = undefined;
       this.__emitChange();

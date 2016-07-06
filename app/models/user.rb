@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token, :make_full_name
 
   has_many :posts
+  has_many :incoming_requests, class_name: "Requesting", foreign_key: :recipient_id
+  has_many :outgoing_requests, class_name: "Requesting", foreign_key: :initiator_id
 
   attr_reader :password
 

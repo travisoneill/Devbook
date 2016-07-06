@@ -1,5 +1,8 @@
 const React = require('react');
 const Transform = require('../../../../constants/transformations');
+const SelectedUserStore = require('../../../../stores/selected_user_store');
+const CurrentUserStore = require('../../../../stores/current_user_store');
+
 
 const TimelineIndexItem = React.createClass({
 
@@ -21,10 +24,16 @@ const TimelineIndexItem = React.createClass({
 
   render(){
     const url = this.props.post.photo_url;
-    const profilePic = CurrentUserStore.get().profile_pic_url;
-    const thumbnail = Transform.profilePic2(this.props.post.thumbnail_url);
+    const user = CurrentUserStore.get();
+    let profilePic = '';
+    let thumbnail = '';
+    let comment = '';
+    if(user){
+      profilePic = user.profile_pic_url;
+      thumbnail = Transform.profilePic2(profilePic);
+      comment = Transform.profilePic3(profilePic);
+    }
     const photo = url ? Transform.postPic(url) : '';
-    const comment = Transform.profilePic3(profilePic);
     return(
       <div className="timeline-index-item">
         <div className="post-display">

@@ -1,12 +1,14 @@
 const React = require('react');
 const ClientActions = require('../../actions/client_actions');
 const SearchBar = require('./search_bar');
+const hashHistory = require('react-router').hashHistory;
 
 const AppTitlebar = React.createClass({
 
   logout(e){
     e.preventDefault();
     ClientActions.logout();
+    // hashHistory.replace('/');
   },
 
   render(){

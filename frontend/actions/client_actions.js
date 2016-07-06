@@ -9,7 +9,7 @@ module.exports = {
   },
 
   login(data){
-    ApiCalls.login(data, ServerActions.storeCurrentUser);
+    ApiCalls.login(data, ServerActions.login);
   },
 
   logout(){

@@ -2,36 +2,38 @@ const React = require('react');
 const ClientActions = require('../../../actions/client_actions');
 const NewPostForm = require('./new_post_form');
 const TimelineIndex = require('./timeline/timeline_index');
-const SelectedUserStore = require('../../../stores/current_user_store');
+const SelectedUserStore = require('../../../stores/selected_user_store');
 
 const Timeline = React.createClass({
 
   getInitialState(){
-    return({user: this.props.user});
+    return({user: SelectedUserStore.get()});
   },
-
+  //
   componentDidMount(){
     this.listener = SelectedUserStore.addListener(this._onChange);
   },
 
   componentWillReceiveProps(newProps){
-    ClientActions.selectUser(newProps.params.id);
-    this.setState({user: SelectedUserStore.get()});
+    if(newProps.params.id){
+      ClientActions.selectUser(newProps.params.id);
+    }
   },
 
   _onChange(){
     this.setState({user: SelectedUserStore.get()});
   },
 
-  componenetWillUnmount(){
+  componentWillUnmount(){
     this.listener.remove();
   },
 
   render(){
+    console.log(this.state.user);
     return(
       <div className="profile-content">
-        <NewPostForm user={this.props.user} />
-        <TimelineIndex user={this.props.user} />
+        <NewPostForm user={this.state.user} />
+        <TimelineIndex user={this.state.user} />
       </div>
     );
   }

@@ -1,7 +1,8 @@
 const Dispatcher = require('../dispatcher/dispatcher');
 const Constants = require('../constants/constants');
+const hashHistory = require('react-router').hashHistory;
 
-module.exports = {
+const ServerActions = {
 
   storeCurrentUser(user){
     Dispatcher.dispatch({
@@ -21,6 +22,7 @@ module.exports = {
     Dispatcher.dispatch({
       actionType: Constants.logout
     });
+    hashHistory.push('/splash');
   },
 
   storeUrl(img){
@@ -62,6 +64,14 @@ module.exports = {
     Dispatcher.dispatch({
       actionType: Constants.clear_search,
     });
+  },
+
+  login(resp){
+    ServerActions.storeCurrentUser(resp);
+    ServerActions.storeSelectedUser(resp);
+    hashHistory.push('/');
   }
 
 };
+
+module.exports = ServerActions;

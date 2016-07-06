@@ -1,16 +1,25 @@
 const React = require('react');
 const TimelineIndexItem = require('./timeline_index_item');
 const PostStore = require('../../../../stores/post_store');
-// const SelectedUserStore = require('../../../../stores/selected_user_store');
+const SelectedUserStore = require('../../../../stores/selected_user_store');
+const CurrentUserStore = require('../../../../stores/current_user_store');
 const ClientActions = require('../../../../actions/client_actions');
 
 const TimelineIndex = React.createClass({
   getInitialState(){
-    return { user: SelectedUserStore.get(), posts: PostStore.all() };
+    return { user: this.props.user, posts: PostStore.all() };
   },
+
   componentDidMount(){
     this.listener = PostStore.addListener(this._onChange);
-    ClientActions.getTimeline(this.state.user.id);
+    ClientActions.getTimeline(this.props.user.id);
+  },
+
+  componentWillReceiveProps(newProps){
+    this.setState({user: newProps.user });
+    if(newProps.user.id){
+      ClientActions.getTimeline(newProps.user.id);
+    }
   },
 
   _onChange(){

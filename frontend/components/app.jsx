@@ -14,6 +14,30 @@ const SelectedUserStore = require('../stores/selected_user_store');
 
 const App = React.createClass({
 
+  getInitialState() {
+    return { user : CurrentUserStore.get(),
+      selectedUser: SelectedUserStore.get()
+    };
+  },
+  //
+  componentDidMount() {
+    this.listener1 = CurrentUserStore.addListener(this._onChange1);
+    this.listener2 = SelectedUserStore.addListener(this._onChange2);
+  },
+  //
+  _onChange1(){
+    this.setState({user: CurrentUserStore.get()});
+  },
+  //
+  _onChange2(){
+    this.setState({selectedUser: SelectedUserStore.get()});
+  },
+  //
+  componentWillUnmount(){
+    this.listener1.remove();
+    this.listener2.remove();
+  },
+
   render(){
     let currentUser = CurrentUserStore.get();
     let selectedUser = SelectedUserStore.get();
