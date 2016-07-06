@@ -50,6 +50,8 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @incoming = @user.incoming_requests
+    @outgoing = @user.outgoing_requests
     render json: @user
   end
 
@@ -84,6 +86,19 @@ class Api::UsersController < ApplicationController
   end
 
   def index
+  end
+
+  def button
+    status = "none"
+    @current = User.find(params[:id1])
+    @selected = User.find(params[:id2])
+    incoming = @current.incoming_requests.map {|req| req.initiator_id}
+    outgoing = @current.outgoing_requests.map {|req| req.recipient_id}
+    status = "incoming" if incoming.include?(@selected.id)
+    status = "outgoing" if outgoing.include?(@selected.id)
+    byebug
+    #friends test
+    render json: [status]
   end
 
   private

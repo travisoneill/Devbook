@@ -2,6 +2,7 @@ const React = require('react');
 const TabBar = require('./header_subcomponents/tab_bar');
 const CoverPhoto = require('./header_subcomponents/cover_photo');
 const ProfilePic = require('./header_subcomponents/profile_pic');
+const AddFriend = require('../../util/add_friend');
 
 const ProfileHeader = React.createClass({
 
@@ -11,6 +12,7 @@ const ProfileHeader = React.createClass({
         <CoverPhoto user={this.props.user} />
         <TabBar user={this.props.user} />
         <ProfilePic user={this.props.user} />
+        <AddFriend />
       </div>
     );
   }

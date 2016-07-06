@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root "static_pages#root"
+
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:create, :update, :destroy, :show]
     resources :posts, only: [:create, :update, :destroy, :index]
@@ -10,7 +12,10 @@ Rails.application.routes.draw do
 
   get '/api/search/:query', to: 'api/searchables#search'
 
-  root "static_pages#root"
+  get '/api/users/button/:id1/:id2', to: 'api/users#button'
+
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

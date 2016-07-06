@@ -115,5 +115,20 @@ module.exports = {
         serverAction(resp);
       }
     });
-  }
+  },
+
+  buttonState(current, selected, action){
+    $.ajax({
+      url: `api/users/button/${current.id}/${selected.id}`,
+      type: `GET`,
+      dataType: `json`,
+      data: "",
+      success(resp){
+        action(resp);
+      }
+    });
+  },
+
+
+
 };

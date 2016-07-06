@@ -1,6 +1,8 @@
 const ApiCalls = require('../util/api_calls');
 const ServerActions = require('./server_actions');
 const CurrentUserStore = require('../stores/current_user_store');
+const SelectedUserStore = require('../stores/selected_user_store');
+
 
 module.exports = {
 
@@ -60,7 +62,11 @@ module.exports = {
 
   clearSearch(){
     ServerActions.clearSearch();
-  }
+  },
+
+  // buttonState(current, selected){
+  //   ApiCalls.buttonState(current, selected, )
+  // }
 
 
 };
