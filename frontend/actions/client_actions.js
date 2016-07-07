@@ -43,7 +43,8 @@ module.exports = {
   },
 
   postImage(image){
-
+    const url = image.url;
+    ApiCalls.addPhoto(url, ServerActions.storePhoto);
   },
 
 

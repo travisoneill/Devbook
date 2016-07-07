@@ -129,6 +129,53 @@ module.exports = {
     });
   },
 
+  sendRequest(data, action){
+    $.ajax({
+      url: `api/requestings`,
+      type: `POST`,
+      dataType: `json`,
+      data: data,
+      success(resp){
+        action();
+      }
+    });
+  },
+
+  withdrawRequest(initiator, target, action){
+    $.ajax({
+      url: `api/requestings/${initiator}/${target}`,
+      type: `DELETE`,
+      dataType: `json`,
+      data: '',
+      success(resp){
+        action();
+      }
+    });
+  },
+
+  acceptRequest(initiator, target, action){
+    $.ajax({
+      url: `api/friendships/${initiator}/${target}`,
+      type: `POST`,
+      dataType: `json`,
+      data: '',
+      success(resp){
+        action();
+      }
+    });
+  },
+
+  unfriend(initiator, target, action){
+    $.ajax({
+      url: `api/friendships/${initiator}/${target}`,
+      type: `DELETE`,
+      dataType: `json`,
+      data: '',
+      success(resp){
+        action();
+      }
+    });
+  }
 
 
 };

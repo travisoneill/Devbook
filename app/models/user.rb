@@ -4,8 +4,11 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token, :make_full_name
 
   has_many :posts
+  has_many :photos
   has_many :incoming_requests, class_name: "Requesting", foreign_key: :recipient_id
   has_many :outgoing_requests, class_name: "Requesting", foreign_key: :initiator_id
+
+
 
   attr_reader :password
 
@@ -27,6 +30,13 @@ class User < ActiveRecord::Base
   def self.find_by_credentials(email, pw)
     user = User.find_by(email: email)
     user && user.is_password?(pw) ? user : nil
+  end
+
+  def friends
+    id = self.id
+    query1 = 'join friendships on users.id = friendships.user_id1 AND user_id1 != ' + id.to_s
+    query2 = 'join friendships on users.id = friendships.user_id2 AND user_id2 != ' + id.to_s
+    User.joins(query1).union(User.joins(query2))
   end
 
   private

@@ -31,6 +31,7 @@ const PhotoUploadButton = React.createClass({
     return(
       <button className="photo-upload-button"
               onClick={this.upload}>
+              className={this.props.location}
         <img src={URL.camera} />
       </button>
     );

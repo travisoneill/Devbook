@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:create, :update, :destroy, :show]
     resources :posts, only: [:create, :update, :destroy, :index]
+    resources :requestings, only: [:create, :destroy]
     resource :session, only: [:create, :destroy, :show]
   end
 
@@ -14,7 +15,11 @@ Rails.application.routes.draw do
 
   get '/api/users/button/:id1/:id2', to: 'api/users#button'
 
+  delete '/api/requestings/:id1/:id2', to: 'api/requestings#destroy'
 
+  post 'api/friendships/:id1/:id2', to: 'api/friendships#create'
+
+  delete 'api/friendships/:id1/:id2', to: 'api/friendships#destroy'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

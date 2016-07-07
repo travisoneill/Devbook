@@ -21,7 +21,7 @@ module.exports = {
   },
 
   transformPic(url, w, h){
-    const query = `/upload/w_${w},h_${h}`;
+    const query = `/upload/w_${w},h_${h},c_fill`;
     return url.split('/upload').join(query);
   }
 

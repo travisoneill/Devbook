@@ -17,7 +17,8 @@ const TimelineIndex = React.createClass({
 
   componentWillReceiveProps(newProps){
     this.setState({user: newProps.user });
-    if(newProps.user.id){
+    debugger;
+    if(newProps.user){
       ClientActions.getTimeline(newProps.user.id);
     }
   },

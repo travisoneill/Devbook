@@ -92,12 +92,20 @@ class Api::UsersController < ApplicationController
     status = "none"
     @current = User.find(params[:id1])
     @selected = User.find(params[:id2])
-    incoming = @current.incoming_requests.map {|req| req.initiator_id}
-    outgoing = @current.outgoing_requests.map {|req| req.recipient_id}
-    status = "incoming" if incoming.include?(@selected.id)
-    status = "outgoing" if outgoing.include?(@selected.id)
-    byebug
-    #friends test
+    while true
+      incoming = @current.incoming_requests.map {|req| req.initiator_id}
+      if incoming.include?(@selected.id)
+        status = "incoming"
+        break
+      end
+      outgoing = @current.outgoing_requests.map {|req| req.recipient_id}
+      if outgoing.include?(@selected.id)
+        status = "outgoing"
+        break
+      end
+      status = "friends" if @current.friends.include?(@selected)
+      break
+    end
     render json: [status]
   end
 

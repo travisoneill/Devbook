@@ -70,6 +70,17 @@ const ServerActions = {
     ServerActions.storeCurrentUser(resp);
     ServerActions.storeSelectedUser(resp);
     hashHistory.push('/');
+  },
+
+  storePhoto(photo){
+    Dispatcher.dispatch({
+      actionType: Constants.add_photo,
+      photo: photo
+    });
+  },
+
+  storeAllPhotos(photos){
+
   }
 
 };

@@ -27,13 +27,13 @@ const Profile = React.createClass({
     return(
       <div className="profile-pane">
         <ProfileHeader user={this.state.user} />
-        <ProfileSidebar user={this.state.user} />
         {this.props.children}
       </div>
     );
   }
 });
 
+// <ProfileSidebar user={this.state.user} />
 // {React.cloneElement(this.props.children, {user: this.state.user})}
 // {React.cloneElement(this.props.children), {user: this.state.user}}
 

@@ -54,7 +54,8 @@ div {
 }
 
 .app-titlebar {
-  position: absolute;
+  position: fixed;
+  z-index: 1;
   height: 42px;
   top: 0px;
   left: 0px;
@@ -78,7 +79,7 @@ div {
   margin-left: 50px;
   position: relative;
   float: left;
-  overflow: auto;
+  /*overflow: auto;*/
 }
 
 .profile-header {
@@ -86,7 +87,7 @@ div {
   top: 0px;
   left: 0px;
   height: 360px;
-  width: 100%;
+  width: auto%;
   background: white;
   border: 1px solid #D4D6DA;
   border-top: 0px;
@@ -316,6 +317,7 @@ div {
   bottom: 20px;
   font-size: 36px;
   color: white;
+  text-shadow: 0 0 3px rgba(0,0,0,.8);
 }
 
 .new-post-form {
@@ -423,7 +425,7 @@ div {
 
 .search-name {
   padding: 11px;
-  margin-left: 39px;
+  float: left;
 }
 
 .search-list {
@@ -464,4 +466,51 @@ div {
 
 .request-button {
   border: 1px solid black
+}
+
+.request-button {
+
+}
+
+.header-friend-button {
+  position: absolute;
+  bottom: 80px;
+  right: 100px;
+}
+
+.search-friend-button {
+  float: right;
+  padding: 10px;
+}
+
+.photos-content {
+  width: 821px;
+  margin-top: 375px;
+  background: white;
+  display: inline-block;
+  padding: 5px;
+  border: 1px solid #D4D6DA;
+  line-height: 0px;
+}
+
+.photo-container {
+  border: 1px solid #000;
+  display: inline-block;
+  width: 261px;
+  height: 261px;
+  margin: 5px;
+  color: transparent;
+}
+
+.photo-container:hover {
+  color: black;
+}
+
+.photo-wall-img {
+
+}
+
+
+.photo-overlay {
+  color: inherit;
 }

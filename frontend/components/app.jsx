@@ -34,8 +34,12 @@ const App = React.createClass({
   },
   //
   componentWillUnmount(){
-    this.listener1.remove();
-    this.listener2.remove();
+    if(this.listener1){
+      this.listener1.remove();
+    }
+    if(this.listener2){
+      this.listener2.remove();
+    }
   },
 
   render(){

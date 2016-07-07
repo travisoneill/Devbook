@@ -4,17 +4,28 @@ const Api = require('../../util/api_calls');
 const CurrentUserStore = require('../../stores/current_user_store');
 const SelectedUserStore = require('../../stores/selected_user_store');
 
+let renderCount = 0;
+
 const AddFriend = React.createClass({
 
   getInitialState(){
-    return({status: "not_friends"});
+    return {status: "none"};
   },
 
   componentDidMount(){
-    let current = CurrentUserStore.get();
-    let selected = SelectedUserStore.get();
-    let status = this.getStatus(current, selected);
-    // this.setState({status: ClientActions.buttonState()});
+    let current = this.props.current;
+    let selected = this.props.selected;
+    if(current && selected && current.id !== selected.id){
+      this.getStatus(current, selected);
+    }
+  },
+
+  componentWillReceiveProps(newProps){
+    let current = newProps.current;
+    let selected = newProps.selected;
+    if(current && selected && current.id !== selected.id){
+      this.getStatus(current, selected);
+    }
   },
 
   componentWillUpdate(){
@@ -23,6 +34,7 @@ const AddFriend = React.createClass({
 
   _onResponse(resp){
     console.log(resp);
+    this.setState({status: resp[0]});
   },
 
   getStatus(current, selected){
@@ -30,10 +42,103 @@ const AddFriend = React.createClass({
   },
 
 
+  sendRequest(e){
+    e.preventDefault();
+    let id1 = this.props.current.id;
+    let id2 = this.props.selected.id;
+    const data = { request: { initiator_id: id1, recipient_id: id2 } };
+    Api.sendRequest(data, this._handleState);
+  },
+
+  withdrawRequest(e){
+    e.preventDefault();
+    let initiator = this.props.current.id;
+    let target = this.props.selected.id;
+    Api.withdrawRequest(initiator, target, this._handleState);
+  },
+
+  acceptRequest(e){
+    e.preventDefault();
+    let initiator = this.props.current.id;
+    let target = this.props.selected.id;
+    Api.acceptRequest(initiator, target, this._handleState);
+  },
+
+  unfriend(e){
+    e.preventDefault();
+    let initiator = this.props.current.id;
+    let target = this.props.selected.id;
+    Api.unfriend(initiator, target, this._handleState);
+  },
+
+  declineRequest(e){
+    e.preventDefault();
+
+  },
+
+  _handleState(){
+    switch(this.state.status){
+      case "none":
+        this.setState({status: "outgoing"});
+        break;
+      case "outgoing":
+        this.setState({status: "none"});
+        break;
+      case "friends":
+        this.setState({status: "none"});
+        break;
+      case "incoming":
+        this.setState({status: "friends"});
+        break;
+    }
+  },
+
+
+
   render(){
+    // renderCount += 1;
+    // console.log(renderCount);
+    // console.log(this.props);
+
+    let text = '';
+    let action = '';
+
+    switch(this.state.status){
+      case "none":
+        text = "Add Friend";
+        action = this.sendRequest;
+        break;
+      case "friends":
+        text = "Unfriend";
+        action = this.unfriend;
+        break;
+      case "incoming":
+        text = "Accept Friend Request";
+        action = this.acceptRequest;
+        break;
+      case "outgoing":
+        text = "Withdraw Request";
+        action = this.withdrawRequest;
+        break;
+
+    }
+
+    let className = this.props.location;
+
+    let component = (
+        <button className="request-button" onClick={action} >{text}</button>
+    );
+
+    let current = this.props.current;
+    let selected = this.props.selected;
+
+    if(current && selected && current.id === selected.id){
+      component = <div className="empty" />;
+    }
+
     return(
-      <div className="request-button-container">
-        <button className="request-button">Add Friend</button>
+      <div className={className}>
+        {component}
       </div>
     );
   }

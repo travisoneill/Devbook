@@ -8,6 +8,7 @@ module.exports = {
   store_timeline: "STORE_TIMELINE",
   add_post: "ADD_POST",
   store_matches: "STORE_MATCHES",
-  clear_search: "CLEAR_SEARCH"
+  clear_search: "CLEAR_SEARCH",
+  add_photo: "ADD_PHOTO"
 
 };
