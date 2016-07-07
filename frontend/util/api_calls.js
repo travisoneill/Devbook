@@ -17,8 +17,6 @@ module.exports = {
     });
   },
 
-
-
   updateUser(data, serverAction){
     $.ajax({
       url: `api/users/${data.id}`,
@@ -175,7 +173,31 @@ module.exports = {
         action();
       }
     });
-  }
+  },
+
+  addPhoto(photo, serverAction){
+    $.ajax({
+      url: `api/photos`,
+      type: `POST`,
+      dataType: `json`,
+      data: photo,
+      success(resp){
+        serverAction(resp);
+      }
+    });
+  },
+
+  getAllPhotos(user, serverAction){
+    $.ajax({
+      url: `api/photos/${user.id}`,
+      type: `GET`,
+      dataType: `json`,
+      data: '',
+      success(resp){
+        serverAction(resp);
+      }
+    });
+  },
 
 
 };

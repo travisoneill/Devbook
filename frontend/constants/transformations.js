@@ -20,6 +20,10 @@ module.exports = {
     return this.transformPic(url, 476, 476);
   },
 
+  photoWall(url){
+    return this.transformPic(url, 261, 261);
+  },
+
   transformPic(url, w, h){
     const query = `/upload/w_${w},h_${h},c_fill`;
     return url.split('/upload').join(query);

@@ -1,4 +1,6 @@
 const React = require('react');
+const PhotoUploadButton = require('../../util/upload_button');
+const PhotoIndex = require('./photo_index');
 
 const Photos = React.createClass({
 
@@ -6,20 +8,16 @@ const Photos = React.createClass({
     return(
       <div className="photos-content">
         <h4>Photos</h4>
-        <div className="photo-container"><p className="photo-overlay">Text</p></div>
-        <div className="photo-container"><p className="photo-overlay">Text</p></div>
-        <div className="photo-container"><p className="photo-overlay">Text</p></div>
-        <div className="photo-container"><p className="photo-overlay">Text</p></div>
-        <div className="photo-container"><p className="photo-overlay">Text</p></div>
-        <div className="photo-container"><p className="photo-overlay">Text</p></div>
-        <div className="photo-container"><p className="photo-overlay">Text</p></div>
-        <div className="photo-container"><p className="photo-overlay">Text</p></div>
-        <div className="photo-container"><p className="photo-overlay">Text</p></div>
-        <div className="photo-container"><p className="photo-overlay">Text</p></div>
-        <div className="photo-container"><p className="photo-overlay">Text</p></div>
+
+        <div className="photo-wall-upload">
+          <PhotoUploadButton location={"wall"} />
+        </div>
+        <PhotoIndex />
       </div>
     );
   }
 });
 
 module.exports = Photos;
+
+// <div className="photo-container"><p className="photo-overlay">Text</p></div>

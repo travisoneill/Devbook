@@ -1,11 +1,32 @@
 Rails.application.routes.draw do
 
+  namespace :api do
+  get 'photos/create'
+  end
+
+  namespace :api do
+  get 'photos/destroy'
+  end
+
+  namespace :api do
+  get 'photos/index'
+  end
+
+  namespace :api do
+  get 'photos/show'
+  end
+
+  namespace :api do
+  get 'photos/update'
+  end
+
   root "static_pages#root"
 
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:create, :update, :destroy, :show]
     resources :posts, only: [:create, :update, :destroy, :index]
     resources :requestings, only: [:create, :destroy]
+    resources :photos, only: [:create, :destroy, :index, :show]
     resource :session, only: [:create, :destroy, :show]
   end
 

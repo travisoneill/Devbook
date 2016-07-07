@@ -79,6 +79,7 @@ const ServerActions = {
     });
   },
 
+
   storeAllPhotos(photos){
 
   }

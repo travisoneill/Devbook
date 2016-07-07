@@ -4,21 +4,25 @@ const Constants = require('../constants/constants');
 
 let _photos = [];
 
-const SearchStore = new Store(Dispatcher);
+const PhotoStore = new Store(Dispatcher);
 
-SearchStore.all = function(){
+PhotoStore.all = function(){
   return _photos;
 };
 
-SearchStore.empty = function(){
+PhotoStore.empty = function(){
   _photos = [];
 };
 
-SearchStore.add = function(photo){
+PhotoStore.add = function(photo){
   _photos.unshift(photo);
 };
 
-SearchStore.remove = function(photo){
+PhotoStore.addAll = function(photos){
+  _photos = photos;
+};
+
+PhotoStore.remove = function(photo){
   let update = [];
   for (let i = 0; i < _photos.length; i++) {
     if(_photos[i].id !== photo.id){ update.push(photo); }
@@ -27,18 +31,18 @@ SearchStore.remove = function(photo){
 };
 
 
-SearchStore.__onDispatch = function(payload){
+PhotoStore.__onDispatch = function(payload){
   switch(payload.actionType){
     case Constants.add_photo:
-      SearchStore.add(payload.photo);
+      PhotoStore.add(payload.photo);
       this.__emitChange();
       break;
-    case Constants.clear_search:
-      SearchStore.empty();
+    case Constants.store_photos:
+      PhotoStore.addAll(payload.photos);
       this.__emitChange();
       break;
   }
 };
 
 
-module.exports = SearchStore;
+module.exports = PhotoStore;

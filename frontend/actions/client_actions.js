@@ -43,8 +43,14 @@ module.exports = {
   },
 
   postImage(image){
+    let id = CurrentUserStore.get().id;
     const url = image.url;
-    ApiCalls.addPhoto(url, ServerActions.storePhoto);
+    const photo = {photo: {user_id: id, url: url} };
+    ApiCalls.addPhoto(photo, ServerActions.storePhoto);
+  },
+
+  getAllPhotos(user){
+    ApiCalls.getAllPhotos(user, ServerActions.storeAllPhotos);
   },
 
 

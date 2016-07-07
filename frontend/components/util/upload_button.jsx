@@ -19,6 +19,7 @@ const PhotoUploadButton = React.createClass({
     if(this.props.action === "cover"){ action = ClientActions.postCoverPhoto;}
     if(this.props.action === "profile"){ action = ClientActions.postProfilePic ;}
     if(this.props.action === "post"){ action = ServerActions.storeUrl ;}
+    if(this.props.action === "wall"){ action = ClientActions.addPhoto ;}
     const button = this;
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, results){
       if(!error){
@@ -29,9 +30,8 @@ const PhotoUploadButton = React.createClass({
 
   render(){
     return(
-      <button className="photo-upload-button"
+      <button className={`photo-upload-button ${this.props.location}`}
               onClick={this.upload}>
-              className={this.props.location}
         <img src={URL.camera} />
       </button>
     );

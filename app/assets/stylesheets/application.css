@@ -456,7 +456,7 @@ div {
   background: #fff;
   border-radius: 3px;
   padding: 3px;
-  width: 350px;
+  width: 400px;
   color: #000;
 }
 
@@ -504,6 +504,16 @@ div {
 
 .photo-container:hover {
   color: black;
+}
+
+.photo-wall-upload {
+  border: 1px solid #000;
+  display: inline-block;
+  width: 261px;
+  height: 261px;
+  margin: 5px;
+  color: transparent;
+  position: relative;
 }
 
 .photo-wall-img {

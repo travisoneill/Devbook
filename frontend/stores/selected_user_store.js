@@ -24,7 +24,7 @@ SelectedUserStore.__onDispatch = function(payload){
     //   break;
     case Constants.logout:
       _selectedUser = undefined;
-      this.__emitChange();
+      // this.__emitChange();
       break;
   }
 };

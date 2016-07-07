@@ -9,6 +9,7 @@ module.exports = {
   add_post: "ADD_POST",
   store_matches: "STORE_MATCHES",
   clear_search: "CLEAR_SEARCH",
-  add_photo: "ADD_PHOTO"
+  add_photo: "ADD_PHOTO",
+  store_photos: "STORE_PHOTOS"
 
 };
