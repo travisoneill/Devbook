@@ -15,9 +15,14 @@ const Demo = React.createClass({
 
   render(){
     return(
-      <button className="demo-login-button" onClick={this.demoLogin}>Demo Login</button>
+      <div className="round-button">
+        <div className="round-button-circle" onClick={this.demoLogin}>
+          <p className="round-button">Demo Login!</p>
+        </div>
+      </div>
     );
   }
 });
 
+// <button className="demo-login-button" onClick={this.demoLogin}>Demo Login</button>
 module.exports = Demo;

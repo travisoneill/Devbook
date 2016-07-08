@@ -10,7 +10,9 @@ const CoverPhoto = React.createClass({
     let name = this.props.user ? this.props.user.full_name : "";
     return (
       <div className="cover-photo">
-        <PhotoUploadButton action="cover" />
+        <div className="cover-photo-overlay">
+          <PhotoUploadButton action="cover" location={"cover"} />
+        </div>
         <img src={cover} />
         <h4 className="profile-name">{name}</h4>
       </div>

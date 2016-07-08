@@ -9,7 +9,9 @@ const ProfilePic = React.createClass({
     let profile = Transform.profilePic(profileUrl);
     return (
       <div className="profile-pic">
-        <PhotoUploadButton action="profile" />
+        <div className="profile-pic-overlay">
+          <PhotoUploadButton action="profile" location={"profile"} />
+        </div>
         <img className="profile-img" src={profile} />
       </div>
     );
