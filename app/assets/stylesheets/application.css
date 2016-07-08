@@ -273,6 +273,16 @@ div {
   margin: 5px;
   border-radius: 5px;
   background: white;
+  opacity: 0.5;
+}
+
+.new-user-input:hover {
+  opacity: 1;
+}
+
+.new-user-input:focus {
+  opacity: 1;
+  box-shadow: 0 0 6 6 rgba(62	124	205 0.7) #3D7BCB
 }
 
 .signup-submit {
@@ -318,17 +328,13 @@ div {
   background-image: url(http://res.cloudinary.com/devbook/image/upload/v1467948031/devbook/app-images/nerve-2.jpg);
 }
 
-
-
-
-}
-
 .splash-titlebar {
   position: absolute;
   left: 0px;
   top: 0px;
   height: 60px;
   width: 100%;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .splash-logo {

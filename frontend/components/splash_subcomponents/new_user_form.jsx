@@ -92,6 +92,7 @@ const NewUserForm = React.createClass({
     return(
       <div className="new-user-form-container">
         <form className="new-user-form" onSubmit={this.handleSubmit}>
+          <label className="new-user-label" >{"new User({"} </label><br />
           <input className="new-user-input"
                  type="text"
                  placeholder="First Name"
@@ -141,10 +142,11 @@ const NewUserForm = React.createClass({
                  value={this.state.year}
                  onChange={this.yearChange} />
           <label>Human: </label>
-          <input type="radio" name="species" value="human" />
+          <input type="radio" className="new-user-input" name="species" value="human" />
           <label>Machine: </label>
-          <input type="radio" name="species" value="human" /><br />
-          <input className="signup-submit" disabled={this.checkComplete()} type="submit" value="Sign Up!" />
+          <input type="radio" className="new-user-input" name="species" value="human" /><br />
+          <input className="signup-submit" disabled={this.checkComplete()} type="submit" value="Sign Up!" /><br/>
+          <label>)};</label>
         </form>
       </div>
     );
