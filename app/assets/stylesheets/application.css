@@ -282,7 +282,7 @@ div {
 
 .new-user-input:focus {
   opacity: 1;
-  box-shadow: 0 0 6 6 rgba(62	124	205 0.7) #3D7BCB
+  box-shadow: 0 0 6 6 rgba(62, 124, 205, 0.7)
 }
 
 .signup-submit {
@@ -601,7 +601,7 @@ div {
 
 .friend-container:hover {
   color: white;
-  text-shadow: 0 0 3px rgba(0,0,0,.8);
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
 }
 
 .friend-overlay {
