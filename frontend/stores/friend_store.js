@@ -20,7 +20,6 @@ FriendStore.empty = function(){
 };
 
 FriendStore.add = function(friend){
-  debugger;
   _friends.unshift(friend);
 };
 
@@ -46,7 +45,6 @@ FriendStore.remove = function(friend){
 
 FriendStore.removeIncoming = function(incoming){
   let update = [];
-  debugger;
   for (let i = 0; i < _incoming.length; i++) {
     if(_incoming[i].id !== incoming.id){ update.push(_incoming[i]); }
   }
