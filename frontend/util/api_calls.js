@@ -194,10 +194,37 @@ module.exports = {
       dataType: `json`,
       data: '',
       success(resp){
+        console.log(resp);
         serverAction(resp);
       }
     });
   },
+
+  getAllFriends(user, serverAction){
+    $.ajax({
+      url: `api/friends/${user.id}`,
+      type: `GET`,
+      dataType: `json`,
+      data: '',
+      success(resp){
+        // console.log(resp);
+        serverAction(resp);
+      }
+    });
+  },
+
+  getAllIncoming(user, serverAction){
+    $.ajax({
+      url: `api/incoming/${user.id}`,
+      type: `GET`,
+      dataType: `json`,
+      data: '',
+      success(resp){
+        // console.log(resp);
+        serverAction(resp);
+      }
+    });
+  }
 
 
 };

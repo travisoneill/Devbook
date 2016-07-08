@@ -24,8 +24,17 @@ module.exports = {
     return this.transformPic(url, 261, 261);
   },
 
-  transformPic(url, w, h){
-    const query = `/upload/w_${w},h_${h},c_fill`;
+  friendWall(url){
+    return this.transformPic(url, 152, 152);
+  },
+
+  friendWallBW(url){
+    return this.transformPic(url, 152, 152, ",o_50,e_grayscale");
+  },
+
+  transformPic(url, w, h, params){
+    if(params === undefined){params = '';}
+    const query = `/upload/w_${w},h_${h},c_fill${params}`;
     return url.split('/upload').join(query);
   }
 

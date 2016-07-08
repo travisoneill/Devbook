@@ -36,6 +36,10 @@ Rails.application.routes.draw do
 
   get '/api/users/button/:id1/:id2', to: 'api/users#button'
 
+  get '/api/friends/:id', to: 'api/users#friends'
+
+  get '/api/incoming/:id', to: 'api/users#incoming'
+
   delete '/api/requestings/:id1/:id2', to: 'api/requestings#destroy'
 
   post 'api/friendships/:id1/:id2', to: 'api/friendships#create'

@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   has_many :incoming_requests, class_name: "Requesting", foreign_key: :recipient_id
   has_many :outgoing_requests, class_name: "Requesting", foreign_key: :initiator_id
 
+  has_many :incoming, class_name: "User", through: :incoming_requests, source: :initiator
+  has_many :outgoing, class_name: "User", through: :outgoing_requests, source: :recipient
 
 
   attr_reader :password
@@ -34,9 +36,9 @@ class User < ActiveRecord::Base
 
   def friends
     id = self.id
-    query1 = 'join friendships on users.id = friendships.user_id1 AND user_id1 != ' + id.to_s
-    query2 = 'join friendships on users.id = friendships.user_id2 AND user_id2 != ' + id.to_s
-    User.joins(query1).union(User.joins(query2))
+    Friendship.select('user_id2 as f_id').where(user_id1: id)
+              .union(Friendship.select('user_id1 as f_id').where(user_id2: id))
+              .map { |obj| User.find(obj.f_id) }
   end
 
   private

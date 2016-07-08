@@ -20,7 +20,7 @@ class Api::PhotosController < ApplicationController
   def show
     id = params[:id]
     @photos = Photo.where(user_id: id)
-    render json: @photos
+    render json: @photos.to_a
   end
 
   def update

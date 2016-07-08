@@ -500,6 +500,7 @@ div {
   height: 261px;
   margin: 5px;
   color: transparent;
+  position: relative;
 }
 
 .photo-container:hover {
@@ -523,4 +524,66 @@ div {
 
 .photo-overlay {
   color: inherit;
+  position: absolute;
+  top: 10px;
+  left: 10px
+}
+
+
+.friends-content {
+  width: 821px;
+  margin-top: 375px;
+  background: white;
+  display: inline-block;
+  padding: 5px;
+  border: 1px solid #D4D6DA;
+  line-height: 0px;
+}
+
+.friend-container {
+  border: 1px solid #000;
+  display: inline-block;
+  width: 152px;
+  height: 152px;
+  margin: 5px;
+  color: transparent;
+  position: relative;
+  text-shadow: none;
+}
+
+.friend-container:hover {
+  color: white;
+  text-shadow: 0 0 3px rgba(0,0,0,.8);
+}
+
+.friend-overlay {
+  color: inherit;
+  text-shadow: inherit;
+  position: absolute;
+  bottom: 10px;
+  margin: 5px;
+  line-height: normal;
+}
+
+.friend-wall-upload {
+  border: 1px solid #000;
+  display: inline-block;
+  width: 152px;
+  height: 152px;
+  margin: 5px;
+  color: transparent;
+  position: relative;
+}
+
+.friend-wall-img {
+
+}
+
+.request-button.friend-index {
+  border: none;
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  text-shadow: inherit;
+  line-height: normal;
 }

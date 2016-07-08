@@ -109,6 +109,18 @@ class Api::UsersController < ApplicationController
     render json: [status]
   end
 
+  def friends
+    @user = User.find(params[:id])
+    @friends = @user.friends
+    render json: @friends
+  end
+
+  def incoming
+    @user = User.find(params[:id])
+    @incoming = @user.incoming
+    render json: @incoming
+  end
+
   private
   def user_params
     params.require(:user)

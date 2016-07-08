@@ -29,7 +29,6 @@ const Timeline = React.createClass({
   },
 
   render(){
-    console.log(this.state.user);
     return(
       <div className="profile-content">
         <NewPostForm user={this.state.user} />

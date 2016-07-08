@@ -3,6 +3,8 @@ const ClientActions = require('../../actions/client_actions');
 const Api = require('../../util/api_calls');
 const CurrentUserStore = require('../../stores/current_user_store');
 const SelectedUserStore = require('../../stores/selected_user_store');
+const FriendStore = require('../../stores/friend_store');
+const ServerActions = require('../../actions/server_actions');
 
 let renderCount = 0;
 
@@ -33,7 +35,7 @@ const AddFriend = React.createClass({
   },
 
   _onResponse(resp){
-    console.log(resp);
+    // console.log(resp);
     this.setState({status: resp[0]});
   },
 
@@ -61,6 +63,7 @@ const AddFriend = React.createClass({
     e.preventDefault();
     let initiator = this.props.current.id;
     let target = this.props.selected.id;
+    ServerActions.acceptRequest(this.props.selected);
     Api.acceptRequest(initiator, target, this._handleState);
   },
 
@@ -68,6 +71,7 @@ const AddFriend = React.createClass({
     e.preventDefault();
     let initiator = this.props.current.id;
     let target = this.props.selected.id;
+    ServerActions.removeFriend(this.props.selected);
     Api.unfriend(initiator, target, this._handleState);
   },
 
@@ -77,28 +81,25 @@ const AddFriend = React.createClass({
   },
 
   _handleState(){
-    switch(this.state.status){
-      case "none":
-        this.setState({status: "outgoing"});
-        break;
-      case "outgoing":
-        this.setState({status: "none"});
-        break;
-      case "friends":
-        this.setState({status: "none"});
-        break;
-      case "incoming":
-        this.setState({status: "friends"});
-        break;
+    if(this.isMounted()){
+      switch(this.state.status){
+        case "none":
+          this.setState({status: "outgoing"});
+          break;
+        case "outgoing":
+          this.setState({status: "none"});
+          break;
+        case "friends":
+          this.setState({status: "none"});
+          break;
+        case "incoming":
+          this.setState({status: "friends"});
+          break;
+      }
     }
   },
 
-
-
   render(){
-    // renderCount += 1;
-    // console.log(renderCount);
-    // console.log(this.props);
 
     let text = '';
     let action = '';
@@ -126,7 +127,7 @@ const AddFriend = React.createClass({
     let className = this.props.location;
 
     let component = (
-        <button className="request-button" onClick={action} >{text}</button>
+        <button className={`request-button ${className}` } onClick={action} >{text}</button>
     );
 
     let current = this.props.current;

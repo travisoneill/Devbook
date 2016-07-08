@@ -10,6 +10,13 @@ module.exports = {
   store_matches: "STORE_MATCHES",
   clear_search: "CLEAR_SEARCH",
   add_photo: "ADD_PHOTO",
-  store_photos: "STORE_PHOTOS"
+  store_photos: "STORE_PHOTOS",
+  store_friends: "STORE_FRIENDS",
+  store_incoming: "STORE_INCOMING",
+  remove_friend: "REMOVE_FRIEND",
+  remove_incoming: "REMOVE INCOMING",
+  add_friend: "ADD_FRIEND",
+  add_incoming: "ADD_INCOMING",
+  accept_request: "ACCEPT_REQUEST"
 
 };

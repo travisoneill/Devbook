@@ -53,6 +53,13 @@ module.exports = {
     ApiCalls.getAllPhotos(user, ServerActions.storeAllPhotos);
   },
 
+  getAllFriends(user){
+    ApiCalls.getAllFriends(user, ServerActions.storeAllFriends);
+  },
+
+  getAllIncoming(user){
+    ApiCalls.getAllIncoming(user, ServerActions.storeAllIncoming);
+  },
 
   createPost(post){
     ApiCalls.createPost(post, ServerActions.storePost);
