@@ -36,7 +36,9 @@ const AddFriend = React.createClass({
 
   _onResponse(resp){
     // console.log(resp);
-    this.setState({status: resp[0]});
+    if(this.isMounted()){
+      this.setState({status: resp[0]});
+    }
   },
 
   getStatus(current, selected){

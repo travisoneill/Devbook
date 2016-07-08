@@ -36,9 +36,7 @@ class User < ActiveRecord::Base
 
   def friends
     id = self.id
-    Friendship.select('user_id2 as f_id').where(user_id1: id)
-              .union(Friendship.select('user_id1 as f_id').where(user_id2: id))
-              .map { |obj| User.find(obj.f_id) }
+    Friendship.select('user_id2 as f_id').where(user_id1: id).union(Friendship.select('user_id1 as f_id').where(user_id2: id)).map { |obj| User.find(obj.f_id) }
   end
 
   private

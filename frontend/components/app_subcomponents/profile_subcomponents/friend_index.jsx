@@ -20,7 +20,6 @@ const FriendIndex = React.createClass({
   },
 
   _onChange(){
-    debugger;
     this.setState({friends: FriendStore.all(), incoming: FriendStore.incoming()});
   },
 
@@ -40,7 +39,6 @@ const FriendIndex = React.createClass({
 
     const index = incoming.concat(friends);
 
-    debugger;
     return(
       <div className="photo-index">
         {index}
