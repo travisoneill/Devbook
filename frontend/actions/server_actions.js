@@ -87,6 +87,13 @@ const ServerActions = {
     });
   },
 
+  removePhoto(photo){
+    Dispatcher.dispatch({
+      actionType: Constants.remove_photo,
+      photo: photo
+    });
+  },
+
   storeAllFriends(friends){
     Dispatcher.dispatch({
       actionType: Constants.store_friends,

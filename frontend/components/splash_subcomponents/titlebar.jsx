@@ -8,11 +8,11 @@ const SplashTitlebar = React.createClass({
         <div className="splash-logo">
           <p>LOGO</p>
         </div>
-        <LoginForm />
       </div>
 
     );
   }
 });
 
+// <LoginForm />
 module.exports = SplashTitlebar;

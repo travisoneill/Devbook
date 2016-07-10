@@ -57,6 +57,10 @@ module.exports = {
     ApiCalls.getAllFriends(user, ServerActions.storeAllFriends);
   },
 
+  mutualFriends(user1, user2){
+    ApiCalls.getMutualFriends(user1, user2, ServerActions.storeAllFriends);
+  },
+
   getAllIncoming(user){
     ApiCalls.getAllIncoming(user, ServerActions.storeAllIncoming);
   },

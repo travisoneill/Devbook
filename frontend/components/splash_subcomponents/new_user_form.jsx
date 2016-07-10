@@ -5,7 +5,8 @@ const NewUserForm = React.createClass({
 
   getInitialState() {
     return { fname: "", lname: "", email: "", email2: "", password: "",
-            match: true, DD: "", MM: "", YYYY: "", incomplete: true};
+            match: true, DD: "", MM: "", YYYY: "", incomplete: true,
+            hidden: true};
   },
 
   checkComplete(){
@@ -87,67 +88,84 @@ const NewUserForm = React.createClass({
 
   prevent(e){e.preventDefault();},
 
+  toggleShow(e){
+    e.preventDefault();
+    this.setState({hidden: !this.state.hidden});
+  },
+
 
   render(){
+
+    let component = (
+      <form className="new-user-form" onSubmit={this.handleSubmit}>
+        <label className="new-user-label" onClick={this.toggleShow}>Create Account:</label><br/>
+        <input className="new-user-input"
+               type="text"
+               placeholder="First Name"
+               value={this.state.fname}
+               onChange={this.fnameChange} />
+        <input className="new-user-input"
+               type="text"
+               placeholder="Last Name"
+               value={this.state.lname}
+               onChange={this.lnameChange} />
+        <input className="new-user-input long"
+               type="text"
+               placeholder="Email Address"
+               value={this.state.email}
+               onChange={this.emailChange} /><br />
+        <input className="new-user-input long"
+               type="test"
+               placeholder="Re-enter Email Address"
+               onPaste={this.prevent}
+               onDrop={this.prevent}
+               value={this.state.email2}
+               onChange={this.email2Change} /><br />
+        <input className="new-user-input long"
+               type="password"
+               placeholder="Password"
+               value={this.state.password}
+               onChange={this.passwordChange} /><br />
+        <input className="new-user-input vshort"
+               id="MM"
+               type="number"
+               placeholder="MM"
+               maxlength="2" min="1" max="12"
+               value={this.state.month}
+               onChange={this.monthChange} />/
+        <input className="new-user-input vshort"
+               id="DD"
+               type="number"
+               placeholder="DD"
+               maxlength="2" min="1" max="31"
+               value={this.state.day}
+               onChange={this.dayChange} />/
+        <input className="new-user-input short"
+               type="number"
+               id="YYYY"
+               placeholder="YYYY"
+               maxlength="4" max={new Date().getFullYear()}
+               value={this.state.year}
+               onChange={this.yearChange} />
+        <label>Human: </label>
+        <input type="radio" className="new-user-input radio" name="species" value="human" />
+        <label>Machine: </label>
+        <input type="radio" className="new-user-input radio" name="species" value="human" /><br />
+        <input className="signup-submit" disabled={this.checkComplete()} type="submit" value="Sign Up" /><br/>
+      </form>
+    );
+
+    if(this.state.hidden === true){
+      component = (
+        <form className="new-user-form" onSubmit={this.handleSubmit}>
+          <label className="new-user-label" onClick={this.toggleShow}>Create Account:</label>
+        </form>
+      );
+    }
+
     return(
       <div className="new-user-form-container">
-        <form className="new-user-form" onSubmit={this.handleSubmit}>
-          <label className="new-user-label" >{"new User({"} </label><br />
-          <input className="new-user-input"
-                 type="text"
-                 placeholder="First Name"
-                 value={this.state.fname}
-                 onChange={this.fnameChange} />
-          <input className="new-user-input"
-                 type="text"
-                 placeholder="Last Name"
-                 value={this.state.lname}
-                 onChange={this.lnameChange} />
-          <input className="new-user-input long"
-                 type="text"
-                 placeholder="Email Address"
-                 value={this.state.email}
-                 onChange={this.emailChange} /><br />
-          <input className="new-user-input long"
-                 type="test"
-                 placeholder="Re-enter Email Address"
-                 onPaste={this.prevent}
-                 onDrop={this.prevent}
-                 value={this.state.email2}
-                 onChange={this.email2Change} /><br />
-          <input className="new-user-input long"
-                 type="password"
-                 placeholder="Password"
-                 value={this.state.password}
-                 onChange={this.passwordChange} /><br />
-          <input className="new-user-input vshort"
-                 id="MM"
-                 type="number"
-                 placeholder="MM"
-                 maxlength="2" min="1" max="12"
-                 value={this.state.month}
-                 onChange={this.monthChange} />/
-          <input className="new-user-input vshort"
-                 id="DD"
-                 type="number"
-                 placeholder="DD"
-                 maxlength="2" min="1" max="31"
-                 value={this.state.day}
-                 onChange={this.dayChange} />/
-          <input className="new-user-input short"
-                 type="number"
-                 id="YYYY"
-                 placeholder="YYYY"
-                 maxlength="4" max={new Date().getFullYear()}
-                 value={this.state.year}
-                 onChange={this.yearChange} />
-          <label>Human: </label>
-          <input type="radio" className="new-user-input" name="species" value="human" />
-          <label>Machine: </label>
-          <input type="radio" className="new-user-input" name="species" value="human" /><br />
-          <input className="signup-submit" disabled={this.checkComplete()} type="submit" value="Sign Up!" /><br/>
-          <label>)};</label>
-        </form>
+        {component}
       </div>
     );
   }

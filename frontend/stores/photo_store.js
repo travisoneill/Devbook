@@ -41,6 +41,10 @@ PhotoStore.__onDispatch = function(payload){
       PhotoStore.addAll(payload.photos);
       this.__emitChange();
       break;
+    case Constants.remove_photo:
+        PhotoStore.remove(payload.photo);
+        this.__emitChange();
+        break;
   }
 };
 

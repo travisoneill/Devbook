@@ -4,11 +4,16 @@ const Constants = require('../constants/constants');
 
 let _friends = [];
 let _incoming = [];
+let _count = 0;
 
 const FriendStore = new Store(Dispatcher);
 
 FriendStore.all = function(){
   return _friends;
+};
+
+FriendStore.count = function(){
+  return _count;
 };
 
 FriendStore.incoming = function(){
@@ -20,11 +25,12 @@ FriendStore.empty = function(){
 };
 
 FriendStore.add = function(friend){
+  _count += 1;
   _friends.unshift(friend);
 };
 
-FriendStore.addIncoming = function(friend){
-  _incoming.unshift(friend);
+FriendStore.addIncoming = function(incoming){
+  _incoming.unshift(incoming);
 };
 
 FriendStore.storeIncoming = function(incoming){
@@ -32,6 +38,7 @@ FriendStore.storeIncoming = function(incoming){
 };
 
 FriendStore.addAll = function(friends){
+  _count = friends.pop();
   _friends = friends;
 };
 
@@ -40,6 +47,7 @@ FriendStore.remove = function(friend){
   for (let i = 0; i < _friends.length; i++) {
     if(_friends[i].id !== friend.id){ update.push(_friends[i]); }
   }
+  _count -= 1;
   _friends = update;
 };
 

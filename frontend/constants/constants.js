@@ -11,6 +11,7 @@ module.exports = {
   clear_search: "CLEAR_SEARCH",
   add_photo: "ADD_PHOTO",
   store_photos: "STORE_PHOTOS",
+  remove_photo: "REMOVE_PHOTO",
   store_friends: "STORE_FRIENDS",
   store_incoming: "STORE_INCOMING",
   remove_friend: "REMOVE_FRIEND",

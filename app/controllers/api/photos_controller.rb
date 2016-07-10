@@ -11,6 +11,12 @@ class Api::PhotosController < ApplicationController
   end
 
   def destroy
+    @photo = Photo.find(params[:id])
+    if @photo.destroy!
+      render json: @photo
+    else
+      flash[:errors] = "Error"
+    end
   end
 
   def index

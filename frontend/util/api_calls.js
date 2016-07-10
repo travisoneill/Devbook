@@ -187,6 +187,20 @@ module.exports = {
     });
   },
 
+  deletePhoto(id, serverAction){
+    $.ajax({
+      url: `api/photos/${id}`,
+      type: `DELETE`,
+      dataType: `json`,
+      data: '',
+      success(resp){
+        serverAction(resp);
+      }
+    });
+  },
+
+
+
   getAllPhotos(user, serverAction){
     $.ajax({
       url: `api/photos/${user.id}`,
@@ -221,6 +235,19 @@ module.exports = {
       data: '',
       success(resp){
         // console.log(resp);
+        serverAction(resp);
+      }
+    });
+  },
+
+  getMutualFriends(user1, user2, serverAction){
+    $.ajax({
+      url: `api/mutual/${user1.id}/${user2.id}`,
+      type: `GET`,
+      dataType: `json`,
+      data: '',
+      success(resp){
+        console.log(resp);
         serverAction(resp);
       }
     });

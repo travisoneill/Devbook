@@ -1,6 +1,5 @@
 class Api::SearchablesController < ApplicationController
   def search
-    #UGLY! should fix extra qurey at the end by writing uniq method
     limit = 10
     query = params[:query].downcase
     regexp = '^' + query

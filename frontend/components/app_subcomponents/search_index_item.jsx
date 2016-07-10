@@ -18,7 +18,7 @@ const SearchIndexItem = React.createClass({
           <p className="search-name">{name}</p>
           <FriendButton current={CurrentUserStore.get()}
                         selected={this.props.result}
-                        location={"search-friend-button"} />
+                        location={"search-friend-button"} />                        
         </Link>
       </li>
     );

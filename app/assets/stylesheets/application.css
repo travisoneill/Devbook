@@ -29,7 +29,9 @@
 }
 
 body {
-  background: #EAEBEE
+  background: #EAEBEE;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
 }
 
 div {
@@ -187,12 +189,14 @@ div {
 
 
 .login-input {
-  border: 1px solid;
-  border-color: #1d2a5b;
-  width: 142px;
-  padding: 3px;
+  border: 1px solid #bdc7d8;
+  padding: 5px;
   margin: 5px;
+  border-radius: 5px;
   background: white;
+  opacity: 1;
+  width: 171.5px;
+  box-shadow: 0 0 1px 1px rgba(62, 124, 205, 0.7);
 }
 
 .login-submit {
@@ -236,7 +240,13 @@ div {
 }
 
 .login-form-container {
-  float: right;
+  display: block;
+  box-shadow: 0 0 20px 20px rgba(255, 255, 255, 0.7);  background: rgba(255, 255, 255, 0.7);
+  overflow: auto;
+  margin-right: 50px;
+  margin-top: 20px;
+  padding: 10px;
+  min-width: 420px;
 }
 
 .logo-container {
@@ -245,8 +255,7 @@ div {
 }
 
 .login-form {
-  display: flex;
-  float: right;
+  display: block;
   padding: 10px;
 }
 
@@ -258,12 +267,65 @@ div {
   padding-left: 15px;
 }
 
+.new-user-label {
+
+}
+
+.new-user-label:hover {
+
+}
+
+.login-label {
+
+}
+
+.login-label:hover {
+
+}
+
+.login-submit {
+  border: 1px solid;
+  padding: 5px;
+  /*float: left;*/
+  border-radius: 5px;
+  box-shadow: 0 0 2px 2px rgba(62, 124, 205, 0.7);
+  width: 30%;
+  margin-left: 35%;
+  margin-top: 15px;
+  background: rgba(62, 124, 205, 0.7);
+  color: white;
+  text-align: center;
+}
+
+.login-submit:hover {
+  background: rgba(62, 124, 205, 1);
+  box-shadow: 0 0 8px 8px rgba(62, 124, 205, 0.7);
+}
+
+.login-submit:disabled {
+  height: 0px;
+  width: 0px;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  box-shadow: none;
+  background: transparent;
+  color: transparent;
+}
+
 .new-user-form-container {
   display: block;
+  box-shadow: 0 0 20px 20px rgba(255, 255, 255, 0.7);  background: rgba(255, 255, 255, 0.7);
+  overflow: auto;
+  margin-right: 50px;
+  margin-top: 20px;
+  padding: 10px;
+  min-width: 420px;
 }
 
 .new-user-form {
   display: block;
+  padding: 10px;
 }
 
 
@@ -273,31 +335,59 @@ div {
   margin: 5px;
   border-radius: 5px;
   background: white;
-  opacity: 0.5;
+  opacity: 1;
+  width: 171.5px;
+  box-shadow: 0 0 1px 1px rgba(62, 124, 205, 0.7);
 }
 
 .new-user-input:hover {
   opacity: 1;
+  box-shadow: 0 0 2px 2px rgba(62, 124, 205, 0.7);
+
 }
 
 .new-user-input:focus {
   opacity: 1;
-  box-shadow: 0 0 6 6 rgba(62, 124, 205, 0.7)
+  box-shadow: 0 0 4px 4px rgba(62, 124, 205, 0.7);
 }
 
 .signup-submit {
-  border: 1px solid;
+  /*border: 1px solid;*/
   padding: 5px;
-  float: right;
+  /*float: left;*/
   border-radius: 5px;
+  box-shadow: 0 0 2px 2px rgba(62, 124, 205, 0.7);
+  width: 30%;
+  margin-left: 35%;
+  margin-top: 35px;
+  background: rgba(62, 124, 205, 0.7);
+  color: white;
+  text-align: center;
 }
 
+.signup-submit:hover {
+  background: rgba(62, 124, 205, 1);
+  box-shadow: 0 0 8px 8px rgba(62, 124, 205, 0.7);
+}
+
+
 .signup-submit:disabled {
-  background: red;
+  height: 0px;
+  width: 0px;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  box-shadow: none;
+  background: transparent;
+  color: transparent;
+}
+
+.radio {
+  width: auto;
 }
 
 .long {
-  width: 342px;
+  width: 365px;
 }
 
 .short {
@@ -325,7 +415,7 @@ div {
   display: flex;
   height: 100vh;
   position: relative;
-  background-image: url(http://res.cloudinary.com/devbook/image/upload/v1467948031/devbook/app-images/nerve-2.jpg);
+  background-image: url(http://res.cloudinary.com/devbook/image/upload/v1467997293/devbook/app-images/business-network.jpg);  background-size: cover;
 }
 
 .splash-titlebar {
@@ -335,22 +425,28 @@ div {
   height: 60px;
   width: 100%;
   background: rgba(255, 255, 255, 0.5);
+  background-image: linear-gradient(#4e69a2, #3b5998 50%);
+  border-bottom: 1px solid #133783;
 }
 
 .splash-logo {
   float: left;
+  margin: 10px;
+}
+
+.splash-logo-container {
+  padding: 10px;
+  margin: 10px;
 }
 
 .splash-left-pane {
   position: relative;
   flex: 1;
-  margin-top: 75px;
 }
 
 .splash-right-pane {
-  width: 400px;
+  flex: 1;
   position: relative;
-  margin-top: 75px;
 }
 
 .photo-upload-button {
@@ -393,7 +489,16 @@ div {
   height: 38px;
   border: 1px solid #E9EAED;
   margin-top: 5px;
-  width: 100%;
+  width: 98%;
+  padding-left: 5px;
+}
+
+.post-form-input:hover {
+  box-shadow: 0 0 1px 1px rgba(62, 124, 205, 0.7);
+}
+
+.post-form-input:focus {
+  box-shadow: 0 0 2px 2px rgba(62, 124, 205, 0.7);
 }
 
 .post-form-submit {
@@ -403,6 +508,24 @@ div {
 .timeline-index-item {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.timeline-sidebar {
+  width: 318px;
+  float: left;
+}
+
+.recent-photos {
+  border: 1px solid #E5E6E9;
+  border-bottom: 1px solid #D0D1D4;
+  background: white;
+  margin-top: 10px;
+}
+
+.mutual-friends {
+  border: 1px solid #E5E6E9;
+  border-bottom: 1px solid #D0D1D4;
+  background: white;
 }
 
 .post-display {
@@ -449,6 +572,7 @@ div {
   margin: 8px;
   margin-left: 0px;
   background: white;
+  padding-left: 5px;
 }
 
 .search-bar {
@@ -527,8 +651,7 @@ div {
 }
 
 .search-friend-button {
-  float: right;
-  padding: 10px;
+  position: relative;
 }
 
 .photos-content {
@@ -549,6 +672,27 @@ div {
   color: transparent;
   position: relative;
   border: 1px solid #EAEBEE;
+}
+
+.photo-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 15px;
+  opacity: 0;
+}
+
+.photo-overlay:hover {
+  position: absolute;
+  width: 100%;
+  opacity: 1;
+  height: 100%;
+  /*background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 30%);*/
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 30%);
+}
+
+.photo-delete-button {
+
 }
 
 .photo-container:hover {
@@ -573,8 +717,6 @@ div {
 .photo-overlay {
   color: inherit;
   position: absolute;
-  top: 10px;
-  left: 10px
 }
 
 
@@ -602,15 +744,31 @@ div {
 .friend-container:hover {
   color: white;
   text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+  background-image: linear-gradient: (#fff, #000, 10%)
 }
 
 .friend-overlay {
   color: inherit;
   text-shadow: inherit;
   position: absolute;
-  bottom: 10px;
+  bottom: 5px;
   margin: 5px;
   line-height: normal;
+}
+
+.friend-overlay-div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 15px;
+}
+
+.friend-overlay-div:hover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 30%);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 30%);
 }
 
 .friend-wall-upload {
@@ -634,8 +792,32 @@ div {
   right: 40px;
   text-shadow: inherit;
   line-height: normal;
+  font-size: 20px;
+  background: inherit;
+
+  /*box-shadow: 0 0px 10px 10px rgba(255, 255, 255, .60);*/
 }
 
+.request-button.search-friend-button {
+  float: right;
+  padding: 2px;
+  margin: 9px;
+  border: 0px;
+  position: relative;
+  background: rgba(75, 96, 140, 1);
+  color: white;
+  border-radius: 2px;
+}
+
+.request-button.search-friend-button:hover {
+
+  box-shadow: 0 0 2px 2px rgba(75, 96, 140, 1);
+
+}
+
+.dropdown-button-overlay {
+  position: absolute
+}
 
 
 .round-button {
@@ -675,3 +857,76 @@ div {
   font-weight: bold;
   text-decoration: none;
 }
+
+/*.hexagon {
+  position: relative;
+  width: 180px;
+  height: 103.92px;
+  margin: 51.96px 0;
+  background-image: url(http://res.cloudinary.com/devbook/image/upload/v1468004368/devbook/app-images/person_icon.png);
+  background-size: auto 184.7521px;
+  background-position: center;
+  border-left: solid 10px #000000;
+  border-right: solid 10px #000000;
+}
+
+.hexTop,
+.hexBottom {
+  position: absolute;
+  z-index: 1;
+  width: 127.28px;
+  height: 127.28px;
+  overflow: hidden;
+  -webkit-transform: scaleY(0.5774) rotate(-45deg);
+  -ms-transform: scaleY(0.5774) rotate(-45deg);
+  transform: scaleY(0.5774) rotate(-45deg);
+  background: inherit;
+  left: 16.36px;
+}
+
+/*counter transform the bg image on the caps*/
+.hexTop:after,
+.hexBottom:after {
+  content: "";
+  position: absolute;
+  width: 160.0000px;
+  height: 92.37604307034013px;
+  -webkit-transform:  rotate(45deg) scaleY(1.7321) translateY(-46.1880px);
+  -ms-transform:      rotate(45deg) scaleY(1.7321) translateY(-46.1880px);
+  transform:          rotate(45deg) scaleY(1.7321) translateY(-46.1880px);
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  background: inherit;
+}
+
+.hexTop {
+  top: -63.6396px;
+  border-top: solid 14.1421px #000000;
+  border-right: solid 14.1421px #000000;
+}
+
+.hexTop:after {
+  background-position: center top;
+}
+
+.hexBottom {
+  bottom: -63.6396px;
+  border-bottom: solid 14.1421px #000000;
+  border-left: solid 14.1421px #000000;
+}
+
+.hexBottom:after {
+  background-position: center bottom;
+}
+
+.hexagon:after {
+  content: "";
+  position: absolute;
+  top: 5.7735px;
+  left: 0;
+  width: 160.0000px;
+  height: 92.3760px;
+  z-index: 2;
+  background: inherit;
+}*/

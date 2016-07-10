@@ -32,6 +32,14 @@ module.exports = {
     return this.transformPic(url, 152, 152, ",o_50,e_grayscale");
   },
 
+  titlebarLogo(url){
+    return this.transformPic(url, 25, 25);
+  },
+
+  splashLogo(url){
+    return this.transformPic(url, 400, 60);
+  },
+
   transformPic(url, w, h, params){
     if(params === undefined){params = '';}
     const query = `/upload/w_${w},h_${h},c_fill${params}`;

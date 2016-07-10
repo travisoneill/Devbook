@@ -16,13 +16,17 @@ const Demo = React.createClass({
   render(){
     return(
       <div className="round-button">
-        <div className="round-button-circle" onClick={this.demoLogin}>
-          <p className="round-button">Demo Login!</p>
-        </div>
-      </div>
+       <div className="round-button-circle" onClick={this.demoLogin}>
+         <p className="round-button">Demo Login!</p>
+       </div>
+     </div>
     );
   }
 });
 
-// <button className="demo-login-button" onClick={this.demoLogin}>Demo Login</button>
 module.exports = Demo;
+
+// <div className="round-button-circle" onClick={this.demoLogin}>
+//   <p className="round-button">Demo Login</p>
+// </div>
+// <button className="demo-login-button" onClick={this.demoLogin}>Demo Login</button>

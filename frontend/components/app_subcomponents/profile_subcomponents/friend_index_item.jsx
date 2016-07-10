@@ -15,9 +15,11 @@ const FriendIndexItem = React.createClass({
     const current = CurrentUserStore.get();
     return(
       <div className="friend-container">
-        <p className="friend-overlay">{name}</p>
+        <div className="friend-overlay-div">
+          <p className="friend-overlay">{name}</p>
+          <FriendButton current={current} selected={this.props.friend} location={"friend-index"} />
+        </div>
         <img className="friend-wall-item" src={url} />
-        <FriendButton current={current} selected={this.props.friend} location={"friend-index"} />
       </div>
     );
   }

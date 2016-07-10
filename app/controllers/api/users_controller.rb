@@ -5,14 +5,16 @@ class Api::UsersController < ApplicationController
   def new
   end
 
-  def seed
-
+  def mutual
+    user1 = User.find(params[:id1])
+    user2 = User.find(params[:id2])
+    @mutual = (user1.friends & user2.friends)
+    @mutual << @mutual.length
+    render json: @mutual
   end
 
   def create
     if @user
-      @user.profile_pic_url = DEFAULTS[:profile_pic]
-      @user.cover_pic_url = DEFAULTS[:cover_photo]
       @user.save!
       make_associated_objects
     else
@@ -112,6 +114,7 @@ class Api::UsersController < ApplicationController
   def friends
     @user = User.find(params[:id])
     @friends = @user.friends
+    @friends << @friends.length
     render json: @friends
   end
 

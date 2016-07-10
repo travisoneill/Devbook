@@ -7,7 +7,6 @@ const Splash = React.createClass({
   render() {
     return (
       <div className="splash-container">
-        <Titlebar />
         <LeftPane />
         <RightPane />
       </div>
@@ -18,6 +17,7 @@ const Splash = React.createClass({
 module.exports = Splash;
 
 
+// <Titlebar />
 
 
 // <div className="splash-container">

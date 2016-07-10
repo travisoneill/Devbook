@@ -2,6 +2,8 @@ const React = require('react');
 const ClientActions = require('../../actions/client_actions');
 const SearchBar = require('./search_bar');
 const hashHistory = require('react-router').hashHistory;
+const Transform = require('../../constants/transformations');
+const Defaults = require('../../constants/defaults');
 
 const AppTitlebar = React.createClass({
 
@@ -12,9 +14,13 @@ const AppTitlebar = React.createClass({
   },
 
   render(){
+    const url = Transform.titlebarLogo(Defaults.logo_pic_white_blue);
+
     return(
       <div className="app-titlebar">
-        <h4 className="titlebar-logo">App-Titlebar</h4>
+        <div className="titlebar-logo-container" >
+          <img src={url} className="titlebar-logo" />
+        </div>
         <SearchBar />
         <button className="logout-button" onClick={this.logout}>Logout</button>
       </div>
