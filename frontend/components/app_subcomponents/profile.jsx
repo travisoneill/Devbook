@@ -26,7 +26,7 @@ const Profile = React.createClass({
   render(){
     return(
       <div className="profile-pane">
-        <ProfileHeader user={this.state.user} />
+        <ProfileHeader user={this.state.user} location={this.props.location} />
         {this.props.children}
       </div>
     );

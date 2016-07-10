@@ -10,7 +10,7 @@ const Timeline = React.createClass({
   getInitialState(){
     return({user: SelectedUserStore.get()});
   },
-  //
+
   componentDidMount(){
     this.listener = SelectedUserStore.addListener(this._onChange);
   },

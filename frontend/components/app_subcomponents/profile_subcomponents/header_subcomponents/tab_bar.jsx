@@ -13,19 +13,30 @@ const ProfileTabBar = React.createClass({
     hashHistory.push(route);
   },
 
+  checkStatus(name){
+    const route = this.props.location.pathname;
+    let disabled = route.match(name) ? true : false;
+    if(route === "/" && name === "timeline"){disabled = true;}
+    return disabled;
+  },
+
 
   render(){
     return(
       <div className="profile-tab-bar">
         <div className="profile-tabs">
           <button className="profile-tab-button timeline-tab"
-                  onClick={this.handleClick}>Timeline</button>
+                  onClick={this.handleClick}
+                  disabled={this.checkStatus("timeline")}>Timeline</button>
           <button className="profile-tab-button about-tab"
-                  onClick={this.handleClick}>About</button>
+                  onClick={this.handleClick}
+                  disabled={this.checkStatus("about")}>About</button>
           <button className="profile-tab-button friends-tab"
-                  onClick={this.handleClick}>Friends</button>
+                  onClick={this.handleClick}
+                  disabled={this.checkStatus("friends")}>Friends</button>
           <button className="profile-tab-button photos-tab"
-                  onClick={this.handleClick}>Photos</button>
+                  onClick={this.handleClick}
+                  disabled={this.checkStatus("photos")}>Photos</button>
         </div>
       </div>
     );

@@ -8,13 +8,12 @@ const AddFriend = require('../../util/add_friend');
 const ProfileHeader = React.createClass({
 
   render(){
-
     let currentUser = CurrentUserStore.get();
 
     return(
       <div className="profile-header">
         <CoverPhoto user={this.props.user} />
-        <TabBar user={this.props.user} />
+        <TabBar user={this.props.user} location={this.props.location} />
         <ProfilePic user={this.props.user} />
         <AddFriend current={currentUser} selected={this.props.user} location={"header-friend-button"} />
       </div>

@@ -169,6 +169,11 @@ div {
   background: #F6F7F9
 }
 
+.profile-tab-button:disabled {
+  background: #F6F7F9;
+  color: darkgray;
+}
+
 .photos-tab {
   border-right: 1px solid #E9EAED;
 }
@@ -518,14 +523,76 @@ div {
 .recent-photos {
   border: 1px solid #E5E6E9;
   border-bottom: 1px solid #D0D1D4;
+  border-right: 1px solid #DFE0E3;
   background: white;
   margin-top: 10px;
+}
+
+.recent-photos-index {
+  line-height: 0px;
+  padding: 2px;
+}
+
+.recent-photo-container {
+  /*border: 1px solid #E5E6E9;
+  border-bottom: 1px solid #D0D1D4;*/
+  display: inline-block;
+  width: 98px;
+  height: 98px;
+  position: relative;
+  margin: 2px;
+
+}
+
+.recent-photo-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+  line-height: normal;
+}
+
+.recent-photo-overlay:hover {
+  opacity: 1;
 }
 
 .mutual-friends {
   border: 1px solid #E5E6E9;
   border-bottom: 1px solid #D0D1D4;
+  border-right: 1px solid #DFE0E3;
   background: white;
+}
+
+.mutual-friends-index {
+  line-height: 0px;
+  padding: 2px;
+}
+
+.mutual-friend-container {
+  /*border: 1px solid #E5E6E9;
+  border-bottom: 1px solid #D0D1D4;*/
+  display: inline-block;
+  width: 98px;
+  height: 98px;
+  position: relative;
+  margin: 2px;
+
+}
+
+.mutual-friend-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+  line-height: normal;
+}
+
+.mutual-friend-overlay:hover {
+  opacity: 1;
 }
 
 .post-display {
