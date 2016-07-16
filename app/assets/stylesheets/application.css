@@ -950,9 +950,9 @@ div {
   background: inherit;
   left: 16.36px;
 }
-
+/*
 /*counter transform the bg image on the caps*/
-.hexTop:after,
+/*.hexTop:after,
 .hexBottom:after {
   content: "";
   position: absolute;
