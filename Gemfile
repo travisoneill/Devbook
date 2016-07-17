@@ -25,6 +25,7 @@ gem 'bcrypt'
 gem 'gon'
 gem 'figaro'
 gem 'active_record_union'
+gem 'faker'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

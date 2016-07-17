@@ -205,13 +205,13 @@ div {
 }
 
 .login-submit {
-  background: #4267B2;
+  /*background: #4267B2;
   border: 1px solid #29487D;
   padding: 0 13px;
   height: 30px;
   align-self: center;
   border-radius: 3px;
-  margin: 5px;
+  margin: 5px;*/
 }
 
 .login-button {
@@ -273,25 +273,33 @@ div {
 }
 
 .new-user-label {
+  font-size: 24px;
+  color: rgba(62, 124, 205, 0.7);
+
+  /*color: #ffffff;*/
 
 }
 
 .new-user-label:hover {
+  color: #rgba(62, 124, 205, 0.7);
+  text-shadow: 0 0 5px rgba(62, 124, 205, 0.7);
 
 }
 
 .login-label {
-
+  font-size: 24px;
+  color: rgba(62, 124, 205, 0.7);
 }
 
 .login-label:hover {
-
+  color: #rgba(62, 124, 205, 0.7);
+  text-shadow: 0 0 5px rgba(62, 124, 205, 0.7);
 }
 
 .login-submit {
   border: 1px solid;
   padding: 5px;
-  /*float: left;*/
+  float: left;
   border-radius: 5px;
   box-shadow: 0 0 2px 2px rgba(62, 124, 205, 0.7);
   width: 30%;
@@ -894,16 +902,19 @@ div {
   left: 33px;
 }
 .round-button-circle {
-	width: 105%;
-	height:0;
-	padding-bottom: 100%;
+  width: 105%;
+  height: 0;
+  padding-bottom: 100%;
   border-radius: 50%;
-	border: 1px solid rgba(211, 220, 234, 0.5);
-  overflow:hidden;
-  box-shadow: 0 0 3px gray;
+  border: 1px solid;
+  overflow: hidden;
+  background: rgba(62, 124, 205, 0.7);
+  color: white;
+  box-shadow: 0 0 2px 2px rgba(62, 124, 205, 0.7);
 }
 .round-button-circle:hover {
-  box-shadow: 0 0px 10px 10px rgba(255, 255, 255, .60);
+  background: rgba(62, 124, 205, 1);
+  box-shadow: 0 0 8px 8px rgba(62, 124, 205, 0.7);
 }
 
 .round-button p {
@@ -918,9 +929,9 @@ div {
   line-height: 1em;
   margin-top: -0.5em;
   text-align: center;
-  color: #e2eaf3;
+  color: #ffffff;
   font-family: Verdana;
-  font-size: 1.2em;
+  font-size: 1.5em;
   font-weight: bold;
   text-decoration: none;
 }

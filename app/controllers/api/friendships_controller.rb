@@ -13,6 +13,11 @@ class Api::FriendshipsController < ApplicationController
     end
   end
 
+  def seed(data)
+    @friendship = Friendship.create!(data)
+    Action.create!(initiator_id: data[:user_id1], recipient_id: data[:user_id2], action_type: "friendship")
+  end
+
   def destroy
     id1 = params[:id1]
     id2 = params[:id2]

@@ -17,7 +17,7 @@ const Demo = React.createClass({
     return(
       <div className="round-button">
        <div className="round-button-circle" onClick={this.demoLogin}>
-         <p className="round-button">Demo Login!</p>
+         <p className="round-button">Demo Login</p>
        </div>
      </div>
     );
