@@ -10,6 +10,11 @@ class Api::PhotosController < ApplicationController
 
   end
 
+  def seed(data)
+    Photo.create!(data)
+    Action.create!(initiator_id: data[:user_id], action_type: "photo")
+  end
+
   def destroy
     @photo = Photo.find(params[:id])
     if @photo.destroy!

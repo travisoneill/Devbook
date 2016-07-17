@@ -10,6 +10,10 @@ class Api::RequestingsController < ApplicationController
     end
   end
 
+  def seed(data)
+    Requesting.create!(initiator_id: data[:initiator_id], recipient_id: data[:recipient_id])
+  end
+
   def destroy
     initiator = params[:id1]
     target = params[:id2]

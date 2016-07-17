@@ -14,7 +14,7 @@ class Api::FriendshipsController < ApplicationController
   end
 
   def seed(data)
-    @friendship = Friendship.create!(data)
+    Friendship.create!(data)
     Action.create!(initiator_id: data[:user_id1], recipient_id: data[:user_id2], action_type: "friendship")
   end
 

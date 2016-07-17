@@ -1,6 +1,7 @@
 const React = require('react');
 const FriendStore = require('../../../stores/friend_store');
 const SelectedUserStore = require('../../../stores/selected_user_store');
+const CurrentUserStore = require('../../../stores/current_user_store');
 const FriendIndexItem = require('./friend_index_item');
 const ClientActions = require('../../../actions/client_actions');
 // const FriendButton = require('../../util/friend_button');
@@ -16,7 +17,9 @@ const FriendIndex = React.createClass({
     const user = SelectedUserStore.get();
     this.listener = FriendStore.addListener(this._onChange);
     ClientActions.getAllFriends(user);
-    ClientActions.getAllIncoming(user);
+    if(SelectedUserStore.get() === CurrentUserStore.get()){
+      ClientActions.getAllIncoming(user);
+    }
   },
 
   _onChange(){
@@ -28,13 +31,12 @@ const FriendIndex = React.createClass({
   },
 
   render(){
+    const friends = this.state.friends.map( (friend) => {
+      return <FriendIndexItem key={friend.id} friend={friend} request={false} />;
+    });
 
     const incoming = this.state.incoming.map( (user) => {
       return <FriendIndexItem key={user.id} friend={user} request={true} />;
-    });
-
-    const friends = this.state.friends.map( (friend) => {
-      return <FriendIndexItem key={friend.id} friend={friend} request={false} />;
     });
 
     const index = incoming.concat(friends);

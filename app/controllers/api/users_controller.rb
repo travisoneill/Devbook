@@ -15,6 +15,8 @@ class Api::UsersController < ApplicationController
 
   def create
     if @user
+      @user.profile_pic_url ||= DEFAULTS[:profile_pic]
+      @user.cover_pic_url ||= DEFAULTS[:cover_photo]
       @user.save!
       make_associated_objects
     else

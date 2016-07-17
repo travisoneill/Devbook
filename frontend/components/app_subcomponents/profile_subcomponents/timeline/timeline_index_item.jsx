@@ -24,14 +24,14 @@ const TimelineIndexItem = React.createClass({
 
   render(){
     const url = this.props.post.photo_url;
-    const user = CurrentUserStore.get();
+    const user = SelectedUserStore.get();
     let profilePic = '';
     let thumbnail = '';
     let comment = '';
     if(user){
       profilePic = user.profile_pic_url;
       thumbnail = Transform.profilePic2(profilePic);
-      comment = Transform.profilePic3(profilePic);
+      comment = Transform.profilePic3(CurrentUserStore.get().profile_pic_url);
     }
     const photo = url ? Transform.postPic(url) : '';
     return(

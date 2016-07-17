@@ -389,96 +389,96 @@ pics = [
 
 
 user_pics = [
-"https://i.scdn.co/image/406a50ed101bc5aeb4c3343dd8e4a2ba86b24b7d",
-"https://i.scdn.co/image/4c6fb53e449ded52b885de04ec6a4094a0567738",
-"https://i.scdn.co/image/45b61196414e38bbfe8389dc0d852246ad352876",
-"https://i.scdn.co/image/e46c8d78463420a58c4297a76e2512116742dd17",
-"https://i.scdn.co/image/b407a9cf7134a4272439fc431df117c841c7641e",
-"https://i.scdn.co/image/9a8c6c0b666e19fca05fdd860c17bb363db1c67b",
-"https://i.scdn.co/image/f88d274b1bfabc987f04d41772616d85efc91531",
-"https://i.scdn.co/image/7288587ed18588204b6c281f6225acf49da859a3",
-"https://i.scdn.co/image/ccdcf8c4962d103bde7a20a70669febc9cf7a48b",
-"https://i.scdn.co/image/2ea4c4c9f93d2ba844ec122a1eaebf1153e27576",
-"https://i.scdn.co/image/1608cb7d4c4d02cacbb20f15e1464211106d037a",
-"https://i.scdn.co/image/6e6388f864f394ea24d75fbbd45795f1b6523e16",
-"https://i.scdn.co/image/dfc389be290479bf665bd91a4282aecc03741419",
-"https://i.scdn.co/image/c8d9dec51745b141dd66cc20005cff8550316da8",
-"https://i.scdn.co/image/ad06e010e8622a7587616f08b0673f731edad3af",
-"https://i.scdn.co/image/92c34b174f8fe86409622d2ed7cccdb1791dc633",
-"https://i.scdn.co/image/3436c32ddf144e05c734c7b80fb4869d9283ea27",
-"https://i.scdn.co/image/f8e7b953f74779ba1f8e924659c7f0fad049a88e",
-"https://i.scdn.co/image/b0f441db4fb074c46b6ea6c6637f7b00f4d2891b",
-"https://i.scdn.co/image/745a51df66eddd146cc02f1c9af60da957f9a3f7",
-"https://i.scdn.co/image/999d34c3c41c44f7dbc003b235ed2df14d09543a",
-"https://i.scdn.co/image/ac6c593f01a953056adaa15fe8ef487a6e50733a",
-"https://i.scdn.co/image/c5365e5b30d155a0135e42fb0795f62aac113aec",
-"https://i.scdn.co/image/7c911fd87081eac21102a40d63a57973c35d2ee3",
-"https://i.scdn.co/image/6dc430d840748f06d70091c9ada77e7b7d7ed47a",
-"https://i.scdn.co/image/a82b0ceacf44bcdfe2b705c4bc252ce543836062",
-"https://i.scdn.co/image/69e330eac7fe4c7a7cd15fc55f62ad998d86524b",
-"https://i.scdn.co/image/a6767a4a0ab403c1dcc8cbd660dff093dd974f95",
-"https://i.scdn.co/image/c63d417007b291ac8877de3324cf1ca1f7b953a3",
-"https://i.scdn.co/image/a0b6511a9c1755392ed7a8dac1bc4507bacee8c8",
-"https://i.scdn.co/image/084032659609f76d714274752d716726cd396895",
-"https://i.scdn.co/image/4cc49d724cd24e265197741203dcbca7b450a236",
-"https://i.scdn.co/image/fc9e3f5acf8255daa7b368d68a825ceb0325c967",
-"https://i.scdn.co/image/9ba0ca60d741950ec3426a237606161d37bd0a6a",
-"https://i.scdn.co/image/a293b416795a3262fcd403a7d487326320ec8ad4",
-"https://i.scdn.co/image/4bf21bad43f2d3d1828aef51fbbbc9c14829baf4",
-"https://i.scdn.co/image/9153a0249cb2d55aebd5ea2bf28da2802b337ca6",
-"https://i.scdn.co/image/2b9493c23674c86b45c40a160a80571b76a3de68",
-"https://i.scdn.co/image/72896f0e0dc7f5834163b188c2d7ffa525a792bf",
-"https://i.scdn.co/image/89ae6242126fed24991a0047c043c3bfad2afb0a",
-"https://i.scdn.co/image/db7f6c8716a714a999ee047b96be7dbfe1e3cb3f",
-"https://i.scdn.co/image/db44ef1602d1a37c7950da3e3109242b5e38bad8",
-"https://i.scdn.co/image/78dd3859398ede4670956b5d18f6dfdc3c39c5ac",
-"https://i.scdn.co/image/4d3de1f8f1225f586c3addf0d75fc0aa6f4ea832",
-"https://i.scdn.co/image/1979adca66b846be3795818f0409d6b1afb36426",
-"https://i.scdn.co/image/1166f38f1cdd0176a712b14a3378bb894ce70865",
-"https://i.scdn.co/image/c1f0bb2b6e5eeb8b9381ba606f57c8da3034176d",
-"https://i.scdn.co/image/524d8e58cc6c7e4802ae30474efd6c3e414a173a",
-"https://i.scdn.co/image/0b0c4aa534c6203577fd01f13a00807e4635851c",
-"https://i.scdn.co/image/a71950a515836cfa028daa469e5ff65c55188522",
-"https://i.scdn.co/image/ddfcf721ef4345793448a80b53ec1b656a930dfb",
-"https://i.scdn.co/image/2d99cbc9ddc4d1e0a9c25f832cf3a79a6614b930",
-"https://i.scdn.co/image/5251d63d3e8b6c950a3d5052086296e24787e2c1",
-"https://i.scdn.co/image/9df2ba6daf0b794f3e1ca898c87cd09279dc260c",
-"https://i.scdn.co/image/0844a31bbae5b8880325056593622b234ae0bfc2",
-"https://i.scdn.co/image/cdec8941332a899a09854dbcd56fc65ce4548b58",
-"https://i.scdn.co/image/be1cf129530da05370980c6307af344de4720385",
-"https://i.scdn.co/image/854a3ee55f0b58e0a88eb4df7ba4515636625f04",
-"https://i.scdn.co/image/2b1ff4a3d93b8b449b7de9514a2b6e1cf80a19e5",
-"https://i.scdn.co/image/ca22695b708b4df64b564f74c474ed132b652f86",
-"https://i.scdn.co/image/5ab998afe4baae3bec2d3ff3ff5129883b88280c",
-"https://i.scdn.co/image/75604df810286a44e5b5dd5f0907f988ad138805",
-"https://i.scdn.co/image/37e8c54d9d21d9f2407b9fa57fc77e4e7838ba7e",
-"https://i.scdn.co/image/204fb441cdeb1c40d98b8cb93c99fe910fcd621f",
-"https://i.scdn.co/image/070eb6dcc99a07ad2b4117096fe6359821465de6",
-"https://i.scdn.co/image/1166f38f1cdd0176a712b14a3378bb894ce70865",
-"https://i.scdn.co/image/47f135edf71b854d8e646e50d716a4f1e9c7d8ed",
-"https://i.scdn.co/image/d38222d47d443c3aa87e56fd23dc2058cf0b4a24",
-"https://i.scdn.co/image/403b929ff23d6616e12deb6b21e95aacfa86fe4b",
-"https://i.scdn.co/image/1431e3d3ebce52143b6651cd4febc42586f95733",
-"https://i.scdn.co/image/01434edbe070cf2dfe0b069856a35c12f1bdc7a3",
-"https://i.scdn.co/image/3a56ff980ef3463c83cbef549f5ca53daef6f56d",
-"https://i.scdn.co/image/8dff0f92819275feabea7fb4c65d1409a1a99127",
-"https://i.scdn.co/image/100425cea17b19a2a30978484117732f93f3b70c",
-"https://i.scdn.co/image/e759528b0f02b598d603d33a33c7e93e52d904e7",
-"https://i.scdn.co/image/22e6ec2e00e3fe5ce9e0aadb3ed2616d900bb385",
-"https://i.scdn.co/image/8a466a1fe2443a836ecfbf9dd11cefb22b3388bc",
-"https://i.scdn.co/image/ecf52494844107517e6285b905006f6bb1b41fae",
-"https://i.scdn.co/image/44950144319b9ba8e6bc82cd6d20d785128d52aa",
-"https://i.scdn.co/image/830d7ee17a91bc17cebd36ba0cb8929e53c7bdc4",
-"https://i.scdn.co/image/4c3380a27af9d846dae62ffbd6f63e7ef7aa83d1",
-"https://i.scdn.co/image/e0947a1daa0d4d28c9017b6ff9478e774be44dfc",
-"https://i.scdn.co/image/69a6645b73ba13c806d205735606ae325cfcb236",
-"https://i.scdn.co/image/f90e64b77d274730c6374ddb44e6ba50033ba0b3",
-"https://i.scdn.co/image/c5525afd94a493d7d7dd53ef23f1def0db47fc51",
-"https://i.scdn.co/image/b5bf63d2fa3b597f378186208c39d1087d88140a",
-"https://i.scdn.co/image/5d883e60ea04e0086e4b8b17e277e7a289563339",
-"https://i.scdn.co/image/a9cb700e422db9e8ac94808e3b3a63641b8e8c51",
-"https://i.scdn.co/image/b07143e2833eafc245bf123f9ac4378530026fe3",
-"https://i.scdn.co/image/08542d7e0e7d64432e6c57cc912f557284f7418d",
+"http://res.cloudinary.com/devbook/image/upload/v1468730239/mlix0qj0ri6kaiclkob1.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730240/kpyfsvbm8ctystusaiwg.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730241/v2an8vdhaquzexrnngzl.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730242/dm2v6hrts9lzevemdmvc.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730243/ivsuj2t647un7ufyxycp.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730243/yr61xocqfrar1soe3syw.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730244/qfbnxqi54cc01dzue3hs.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730245/jve9b1drotla8mnj4kyi.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730245/hpcw6yhbnlkmtb1vml15.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730246/iraauazkkd3kjawwlzrg.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730247/qyhhpcvbzqjel3f1ddu3.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730248/rffwtatkkfbx8jid9utl.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730249/iznfub5hhnwr28sirhmw.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730250/kvxe9kaeqyjlclfnutw7.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730250/dmxdghf3kubgc5aeg9pp.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730251/vumreeg82z1fcsgflrmr.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730252/ppmbjbgkeu5vj1gwfdti.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730253/ynsslgutojsmktvcjtnu.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730254/chabjnrrjdwqwbrik5kr.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730255/zocj2kmxt7o75wg2odpb.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730255/zhmvtxv0aesxpt6rnscd.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730256/okvxzwss8hrbluxfcenf.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730257/s29qfdlurhf8i4npl81w.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730258/nn6f1qqlxo9dytqc1ykj.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730259/kqyood79g2vgcqixxutl.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730259/pujux1nz9du9o3pglvfv.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730260/jmkyfamughpjrrgbvekl.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730261/d4v0etjj1grswmigt6wp.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730262/x0uqqyzdjhjhtnsgbxmz.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730263/ns04mdgmgwatijlivgbr.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730263/f2fdx0qjf9rpjqctgb3c.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730264/isc7loar1bu0npobpxc2.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730265/moshsfvnl7ojovgceze2.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730266/xxjrseotn0n1nxzea9r6.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730267/ji3ltdxw5dmxgv547dt4.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730268/qen4eri4mjjhvnx7klgc.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730269/zs6qnpzcak2jetovjrxe.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730270/p3hueywmxsfwdfye6wcb.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730270/t3r5msibdcegddeocmrx.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730271/zqs9cjf5pugqtezg1chk.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730272/w4q6tvevnaku4yaij51l.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730273/fqxs8bpq0nwz0vp2eabl.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730274/h701nh1icftqfphvoxdf.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730274/ikokxy4w53bvlrtt20rs.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730275/cvgof4rjdwrg6oiz3bea.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730276/vmuiqoidukxrsalygr3x.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730277/hzd4mhic7ndo4brf06rq.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730278/t3elbnelgrpww2fb5g5n.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730278/o5ogxahr9otmds1vd1vp.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730279/enm5aqk12mjluzja8rzf.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730280/dn8xld2hvnjxtewkigt3.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730281/oqnawdbwbjkqbjlhk8c1.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730282/nqtqt7pvfhazjivywjlm.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730283/ovskluarj5tlqm3jqcqv.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730283/pn78houx8a8ld9vvuh8l.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730284/zlhw7oxthtxmxclh1v1l.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730285/zjztvhsb0kgfgfhzsgpe.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730287/htnqudbrezfrmh9fytod.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730287/sszfrt2tantdemgee5eq.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730288/oxp0rr2co4hwujefw6cx.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730289/iwp1hazhm5cl0aysit2t.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730290/yyyitveyqqya0spprdkb.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730291/ruumxraudhjmmw7lzbtn.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730292/cwadq3veybnvf4gxwwxu.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730292/eivtqnvncg1cqmthbkdq.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730293/pzrjcnesab8r0ulopecp.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730294/b8nzaarague1kdgphlyl.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730295/bissna4is8pjnxzorf57.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730296/zo8vunem2gpxvn99zxup.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730296/bemjntpsy4hk4rs5lb6d.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730297/cgynjh1k782slqlktxdh.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730298/khx5j0v5urfxzdgywy4d.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730298/otjdqgdh4oepgzkrpdre.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730299/n3lwlrhumyaqmjwyj6kk.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730300/dvrc7kscwp51ds9zsiky.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730301/kvartlbp8hdj545vf8xm.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730302/haal0tdgbtqed9pci0cf.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730303/j74dsdittnqqns3c5xqr.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730304/va5ism5lmsvqrrgmfyxy.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730305/pwyexn70snegxpmjdpoa.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730305/wivg04d5dxdwvdylx7zs.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730306/lyulwbumsuumwigsyvur.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730307/sfneydoa63whr9alqz7m.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730308/cwhtzttyio2ib2wgh8tn.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730308/uz2s3ywenxef1psj5uss.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730309/jhijsu9yi2luvrpkrys4.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730310/uzyk0l2gzm1rcwwn2gn8.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730311/wgse4sqn878j7lbjxdyn.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730312/gsaxrygebyr6gojs6zrc.jpg",
+"http://res.cloudinary.com/devbook/image/upload/v1468730312/mafkd4frne4anlae6irw.jpg",
 "https://res.cloudinary.com/dywbzmakl/image/upload/v1467772906/url_b6xfhb.jpg",
 "https://res.cloudinary.com/dywbzmakl/image/upload/v1467772906/url-1_mn7ltf.jpg",
 "https://res.cloudinary.com/dywbzmakl/image/upload/v1467772906/tsm_bjergsen-profile_image-d743788675571b95-300x300_aczxat.jpg",
@@ -598,17 +598,48 @@ seeds.each do |seed|
 end
 
 friender = Api::FriendshipsController.new
+requester = Api::RequestingsController.new
 
-friendships = []
+combinations = []
 n = User.count
-until friendships.length == n * 15
-  friendships.uniq!
+until combinations.length == n * 30
+  combinations.uniq!
   id1 = rand(n) + 1
   id2 = rand(n) + 1
-  friendships << [id1, id2].sort
+  combinations << [id1, id2].sort
+  puts combinations.length if combinations.length % 1000 == 0
 end
 
-friendships.each do |f|
+n = 2 * combinations.length / 3
+combinations[0...n].each_with_index do |f, idx|
   data = {user_id1: f[0], user_id2: f[1]}
   friender.seed(data)
+  puts idx if idx % 1000 == 0
+end
+
+combinations[n..-1].each_with_index do |r, idx|
+  arr = r.shuffle
+  data = {initiator_id: arr[0], recipient_id: arr[1]}
+  requester.seed(data)
+  puts idx if idx % 1000 == 0
+end
+
+poster = Api::PostsController.new
+photo_seeder = Api::PhotosController.new
+
+User.all.each do |user|
+  10.times do |n|
+    if n % 2 === 0
+      data = {user_id: user.id, photo_url: user_pics.sample, body: Faker::Lorem.paragraph}
+    else
+      data = {user_id: user.id, body: Faker::Lorem.paragraph}
+    end
+    poster.seed(data)
+  end
+
+  21.times do
+    data2 = {user_id: user.id, url: user_pics.sample}
+    photo_seeder.seed(data2) 
+  end
+
 end

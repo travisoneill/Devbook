@@ -2,13 +2,17 @@ class Api::PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     id = post_params[:user_id]
-    action_type = "post"
     if @post.save!
-      Action.new(initiator_id: id, action_type: action_type )
+      Action.create!(initiator_id: id, action_type: "post")
       render json: @post
     else
       flash.now[:errors] = @post.errors.full_messages
     end
+  end
+
+  def seed(data)
+    Post.create!(data)
+    Action.create!(initiator_id: id, action_type: "post")
   end
 
   def update
