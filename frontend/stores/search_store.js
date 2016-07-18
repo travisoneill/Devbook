@@ -22,7 +22,7 @@ SearchStore.__onDispatch = function(payload){
   switch(payload.actionType){
     case Constants.store_matches:
       SearchStore.stock(payload.results);
-      console.log(_matches);
+      // console.log(_matches);
       this.__emitChange();
       break;
     case Constants.clear_search:

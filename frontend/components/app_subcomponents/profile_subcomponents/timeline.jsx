@@ -1,5 +1,6 @@
 const React = require('react');
 const ClientActions = require('../../../actions/client_actions');
+const ServerActions = require('../../../actions/server_actions');
 const NewPostForm = require('./new_post_form');
 const TimelineIndex = require('./timeline/timeline_index');
 const TimelineSidebar = require('./timeline/sidebar');
@@ -13,6 +14,9 @@ const Timeline = React.createClass({
 
   componentDidMount(){
     this.listener = SelectedUserStore.addListener(this._onChange);
+    if(this.props.params.id){
+      ClientActions.selectUser(this.props.params.id);
+    }
   },
 
   componentWillReceiveProps(newProps){
@@ -27,6 +31,7 @@ const Timeline = React.createClass({
 
   componentWillUnmount(){
     this.listener.remove();
+    ServerActions.emptyFriends();
   },
 
   render(){

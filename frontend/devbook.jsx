@@ -70,7 +70,8 @@ const SelectedUserStore = require('./stores/selected_user_store');
 const Setup = {
   currentUser(){
     let user = window.bootstrap.user;
-    ServerActions.login(user);
+    console.log(user);
+    ServerActions.reload(user);
         //This could be a problem later!!!
     //need to seperate from filling selscted user store.
   }

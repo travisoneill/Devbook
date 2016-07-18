@@ -22,6 +22,8 @@ FriendStore.incoming = function(){
 
 FriendStore.empty = function(){
   _friends = [];
+  _incoming = [];
+  _count = 0;
 };
 
 FriendStore.add = function(friend){
@@ -79,10 +81,10 @@ FriendStore.__onDispatch = function(payload){
       FriendStore.add(payload.friend);
       this.__emitChange();
       break;
-      // case Constants.add_friend:
-      //   FriendStore.add(payload.friend);
-      //   this.__emitChange();
-      //   break;
+    case Constants.empty_friends:
+      FriendStore.empty();
+      this.__emitChange();
+      break;
       // case Constants.add_incoming:
       //   FriendStore.addIncoming(payload.incoming);
       //   this.__emitChange();

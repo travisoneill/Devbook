@@ -13,6 +13,7 @@ module.exports = {
   store_photos: "STORE_PHOTOS",
   remove_photo: "REMOVE_PHOTO",
   store_friends: "STORE_FRIENDS",
+  empty_friends: "EMPTY_FRIENDS",
   store_incoming: "STORE_INCOMING",
   remove_friend: "REMOVE_FRIEND",
   remove_incoming: "REMOVE INCOMING",

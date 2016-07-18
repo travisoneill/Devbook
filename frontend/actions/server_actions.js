@@ -72,6 +72,14 @@ const ServerActions = {
     hashHistory.push('/');
   },
 
+  reload(resp){
+    ServerActions.storeCurrentUser(resp);
+    // let id = +window.location.hash.match(/\/\d*\?/).pop().slice(1,-1);
+    // let selected = localStorage.selected;
+    // debugger;
+    ServerActions.storeSelectedUser(resp);
+  },
+
   storePhoto(photo){
     Dispatcher.dispatch({
       actionType: Constants.add_photo,
@@ -98,6 +106,12 @@ const ServerActions = {
     Dispatcher.dispatch({
       actionType: Constants.store_friends,
       friends: friends
+    });
+  },
+
+  emptyFriends(){
+    Dispatcher.dispatch({
+      actionType: Constants.empty_friends
     });
   },
 

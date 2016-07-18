@@ -11,6 +11,12 @@ class User < ActiveRecord::Base
   has_many :incoming, class_name: "User", through: :incoming_requests, source: :initiator
   has_many :outgoing, class_name: "User", through: :outgoing_requests, source: :recipient
 
+  has_many :friendships1, class_name: "Friendship", foreign_key: :user_id1
+  has_many :friendships2, class_name: "Friendship", foreign_key: :user_id2
+
+  has_many :friends_test1, class_name: "User", through: :friendships1, source: :user2
+  has_many :friends_test2, class_name: "User", through: :friendships2, source: :user1
+
 
   attr_reader :password
 
@@ -35,9 +41,39 @@ class User < ActiveRecord::Base
   end
 
   def friends
-    id = self.id
-    Friendship.select('user_id2 as f_id').where(user_id1: id).union(Friendship.select('user_id1 as f_id').where(user_id2: id)).map { |obj| User.find(obj.f_id) }
+    user = User.find(self.id)
+    user.friends_test1.union(user.friends_test2)
   end
+
+  # def friends
+  #
+  #   id = self.id
+  #
+  #   friends_query = <<-SQL
+  #
+  #     SELECT u1.*
+  #     FROM users AS u2
+  #     JOIN friendships AS f
+  #       ON u2.id = f.user_id2
+  #     JOIN users AS u1
+  #       ON u1.id = f.user_id1
+  #     WHERE u2.id = #{id}
+  #
+  #     UNION
+  #
+  #     SELECT u2.*
+  #     FROM users AS u1
+  #     JOIN friendships AS f
+  #       ON u1.id = f.user_id1
+  #     JOIN users AS u2
+  #       ON u2.id = f.user_id2
+  #     WHERE u1.id = #{id};
+  #
+  #   SQL
+  #
+  #   User.find_by_sql(friends_query)
+  #
+  # end
 
   private
 

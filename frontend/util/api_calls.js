@@ -207,7 +207,6 @@ module.exports = {
       dataType: `json`,
       data: '',
       success(resp){
-        console.log(resp);
         serverAction(resp);
       }
     });
@@ -246,7 +245,6 @@ module.exports = {
       dataType: `json`,
       data: '',
       success(resp){
-        console.log(resp);
         serverAction(resp);
       }
     });
