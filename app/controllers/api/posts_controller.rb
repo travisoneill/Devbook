@@ -12,7 +12,7 @@ class Api::PostsController < ApplicationController
 
   def seed(data)
     Post.create!(data)
-    Action.create!(initiator_id: id, action_type: "post")
+    Action.create!(initiator_id: data.id, action_type: "post")
   end
 
   def update

@@ -116,7 +116,7 @@ const AddFriend = React.createClass({
         action = this.unfriend;
         break;
       case "incoming":
-        text = "Accept Friend Request";
+        text = "Accept Request";
         action = this.acceptRequest;
         break;
       case "outgoing":
