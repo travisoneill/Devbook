@@ -22,7 +22,6 @@ CurrentUserStore.store = function(payload){
 };
 
 CurrentUserStore.setRelation = function(relation){
-   debugger;
   _relation = relation;
 };
 
@@ -34,6 +33,7 @@ CurrentUserStore.__onDispatch = function(payload){
       break;
     case Constants.set_relation:
       CurrentUserStore.setRelation(payload.relation)
+      console.log(_relation);
       break;
     case Constants.logout:
       _currentUser = undefined;
