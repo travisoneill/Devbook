@@ -21,8 +21,9 @@ CurrentUserStore.store = function(payload){
   _currentUser = payload.user;
 };
 
-CurrentUserStore.setRelation = function(payload){
-  _relation = payload.relation;
+CurrentUserStore.setRelation = function(relation){
+   debugger;
+  _relation = relation;
 };
 
 CurrentUserStore.__onDispatch = function(payload){
@@ -30,6 +31,9 @@ CurrentUserStore.__onDispatch = function(payload){
     case Constants.store_current_user:
       CurrentUserStore.store(payload);
       this.__emitChange();
+      break;
+    case Constants.set_relation:
+      CurrentUserStore.setRelation(payload.relation)
       break;
     case Constants.logout:
       _currentUser = undefined;

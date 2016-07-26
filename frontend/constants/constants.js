@@ -20,6 +20,7 @@ module.exports = {
   add_friend: "ADD_FRIEND",
   add_incoming: "ADD_INCOMING",
   accept_request: "ACCEPT_REQUEST",
-  add_comment: "ADD_COMMENT"
+  add_comment: "ADD_COMMENT",
+  set_relation: "SET_RELATION"
 
 };

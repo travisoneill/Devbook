@@ -84,6 +84,10 @@ module.exports = {
 
   addComment(comment){
     ApiCalls.addComment(comment, ServerActions.storeComment)
+  },
+
+  getRelations(user){
+    ApiCalls.getRelations(user, ServerActions.setRelation);
   }
 
   // buttonState(current, selected){

@@ -17,6 +17,7 @@ class Api::SessionsController < ApplicationController
   end
 
   def relation
+    @user = User.find(params[:id])
     @relation = {};
     @user.friends.each { |f| @relation[f.id] = "friends" }
     @user.incoming.each { |i| @relation[i.id] = "incoming" }

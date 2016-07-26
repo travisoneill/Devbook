@@ -27,6 +27,8 @@ Rails.application.routes.draw do
 
   get 'api/mutual/:id1/:id2', to: 'api/users#mutual'
 
+  get 'api/relations/:id', to: 'api/sessions#relation'
+
   delete '/api/requestings/:id1/:id2', to: 'api/requestings#destroy'
 
   post 'api/friendships/:id1/:id2', to: 'api/friendships#create'

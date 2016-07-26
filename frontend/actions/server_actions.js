@@ -18,6 +18,13 @@ const ServerActions = {
     });
   },
 
+  setRelation(relation){
+    Dispatcher.dispatch({
+      actionType: Constants.set_relation,
+      relation: relation
+    });
+  },
+
   logout(){
     Dispatcher.dispatch({
       actionType: Constants.logout

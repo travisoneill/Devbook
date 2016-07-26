@@ -263,7 +263,22 @@ module.exports = {
         action(resp);
       }
     });
+  },
+
+  getRelations(user, action){
+    $.ajax({
+      url: `api/relations/${user.id}`,
+      type: `GET`,
+      dataType: 'json',
+      data: '',
+      success(resp){
+        console.log(resp);
+        action(resp);
+      }
+    });
   }
+
+
 
 
 };

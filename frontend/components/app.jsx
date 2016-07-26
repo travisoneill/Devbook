@@ -23,6 +23,9 @@ const App = React.createClass({
   componentDidMount() {
     this.listener1 = CurrentUserStore.addListener(this._onChange1);
     this.listener2 = SelectedUserStore.addListener(this._onChange2);
+    let user = CurrentUserStore.get();
+    let user2 = SelectedUserStore.get();
+    if(user && user2){ClientActions.getRelations(user);}
   },
   //
   _onChange1(){
