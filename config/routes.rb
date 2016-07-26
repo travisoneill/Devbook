@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'comments/create'
+
+  get 'comments/delete'
+
   root "static_pages#root"
 
   namespace :api, defaults: { format: :json } do
@@ -7,6 +11,7 @@ Rails.application.routes.draw do
     resources :posts, only: [:create, :update, :destroy, :index]
     resources :requestings, only: [:create, :destroy]
     resources :photos, only: [:create, :destroy, :index, :show]
+    resources :comments, only: [:create]
     resource :session, only: [:create, :destroy, :show]
   end
 

@@ -15,7 +15,7 @@ const FriendIndexItem = React.createClass({
     const name = this.props.friend.full_name;
     const current = CurrentUserStore.get();
     let button = <div />;
-    if(current === SelectedUserStore.get()){
+    if(current.id === SelectedUserStore.get().id){
       button = <FriendButton current={current} selected={this.props.friend} location={"friend-index"} />;
     }
     return(

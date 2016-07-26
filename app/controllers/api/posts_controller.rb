@@ -36,7 +36,7 @@ class Api::PostsController < ApplicationController
 
   def show
     @posts = Post.find_by(user_id: params[:id])
-    render json: posts
+    render json: @posts
   end
 
   def index
@@ -44,8 +44,16 @@ class Api::PostsController < ApplicationController
   end
 
   def timeline
-    @posts = User.find(params[:id]).posts
-    render json: @posts
+    @posts = User.find(params[:id]).posts_plus_comments
+    @comments = {}
+    @commenters = {};
+    @posts.each do |post|
+      @comments[post.id] = post.comments
+      post.comments.each do |comment|
+        @commenters[comment.id] = {name: comment.user.full_name, url: comment.user.profile_pic_url}
+      end
+    end
+    render json: {posts: @posts, comments: @comments, commenters: @commenters}
   end
 
   private

@@ -72,6 +72,7 @@ module.exports = {
       dataType: `json`,
       data: data,
       success(resp){
+        console.log(resp);
         serverAction(resp);
       }
     });
@@ -96,6 +97,7 @@ module.exports = {
       dataType: `json`,
       data: "",
       success(resp){
+        console.log(resp);
         serverAction(resp);
       }
     });
@@ -246,6 +248,19 @@ module.exports = {
       data: '',
       success(resp){
         serverAction(resp);
+      }
+    });
+  },
+
+  addComment(data, action){
+    $.ajax({
+      url: `api/comments`,
+      type: `POST`,
+      dataType: 'json',
+      data: {comment: data},
+      success(resp){
+        console.log(resp);
+        action(resp);
       }
     });
   }

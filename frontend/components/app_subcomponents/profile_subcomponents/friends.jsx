@@ -8,14 +8,12 @@ const SelectedUserStore = require('../../../stores/selected_user_store');
 const Friends = React.createClass({
 
   componentDidMount(){
-    ServerActions.emptyFriends();
     if(this.props.params.id){
       ClientActions.selectUser(this.props.params.id);
     }
   },
 
   componentWillReceiveProps(newProps){
-    ServerActions.emptyFriends();
     if(newProps.params.id){
       ClientActions.selectUser(newProps.params.id);
     }

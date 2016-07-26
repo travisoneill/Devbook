@@ -2,6 +2,9 @@ const React = require('react');
 const Transform = require('../../../../constants/transformations');
 const SelectedUserStore = require('../../../../stores/selected_user_store');
 const CurrentUserStore = require('../../../../stores/current_user_store');
+const Link = require('react-router').Link;
+const CommentIndex = require('./comment_index');
+const ClientActions = require('../../../../actions/client_actions');
 
 
 const TimelineIndexItem = React.createClass({
@@ -18,13 +21,31 @@ const TimelineIndexItem = React.createClass({
 
   handleSubmit(e){
     e.preventDefault();
+    const post = this.props.post;
+    const val = this.state.comment;
+    ClientActions.addComment({body: this.state.comment, user_id: post.user_id, post_id: post.id});
     this.setState({comment: ''});
-    console.log("Gotta make a comments controller first!");
+  },
+
+  makeTimestamp(){
+    const t0 = new Date (this.props.post.created_at);
+    const t1 = new Date();
+    const seconds = ~~((t1 - t0) / 1000);
+    let text = '';
+    if(seconds < 60){text = `${seconds} seconds ago`;}
+    else if(seconds < 3600 ){text = `${~~(seconds / 60)} minutes ago`;}
+    else if(seconds / 3600 < 24){text = `${~~(seconds / 3600)} hours ago`;}
+    else if(seconds / 3600 / 24 < 30){text = `${~~(seconds / 3600 / 24)} days ago`;}
+    else if(seconds / 3600 / 24 / 30 < 365){text = `${~~(seconds / 3600 / 24/ 30)} months ago`;}
+    else {text = `${~~(seconds / 3600 / 24 / 30 / 365)} months ago`;}
+    return text;
   },
 
   render(){
     const url = this.props.post.photo_url;
     const user = SelectedUserStore.get();
+    const time = this.makeTimestamp();
+
     let profilePic = '';
     let thumbnail = '';
     let comment = '';
@@ -37,10 +58,15 @@ const TimelineIndexItem = React.createClass({
     return(
       <div className="timeline-index-item">
         <div className="post-display">
-          <img className="post-header-pic" src={thumbnail} />
+          <Link to={`/timeline/${user.id}`}>
+            <img className="post-header-pic" src={thumbnail} />
+            <span className="post-name">{user.full_name}</span><br/>
+            <span className="post-timestamp">{time}</span>
+          </Link>
           <p className="post-text">{this.props.post.body}</p>
           <img className="post-photo" src={photo} />
         </div>
+        <CommentIndex post={this.props.post} />
         <div className="comment">
           <img className="comment-thumbnail" src={comment} />
           <form className="comment-form" onSubmit={this.handleSubmit}>

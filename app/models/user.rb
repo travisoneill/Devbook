@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
 
   has_many :posts
   has_many :photos
+  has_many :comments
   has_many :incoming_requests, class_name: "Requesting", foreign_key: :recipient_id
   has_many :outgoing_requests, class_name: "Requesting", foreign_key: :initiator_id
 
@@ -40,40 +41,59 @@ class User < ActiveRecord::Base
     user && user.is_password?(pw) ? user : nil
   end
 
+  # def friends
+  #   user = User.find(self.id)
+  #   user.friends_test1.union(user.friends_test2)
+  # end
+
   def friends
-    user = User.find(self.id)
-    user.friends_test1.union(user.friends_test2)
+
+    id = self.id
+
+    friends_query = <<-SQL
+
+      SELECT u1.*
+      FROM users AS u2
+      JOIN friendships AS f
+        ON u2.id = f.user_id2
+      JOIN users AS u1
+        ON u1.id = f.user_id1
+      WHERE u2.id = #{id}
+
+      UNION
+
+      SELECT u2.*
+      FROM users AS u1
+      JOIN friendships AS f
+        ON u1.id = f.user_id1
+      JOIN users AS u2
+        ON u2.id = f.user_id2
+      WHERE u1.id = #{id};
+
+    SQL
+
+    User.find_by_sql(friends_query)
+
   end
 
-  # def friends
-  #
-  #   id = self.id
-  #
-  #   friends_query = <<-SQL
-  #
-  #     SELECT u1.*
-  #     FROM users AS u2
-  #     JOIN friendships AS f
-  #       ON u2.id = f.user_id2
-  #     JOIN users AS u1
-  #       ON u1.id = f.user_id1
-  #     WHERE u2.id = #{id}
-  #
-  #     UNION
-  #
-  #     SELECT u2.*
-  #     FROM users AS u1
-  #     JOIN friendships AS f
-  #       ON u1.id = f.user_id1
-  #     JOIN users AS u2
-  #       ON u2.id = f.user_id2
-  #     WHERE u1.id = #{id};
-  #
-  #   SQL
-  #
-  #   User.find_by_sql(friends_query)
-  #
-  # end
+  def posts_query
+    posts_query = <<-SQL
+
+      SELECT u.profile_pic_url, u.full_name, c.*, p.*
+      FROM posts AS p
+      JOIN comments AS c
+        ON c.post_id = p.id
+      JOIN users AS u
+        ON u.id = p.user_id
+      WHERE p.id = #{id}
+
+    SQL
+  end
+
+  def posts_plus_comments
+    Post.eager_load(comments: :user).where(user_id: self.id)
+    # User.eager_load(posts: {comments: :user}).where(id: 1)
+  end
 
   private
 

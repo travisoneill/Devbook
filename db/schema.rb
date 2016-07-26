@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160707023143) do
+ActiveRecord::Schema.define(version: 20160725032614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,17 @@ ActiveRecord::Schema.define(version: 20160707023143) do
   add_index "actions", ["action_type"], name: "index_actions_on_action_type", using: :btree
   add_index "actions", ["initiator_id"], name: "index_actions_on_initiator_id", using: :btree
   add_index "actions", ["recipient_id"], name: "index_actions_on_recipient_id", using: :btree
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "post_id",    null: false
+    t.string   "body",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "friendships", force: :cascade do |t|
     t.integer  "user_id1",   null: false

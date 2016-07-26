@@ -19,6 +19,7 @@ module.exports = {
   remove_incoming: "REMOVE INCOMING",
   add_friend: "ADD_FRIEND",
   add_incoming: "ADD_INCOMING",
-  accept_request: "ACCEPT_REQUEST"
+  accept_request: "ACCEPT_REQUEST",
+  add_comment: "ADD_COMMENT"
 
 };

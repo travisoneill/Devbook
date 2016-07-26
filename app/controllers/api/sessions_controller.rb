@@ -16,6 +16,14 @@ class Api::SessionsController < ApplicationController
     end
   end
 
+  def relation
+    @relation = {};
+    @user.friends.each { |f| @relation[f.id] = "friends" }
+    @user.incoming.each { |i| @relation[i.id] = "incoming" }
+    @user.outgoing.each { |o| @relation[o.id] = "outgoing" }
+    render json: @relation
+  end
+
   def destroy
     @user = current_user
     sign_out

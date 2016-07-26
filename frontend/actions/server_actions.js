@@ -7,7 +7,7 @@ const ServerActions = {
   storeCurrentUser(user){
     Dispatcher.dispatch({
       actionType: Constants.store_current_user,
-      user: user
+      user: user,
     });
   },
 
@@ -45,10 +45,12 @@ const ServerActions = {
     });
   },
 
-  storeTimeline(posts){
+  storeTimeline(resp){
     Dispatcher.dispatch({
       actionType: Constants.store_timeline,
-      posts: posts
+      posts: resp.posts,
+      comments: resp.comments,
+      commenters: resp.commenters
     });
   },
 
@@ -148,8 +150,15 @@ const ServerActions = {
       actionType: Constants.accept_request,
       friend: friend
     });
-  }
+  },
 
+  storeComment(comment){
+    Dispatcher.dispatch({
+      actionType: Constants.add_comment,
+      comment: comment.comment,
+      user: comment.user
+    });
+  }
 
 };
 

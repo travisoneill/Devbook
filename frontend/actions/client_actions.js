@@ -82,6 +82,10 @@ module.exports = {
     ServerActions.clearSearch();
   },
 
+  addComment(comment){
+    ApiCalls.addComment(comment, ServerActions.storeComment)
+  }
+
   // buttonState(current, selected){
   //   ApiCalls.buttonState(current, selected, )
   // }
