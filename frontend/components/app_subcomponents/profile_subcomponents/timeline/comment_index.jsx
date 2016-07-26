@@ -59,9 +59,12 @@ const CommentIndex = React.createClass({
   },
 
   render(){
-    const index = this.state.comments.map( (comment) => {
-      return <CommentIndexItem key={comment.id} comment={comment} />
-    });
+    let index = [];
+    if(this.state.comments){
+      index = this.state.comments.map( (comment) => {
+        return <CommentIndexItem key={comment.id} comment={comment} />
+      });
+    }
     return(
       <div className="comment-index">
         {index}

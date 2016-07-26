@@ -166,7 +166,7 @@ div {
 }
 
 .profile-tab-button:hover {
-  background: #F6F7F9
+  background: #F6F7F9;
 }
 
 .profile-tab-button:disabled {
@@ -581,6 +581,8 @@ div {
 }
 
 .recent-photo-overlay:hover {
+  transition-property: opacity;
+  transition-duration: 0.5;
   opacity: 1;
 }
 
@@ -618,6 +620,8 @@ div {
 }
 
 .mutual-friend-overlay:hover {
+  transition-property: opacity;
+  transition-duration: 0.5s;
   opacity: 1;
 }
 

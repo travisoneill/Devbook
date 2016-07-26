@@ -42,7 +42,7 @@ const AddFriend = React.createClass({
   },
 
   getStatus(current, selected){
-    debugger;
+    // debugger;
     this.setState({status: CurrentUserStore.relation(selected.id)});
     // Api.buttonState(current, selected, this._onResponse);
   },

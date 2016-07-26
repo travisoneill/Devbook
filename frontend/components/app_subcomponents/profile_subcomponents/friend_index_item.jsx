@@ -3,6 +3,8 @@ const Transform = require('../../../constants/transformations');
 const FriendButton = require('../../util/add_friend');
 const CurrentUserStore = require('../../../stores/current_user_store');
 const SelectedUserStore = require('../../../stores/selected_user_store');
+const Link = require('react-router').Link;
+
 
 const FriendIndexItem = React.createClass({
   render(){
@@ -20,11 +22,13 @@ const FriendIndexItem = React.createClass({
     }
     return(
       <div className="friend-container">
-        <div className="friend-overlay-div">
-          <p className="friend-overlay">{name}</p>
-          {button}
-        </div>
-        <img className="friend-wall-item" src={url} />
+        <Link to={`timeline/${this.props.friend.id}`}>
+          <div className="friend-overlay-div">
+            <p className="friend-overlay">{name}</p>
+            {button}
+          </div>
+          <img className="friend-wall-item" src={url} />
+        </Link>
       </div>
     );
   }

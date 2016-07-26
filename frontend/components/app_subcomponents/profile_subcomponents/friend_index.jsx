@@ -52,11 +52,11 @@ const FriendIndex = React.createClass({
 
   render(){
     const friends = this.state.friends.map( (friend) => {
-      return <FriendIndexItem key={friend.id} friend={friend} request={false} />;
+      return <FriendIndexItem key={`f${friend.id}`} friend={friend} request={false} />;
     });
 
     const incoming = this.state.incoming.map( (user) => {
-      return <FriendIndexItem key={user.id} friend={user} request={true} />;
+      return <FriendIndexItem key={`i${user.id}`} friend={user} request={true} />;
     });
 
     const index = incoming.concat(friends);
