@@ -2,6 +2,7 @@ const React = require('react');
 const ClientActions = require('../../actions/client_actions');
 const SearchBar = require('./search_bar');
 const hashHistory = require('react-router').hashHistory;
+const Link = require('react-router').Link;
 const Transform = require('../../constants/transformations');
 const Defaults = require('../../constants/defaults');
 const CurrentUserStore = require('../../stores/current_user_store');
@@ -29,6 +30,9 @@ const AppTitlebar = React.createClass({
           <img className='titlebar-thumbnail' src={thumbnail} />
         </div>
         <p className='titlebar-name'>{name}</p>
+        <Link to={`timeline/${user.id}`}>
+          <p className="titlebar-link">Home</p>
+        </Link>
         <button className="logout-button" onClick={this.logout}>Logout</button>
       </div>
     );

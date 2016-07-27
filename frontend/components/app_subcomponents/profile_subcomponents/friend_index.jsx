@@ -19,19 +19,21 @@ const FriendIndex = React.createClass({
     const user = SelectedUserStore.get();
     this.listener = FriendStore.addListener(this._onChange);
     this.listener2 = SelectedUserStore.addListener(this._onChange2)
-    ClientActions.getAllFriends(user);
-    if(SelectedUserStore.get() === CurrentUserStore.get()){
+    if(user){ClientActions.getAllFriends(user)};
+    if(user.id === CurrentUserStore.get().id){
+      debugger;
       ClientActions.getAllIncoming(user);
     }
   },
 
-  // componentWillReceiveProps(){
-  //   const user = SelectedUserStore.get();
-  //   ClientActions.getAllFriends(user);
-  //   if(SelectedUserStore.get() === CurrentUserStore.get()){
-  //     ClientActions.getAllIncoming(user);
-  //   }
-  // },
+  componentWillReceiveProps(newProps){
+    const user = SelectedUserStore.get();
+    if(user){ClientActions.getAllFriends(user);}
+    if(user.id === CurrentUserStore.get().id){
+      debugger;
+      ClientActions.getAllIncoming(user);
+    }
+  },
 
   _onChange(){
     this.setState({friends: FriendStore.all(), incoming: FriendStore.incoming()});
@@ -51,15 +53,15 @@ const FriendIndex = React.createClass({
   },
 
   render(){
-    const friends = this.state.friends.map( (friend) => {
+    let friends = this.state.friends.map( (friend) => {
       return <FriendIndexItem key={`f${friend.id}`} friend={friend} request={false} />;
     });
 
-    const incoming = this.state.incoming.map( (user) => {
+    let incoming = this.state.incoming.map( (user) => {
       return <FriendIndexItem key={`i${user.id}`} friend={user} request={true} />;
     });
 
-    const index = incoming.concat(friends);
+    let index = incoming.concat(friends);
 
     return(
       <div className="photo-index">

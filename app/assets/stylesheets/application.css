@@ -67,6 +67,13 @@ div {
   border: 1px solid #334B78;
 }
 
+.titlebar-link {
+  display: inline;
+  margin: 5px;
+  position: relative;
+  bottom: 10px;
+}
+
 .app-sidebar {
   margin-top: 44px;
   width: 250px;
