@@ -1,12 +1,14 @@
 const React = require('react');
 const PhotoIndex = require('./photo_index');
+const Default = require('../../../constants/defaults');
 
 const Photos = React.createClass({
 
   render(){
     return(
       <div className="photos-content">
-        <h4>Photos</h4>
+        <img className='header-icon' src={Default.ph_icon}/>
+        <h4 className="photos-header-text">Photos</h4>
         <PhotoIndex />
       </div>
     );

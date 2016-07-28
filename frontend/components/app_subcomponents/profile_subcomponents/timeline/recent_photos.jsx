@@ -5,6 +5,8 @@ const SelectedUserStore = require('../../../../stores/selected_user_store');
 const CurrentUserStore = require('../../../../stores/current_user_store');
 const ClientActions = require('../../../../actions/client_actions');
 const Transform = require('../../../../constants/transformations');
+const Default =  require('../../../../constants/defaults');
+
 
 const IndexItem = React.createClass({
 
@@ -55,7 +57,8 @@ const RecentPhotos = React.createClass({
 
     return(
       <div className="recent-photos">
-        <h4>{title}</h4>
+        <img className='header-icon pm' src={Default.pm_icon}/>
+        <h4 className='header rp'>{title}</h4>
         <div className="recent-photos-index">
           {index}
         </div>

@@ -1,6 +1,7 @@
 const React = require('react');
 const ClientActions = require('../../../actions/client_actions');
 const ServerActions = require('../../../actions/server_actions');
+const Default = require('../../../constants/defaults');
 const FriendIndex = require('./friend_index');
 const SelectedUserStore = require('../../../stores/selected_user_store');
 
@@ -37,7 +38,8 @@ const Friends = React.createClass({
     let user = this.state.user;
     return(
       <div className="friends-content">
-        <h4>Friends</h4>
+        <img src={Default.fh_icon} className='header-icon friends' />
+        <h4 className='friends-header-title'>Friends</h4>
         <FriendIndex user={user} />
       </div>
     );

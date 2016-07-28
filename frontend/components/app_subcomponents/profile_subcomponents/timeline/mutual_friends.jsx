@@ -5,6 +5,7 @@ const SelectedUserStore = require('../../../../stores/selected_user_store');
 const CurrentUserStore = require('../../../../stores/current_user_store');
 const ClientActions = require('../../../../actions/client_actions');
 const Transform = require('../../../../constants/transformations');
+const Default =  require('../../../../constants/defaults');
 const Link = require('react-router').Link;
 
 
@@ -20,7 +21,7 @@ const IndexItem = React.createClass({
         <Link to={`timeline/${user.id}`}>
           <img src={url} className="mutual-friend-image" />
           <div className="mutual-friend-overlay">
-            <p>{name}</p>
+            <p className='mutual-friend-text'>{name}</p>
           </div>
         </Link>
       </div>
@@ -64,7 +65,8 @@ const MutualFriends = React.createClass({
 
     return(
       <div className="mutual-friends">
-        <h4>{title} - {count}</h4>
+        <img className='header-icon mf' src={Default.mf_icon}/>
+        <h4 className='header mf'>{title} - {count}</h4>
         <div className="mutual-friends-index">
           {index}
         </div>

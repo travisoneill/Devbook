@@ -21,7 +21,6 @@ const FriendIndex = React.createClass({
     this.listener2 = SelectedUserStore.addListener(this._onChange2)
     if(user){ClientActions.getAllFriends(user)};
     if(user.id === CurrentUserStore.get().id){
-      debugger;
       ClientActions.getAllIncoming(user);
     }
   },
@@ -30,7 +29,6 @@ const FriendIndex = React.createClass({
     const user = SelectedUserStore.get();
     if(user){ClientActions.getAllFriends(user);}
     if(user.id === CurrentUserStore.get().id){
-      debugger;
       ClientActions.getAllIncoming(user);
     }
   },

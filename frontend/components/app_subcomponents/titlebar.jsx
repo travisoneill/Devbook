@@ -30,10 +30,10 @@ const AppTitlebar = React.createClass({
           <img className='titlebar-thumbnail' src={thumbnail} />
         </div>
         <p className='titlebar-name'>{name}</p>
-        <Link to={`timeline/${user.id}`}>
-          <p className="titlebar-link">Home</p>
-        </Link>
         <button className="logout-button" onClick={this.logout}>Logout</button>
+        <Link to={`timeline/${user.id}`}>
+          <button className="titlebar-link">Home</button>
+        </Link>
       </div>
     );
   }

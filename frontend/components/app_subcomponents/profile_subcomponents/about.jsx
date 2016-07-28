@@ -1,11 +1,20 @@
 const React = require('react');
-
+const Default = require('../../../constants/defaults');
 const About = React.createClass({
 
   render(){
     return(
-      <div className="profile-content">
-        <h4>About</h4>
+      <div className="about-content">
+          <div className='about-header'>
+            <img className='header-icon about' src={Default.about_icon}/>
+            <p className='about-title'>About</p>
+          </div>
+          <div className='about-sidebar'>
+
+          </div>
+          <div className='about-main'>
+
+          </div>
       </div>
     );
   }

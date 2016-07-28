@@ -10,5 +10,10 @@ module.exports = {
   logo_text_black: 'http://res.cloudinary.com/devbook/image/upload/v1468019292/devbook/app-images/DB-logo-text-black.png',
   logo_text_blue: 'http://res.cloudinary.com/devbook/image/upload/v1468019293/devbook/app-images/DB-logo-pic-blue.png',
   logo_text_white: 'http://res.cloudinary.com/devbook/image/upload/v1468019292/devbook/app-images/DB-logo-text-white.png',
-  trashcan: 'http://res.cloudinary.com/devbook/image/upload/h_40,c_fill/v1468105768/Trashcan_o6g7ip.png'
+  trashcan: 'http://res.cloudinary.com/devbook/image/upload/h_40,c_fill/v1468105768/Trashcan_o6g7ip.png',
+  about_icon: 'http://res.cloudinary.com/devbook/image/upload/v1469661752/devbook/app-images/info_24.png',
+  pm_icon: 'http://res.cloudinary.com/devbook/image/upload/v1469665377/devbook/app-images/photos-icon.png',
+  mf_icon: 'http://res.cloudinary.com/devbook/image/upload/v1469665370/devbook/app-images/mutual-friends-icon.png',
+  ph_icon: 'http://res.cloudinary.com/devbook/image/upload/v1469666681/devbook/app-images/ph_icon.png',
+  fh_icon: 'http://res.cloudinary.com/devbook/image/upload/v1469667312/devbook/app-images/friends_24.png'
 };

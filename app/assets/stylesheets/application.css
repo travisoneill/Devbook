@@ -68,11 +68,22 @@ div {
 }
 
 .titlebar-link {
-  display: inline;
-  margin: 5px;
-  position: relative;
-  bottom: 10px;
+  display: inline-block;
+  padding: 5px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  padding-right: 8px;
+  padding-left: 8px;
+  float: right;
+  /*border: 1px solid;*/
+  border-radius: 2px;
+  border-right: 1px solid #355089;
 }
+
+.titlebar-link:hover {
+  background: #355089;
+}
+
 
 .app-sidebar {
   margin-top: 44px;
@@ -423,19 +434,26 @@ div {
 }
 
 .logout-button {
-  float: right;
+  display: inline-block;
   padding: 5px;
-  margin: 6px;
-  background: #4D6BAB;
-  border: 1px solid #334B78;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  padding-right: 8px;
+  padding-left: 8px;
+  float: right;
   border-radius: 2px;
+}
+
+.logout-button:hover {
+  background: #355089;
 }
 
 .splash-container {
   display: flex;
   height: 100vh;
   position: relative;
-  background-image: url(http://res.cloudinary.com/devbook/image/upload/v1467997293/devbook/app-images/business-network.jpg);  background-size: cover;
+  background-image: url(/devbook/image/upload/w_2000,h_2000/v1467997293/devbook/app-images/business-network.jpg);
+  background-size: cover;
 }
 
 .splash-titlebar {
@@ -564,6 +582,7 @@ div {
 .recent-photos-index {
   line-height: 0px;
   padding: 2px;
+  margin-top: 13px;
 }
 
 .recent-photo-container {
@@ -603,16 +622,29 @@ div {
 .mutual-friends-index {
   line-height: 0px;
   padding: 2px;
+  margin-top: 13px;
+}
+
+.header.rp {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.header.mf {
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 .mutual-friend-container {
   /*border: 1px solid #E5E6E9;
   border-bottom: 1px solid #D0D1D4;*/
   display: inline-block;
-  width: 98px;
-  height: 98px;
+  width: 100px;
+  height: 100px;
   position: relative;
-  margin: 2px;
+  margin: 1px;
+  color: #ffffff;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
 
 }
 
@@ -627,9 +659,19 @@ div {
 }
 
 .mutual-friend-overlay:hover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 30%);
   transition-property: opacity;
   transition-duration: 0.5s;
   opacity: 1;
+}
+
+.mutual-friend-text {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
 }
 
 .post-display {
@@ -661,6 +703,23 @@ div {
   box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 }
 
+.photo-index {
+  margin-top: 23px;
+}
+
+.photos-header-text {
+  font-size: 24px;
+  font-weight: 600;
+  color: #4b4f56;
+  margin: 23px;
+}
+
+.friends-header-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #4b4f56;
+  margin: 23px;
+}
 
 .comment-thumbnail {
   float: left;
@@ -808,8 +867,22 @@ div {
 
 .header-friend-button {
   position: absolute;
-  bottom: 80px;
-  right: 100px;
+  bottom: 35px;
+  right: 20px;
+  float: right;
+  padding: 2px;
+  margin: 9px;
+  border: 0px;
+  padding: 5px;
+  padding-right: 15px;
+  padding-left: 15px;
+  background: rgba(75, 96, 140, 1);
+  color: white;
+  border-radius: 2px;
+}
+
+.header-friend-button:hover {
+  box-shadow: 0 0 2px 2px rgba(75, 96, 140, 1);
 }
 
 .search-friend-button {
@@ -1000,6 +1073,49 @@ div {
   bottom: 10px;
 }
 
+.about-content {
+  margin-top: 385px;
+  width: 832px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #D3D6DB;
+
+}
+
+.about-header {
+  flex: 100%;
+  background: #F6F7F9;
+  border-bottom: 1px solid #D3D6DB;
+  font-size: 24px;
+  font-weight: 600;
+  color: #4b4f56;
+}
+.about-sidebar {
+  flex: 25%;
+  height: 100px;
+  background: #ffffff;
+  border-right: 1px solid #cccccc;
+}
+
+.about-main {
+  flex: 74.7%;
+  height: 100px;
+  background: #ffffff;
+}
+
+.about-title {
+  padding: 10px;
+}
+
+.header-icon.about {
+
+}
+
+.header-icon {
+  float: left;
+  margin: 10px;
+  margin-top: 12px;
+}
 
 .round-button {
   width: 162px;
