@@ -3,18 +3,27 @@ const React = require('react');
 const Splash = React.createClass({
   render() {
     return (
-      <div className="splash-container">
-        <div className='splash-upper'>
-
-        </div>
-        <SplashPanel/>
-        <div className='splash-lower'>
-
-        </div>
+      <div>
       </div>
     );
   }
 });
+
+// const Splash = React.createClass({
+//   render() {
+//     return (
+//       <div className="splash-container">
+//         <div className='splash-upper'>
+//
+//         </div>
+//         <SplashPanel/>
+//         <div className='splash-lower'>
+//
+//         </div>
+//       </div>
+//     );
+//   }
+// });
 
 const SplashPanel = React.createClass({
   handleClick(evt){
