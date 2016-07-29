@@ -12,13 +12,15 @@ const TimelineIndex = React.createClass({
 
   componentDidMount(){
     this.listener = PostStore.addListener(this._onChange);
-    ClientActions.getTimeline(this.props.user.id);
+    const selector = this.props.user.id === CurrentUserStore.get().id;
+    ClientActions.getTimeline(this.props.user.id, selector);
   },
 
   componentWillReceiveProps(newProps){
     this.setState({user: newProps.user });
     if(newProps.user){
-      ClientActions.getTimeline(newProps.user.id);
+      const selector = newProps.user.id === CurrentUserStore.get().id;
+      ClientActions.getTimeline(newProps.user.id, selector);
     }
   },
 

@@ -6,7 +6,7 @@ const CurrentUserStore = require('../../../../stores/current_user_store');
 const ClientActions = require('../../../../actions/client_actions');
 const Transform = require('../../../../constants/transformations');
 const Default =  require('../../../../constants/defaults');
-
+const Link = require('react-router').Link;
 
 const IndexItem = React.createClass({
 
@@ -54,11 +54,14 @@ const RecentPhotos = React.createClass({
     const index = this.state.photos.slice(0, 9).map( (photo) => {
       return <IndexItem key={photo.id} photo={photo} />;
     });
+    const id = (this.state.photos[0] || {}).user_id;
 
     return(
       <div className="recent-photos">
-        <img className='header-icon pm' src={Default.pm_icon}/>
-        <h4 className='header rp'>{title}</h4>
+        <Link to={`photos/${id}`}>
+          <img className='header-icon pm' src={Default.pm_icon}/>
+          <h4 className='header rp'>{title}</h4>
+        </Link>
         <div className="recent-photos-index">
           {index}
         </div>

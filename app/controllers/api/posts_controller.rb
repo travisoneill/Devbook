@@ -43,6 +43,14 @@ class Api::PostsController < ApplicationController
 
   end
 
+  def other_timeline
+
+  end
+
+  def personal_timeline
+
+  end
+
   def timeline
     @posts = User.find(params[:id]).posts_plus_comments
     @comments = {}

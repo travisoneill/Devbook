@@ -69,8 +69,8 @@ module.exports = {
     ApiCalls.createPost(post, ServerActions.storePost);
   },
 
-  getTimeline(id){
-    ApiCalls.getTimeline(id, ServerActions.storeTimeline);
+  getTimeline(id, selector){
+    ApiCalls.getTimeline(id, selector, ServerActions.storeTimeline);
   },
 
   userSearch(str){

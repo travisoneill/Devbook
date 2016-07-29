@@ -18,6 +18,30 @@ class User < ActiveRecord::Base
   has_many :friends_test1, class_name: "User", through: :friendships1, source: :user2
   has_many :friends_test2, class_name: "User", through: :friendships2, source: :user1
 
+  # has_many :f1, ->{friends_test1 << friends_test2}, class_name: 'User'
+
+
+  # has_many :f3, ->{Friendship.where(user_id1: self.id).or(user_id2: self.id)}, class_name: 'Friendship'
+
+  # def self.method(id)
+  #   Friendship.unscoped.where('user_id1 = ? OR user_id2 = ?', id, id)
+  # end
+
+
+
+
+
+  def method2
+    friendships = Friendship.unscoped.where('user_id1 = ? OR user_id2 = ?', self.id, self.id)
+    # preload_associations(friendships, [:user1, :user2])
+    # return friendships
+  end
+
+
+  # has_many :f3, ->{Friendship.unscoped.where('user_id1 = ? OR user_id2 = ?', self.id, self.id)}, class_name: "User"
+
+  # has_many :f1, ->{method2}, class_name: 'User'
+
 
   attr_reader :password
 
@@ -41,10 +65,10 @@ class User < ActiveRecord::Base
     user && user.is_password?(pw) ? user : nil
   end
 
-  # def friends
-  #   user = User.find(self.id)
-  #   user.friends_test1.union(user.friends_test2)
-  # end
+  def friends2
+    user = User.find(self.id)
+    user.friends_test1.union(user.friends_test2)
+  end
 
   def friends
 
@@ -93,6 +117,14 @@ class User < ActiveRecord::Base
   def posts_plus_comments
     Post.eager_load(comments: :user).where(user_id: self.id)
     # User.eager_load(posts: {comments: :user}).where(id: 1)
+  end
+
+  # def friend_posts_plus_comments
+  #   User.eager_load(:friends_test1: {posts: {comments: :user}}).where(user_id: self.id)
+  # end
+
+  def fff
+    User.eager_load(friends_test1: {posts: {comments: :user}}).where(user_id: self.id)
   end
 
   private

@@ -7,7 +7,7 @@ const hashHistory = require('react-router').hashHistory;
 const ServerActions = require('./actions/server_actions');
 const ClientActions = require('./actions/client_actions');
 
-const Splash = require('./components/splash');
+const Splash = require('./components/splash2');
 const App = require('./components/app');
 
 const Profile = require('./components/app_subcomponents/profile');

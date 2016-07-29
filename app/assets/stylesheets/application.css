@@ -448,12 +448,87 @@ div {
   background: #355089;
 }
 
-.splash-container {
+/*.splash-container {
   display: flex;
   height: 100vh;
   position: relative;
-  background-image: url(/devbook/image/upload/w_2000,h_2000/v1467997293/devbook/app-images/business-network.jpg);
+  background-image: url(http://res.cloudinary.com/devbook/image/upload/w_2000,h_2000,c_fill/v1467997293/devbook/app-images/business-network.jpg);
   background-size: cover;
+}*/
+
+.splash-container {
+  /*background-image: url(http://res.cloudinary.com/devbook/image/upload/v1469747863/devbook/app-images/splash_copy.jpg);
+  background-size: cover;*/
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.splash-upper {
+  background-image: url(http://res.cloudinary.com/devbook/image/upload/v1469747863/devbook/app-images/splash_copy.jpg);
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  flex: 5;
+}
+
+.splash-panel {
+  position: absolute;
+  top: 50vh;
+  right: 20vw;
+  background: rgba(0, 0, 0, 0.8);
+  width: 60vw;
+  height: 40vh;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.splash-button-bar {
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+}
+
+.splash-button {
+  flex: 1;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup {
+  border-bottom-left-radius: 10px;
+}
+
+.submit {
+  border-bottom-right-radius: 10px;
+}
+
+.splash-button:hover {
+  background: #000000;
+}
+
+.splash-button:disabled {
+
+}
+
+.splash-form-container {
+  flex:1;
+}
+
+.splash-form {
+
+}
+
+.splash-lower {
+  background-image: url(http://res.cloudinary.com/devbook/image/upload/v1469747863/devbook/app-images/splash_copy.jpg);
+  background-size: cover;
+  flex: 1;
+
 }
 
 .splash-titlebar {
@@ -623,6 +698,10 @@ div {
   line-height: 0px;
   padding: 2px;
   margin-top: 13px;
+}
+
+.header:hover {
+  text-decoration: underline;
 }
 
 .header.rp {
