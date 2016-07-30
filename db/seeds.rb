@@ -556,11 +556,27 @@ user_pics = [
 
 
 
+assigned_profile = [
+  'http://res.cloudinary.com/devbook/image/upload/v1467419720/devbook/user-uploads/auvcnpvva15mtgiuafuj.jpg',
+  'http://res.cloudinary.com/devbook/image/upload/v1467924865/devbook/user-uploads/m9tur8fvbyti0pamobzf.jpg',
+  'http://res.cloudinary.com/devbook/image/upload/v1467924901/devbook/user-uploads/jd5ckn6pfx1j342bq3p7.jpg',
+  'http://res.cloudinary.com/devbook/image/upload/v1467924982/devbook/user-uploads/kybxfedfdfgkrlpsi0gk.jpg',
+  'http://res.cloudinary.com/devbook/image/upload/v1467925077/devbook/user-uploads/hu4awbvsiuzuymjgw7sc.jpg',
+  'http://res.cloudinary.com/devbook/image/upload/v1467925026/devbook/user-uploads/lcjssntasqe4l6ijcbt5.jpg',
+  'http://res.cloudinary.com/devbook/image/upload/v1467925101/devbook/user-uploads/fqgkbi4eatrdhfe8z1ev.jpg',
+  'http://res.cloudinary.com/devbook/image/upload/v1467778210/devbook/user-uploads/ixa40rhwd4vwgcrwbnos.jpg'
+]
 
-
-
-
-
+assigned_cover = [
+  'http://res.cloudinary.com/devbook/image/upload/v1467419939/devbook/user-uploads/imnmqu5on8zofprbwp8y.jpg',
+  'http://res.cloudinary.com/devbook/image/upload/v1469836130/devbook/user-uploads/babbage-engine-main_copy.jpg',
+  "https://res.cloudinary.com/devbook/image/upload/v1469837054/yryrhjxzqtbft9t1dchh.jpg",
+  "https://res.cloudinary.com/devbook/image/upload/v1469837056/ktrvaa3mmf8bdd6rkgra.jpg",
+  "https://res.cloudinary.com/devbook/image/upload/v1469837057/pqspdzau1kddf2p5czqq.jpg",
+  "https://res.cloudinary.com/devbook/image/upload/v1469837057/pqe8ohbdtj76fglyt0p4.jpg",
+  "https://res.cloudinary.com/devbook/image/upload/v1469837058/veipeluqpvgqjp9evhk0.jpg",
+  "https://res.cloudinary.com/devbook/image/upload/v1469837059/sgvrl3lmhtrii1f7vs2c.png"
+ ]
 
 
 
@@ -570,14 +586,14 @@ user_pics = [
 
 
 seeds = [
-  { fname: "Administrator", lname: ".", email: "your thoughts", password: "let there be light" },
-  { fname: "Charles", lname: "Babbage", email: "telegraph", password: "password" },
-  { fname: "Alan", lname: "Turing", email: "captcha@gmail.com", password: "password" },
-  { fname: "Al", lname: "Gore", email: "inventor@darpa.gov", password: "password" },
-  { fname: "Bill", lname: "Gates", email: "founder@apple.com", password: "password" },
-  { fname: "Steve", lname: "Jobs", email: "founder@microsoft.com", password: "password" },
-  { fname: "Sergey", lname: "Brin", email: "founder@google.com", password: "password" },
-  { fname: "Robert');", lname: "DROP TABLE users;--", email: "bobbytables@gmail.com", password: "password" }
+  { fname: "Administrator", lname: ".", email: "your thoughts", password: "let there be light", profile_pic_url: assigned_profile[0], cover_pic_url: assigned_cover[0] },
+  { fname: "Charles", lname: "Babbage", email: "telegraph", password: "password", profile_pic_url: assigned_profile[1], cover_pic_url: assigned_cover[1] },
+  { fname: "Alan", lname: "Turing", email: "captcha@gmail.com", password: "password", profile_pic_url: assigned_profile[2], cover_pic_url: assigned_cover[2] },
+  { fname: "Al", lname: "Gore", email: "inventor@darpa.gov", password: "password", profile_pic_url: assigned_profile[3], cover_pic_url: assigned_cover[3] },
+  { fname: "Bill", lname: "Gates", email: "founder@apple.com", password: "password", profile_pic_url: assigned_profile[4], cover_pic_url: assigned_cover[4] },
+  { fname: "Steve", lname: "Jobs", email: "founder@microsoft.com", password: "password", profile_pic_url: assigned_profile[5], cover_pic_url: assigned_cover[5] },
+  { fname: "Sergey", lname: "Brin", email: "founder@google.com", password: "password", profile_pic_url: assigned_profile[6], cover_pic_url: assigned_cover[6] },
+  { fname: "Robert');", lname: "DROP TABLE users;--", email: "bobbytables@gmail.com", password: "password", profile_pic_url: assigned_profile[7], cover_pic_url: assigned_cover[7] }
 ]
 
 user_pics.length.times do |n|
@@ -602,11 +618,16 @@ requester = Api::RequestingsController.new
 
 combinations = []
 n = User.count
+map = Hash.new(false)
 until combinations.length == n * 30
-  combinations.uniq!
-  id1 = rand(n) + 1
-  id2 = rand(n) + 1
-  combinations << [id1, id2].sort
+  arr = [rand(n) + 1, rand(n) + 1].sort
+  while arr[0] == arr[1]
+    arr = [rand(n) + 1, rand(n) + 1].sort
+  end
+  if map[arr.hash] == false
+    combinations << arr.shuffle
+    map[arr.hash] = true
+  end
   puts combinations.length if combinations.length % 1000 == 0
 end
 
@@ -626,11 +647,12 @@ end
 
 poster = Api::PostsController.new
 photo_seeder = Api::PhotosController.new
+comment_seeder = Api::CommentsController.new
 
 User.all.each do |user|
   10.times do |n|
     if n % 2 === 0
-      data = {user_id: user.id, photo_url: user_pics.sample, body: Faker::Lorem.paragraph}
+      data = {user_id: user.id, photo_url: pics.sample, body: Faker::Lorem.paragraph}
     else
       data = {user_id: user.id, body: Faker::Lorem.paragraph}
     end
@@ -638,8 +660,26 @@ User.all.each do |user|
   end
 
   21.times do
-    data2 = {user_id: user.id, url: user_pics.sample}
+    data2 = {user_id: user.id, url: pics.sample}
     photo_seeder.seed(data2)
   end
-
 end
+
+User.all.each do |user|
+  friends = user.friends
+  20.times do
+    post = friends.sample.posts.sample
+    data = {user_id: user.id, post_id: post.id, body: Faker::Lorem.paragraph(1)}
+    comment_seeder.seed(data)
+  end
+end
+
+# def tester
+#   t0 = Time.now
+#   1000.times do
+#     arr = [rand(171), rand(171)]
+#     arr.hash
+#   end
+#   t1 = Time.now
+#   p t1 - t0
+# end

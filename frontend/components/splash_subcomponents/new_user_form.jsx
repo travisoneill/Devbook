@@ -6,7 +6,6 @@ const NewUserForm = React.createClass({
   getInitialState() {
     return { fname: "", lname: "", email: "", email2: "", password: "",
             match: true, DD: "", MM: "", YYYY: "", incomplete: true,
-            hidden: true};
   },
 
   checkComplete(){
