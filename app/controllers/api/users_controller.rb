@@ -9,6 +9,7 @@ class Api::UsersController < ApplicationController
     user1 = User.find(params[:id1])
     user2 = User.find(params[:id2])
     @mutual = (user1.friends & user2.friends)
+    @mutual.each {|m| m.remove_private}
     @mutual << @mutual.length
     render json: @mutual
   end
@@ -56,13 +57,13 @@ class Api::UsersController < ApplicationController
     @user = User.find(params[:id])
     @incoming = @user.incoming_requests
     @outgoing = @user.outgoing_requests
-    render json: @user
+    render json: @user.remove_private
   end
 
   def update
     user = User.find(params[:id])
     if user.update!(user_params)
-      render json: user
+      render json: user.remove_private
     else
       flash.now[:errors] = @user.errors.full_messages
     end
@@ -83,7 +84,7 @@ class Api::UsersController < ApplicationController
       to_destroy.each do |object|
         object.destroy!
       end
-      render json: user
+      render json: user.remove_private
     else
       flash.now[:errors] = @user.errors.full_messages
     end
@@ -115,14 +116,14 @@ class Api::UsersController < ApplicationController
 
   def friends
     @user = User.find(params[:id])
-    @friends = @user.friends
+    @friends = @user.friends.each {|f| f.remove_private}
     @friends << @friends.length
     render json: @friends
   end
 
   def incoming
     @user = User.find(params[:id])
-    @incoming = @user.incoming
+    @incoming = @user.incoming.each {|f| f.remove_private}
     render json: @incoming
   end
 

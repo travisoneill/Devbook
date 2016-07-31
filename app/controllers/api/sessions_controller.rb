@@ -9,6 +9,7 @@ class Api::SessionsController < ApplicationController
     )
     if @user
       sign_in(@user)
+      @user.remove_private
       render json: @user
     else
       flash.now[:errors] = ["Invalid Credentials"]
@@ -28,6 +29,6 @@ class Api::SessionsController < ApplicationController
   def destroy
     @user = current_user
     sign_out
-    render json: @user
+    render json: @user.remove_private
   end
 end

@@ -26,7 +26,8 @@ CurrentUserStore.setRelation = function(relation){
 };
 
 CurrentUserStore.securityCheck = function(){
-  if(_currentUser.session_token || _currentUser.password_digest){
+  let user = _currentUser || {};
+  if(user.session_token || user.password_digest){
     console.log('SECURITY ISSUE');
   }
 }

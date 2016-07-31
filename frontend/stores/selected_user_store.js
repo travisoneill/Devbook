@@ -12,7 +12,8 @@ SelectedUserStore.get = function(){
 };
 
 SelectedUserStore.securityCheck = function(){
-  if(_selectedUser.session_token || _selectedUser.password_digest){
+  let user = _selectedUser || {};
+  if(user.session_token || user.password_digest){
     console.log('SECURITY ISSUE');
   }
 }

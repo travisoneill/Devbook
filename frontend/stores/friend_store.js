@@ -9,7 +9,7 @@ let _count = 0;
 const FriendStore = new Store(Dispatcher);
 
 FriendStore.all = function(){
-  return _friends;
+  return _friends.slice(0);
 };
 
 FriendStore.count = function(){
@@ -17,7 +17,7 @@ FriendStore.count = function(){
 };
 
 FriendStore.incoming = function(){
-  return _incoming;
+  return _incoming.slice(0);
 };
 
 FriendStore.empty = function(){
@@ -61,15 +61,24 @@ FriendStore.removeIncoming = function(incoming){
   _incoming = update;
 };
 
+FriendStore.securityCheck = function(){
+  let issue = false;
+  _friends.forEach( (friend) => {
+    if(friend.password_digest || friend.session_token){issue = true}
+    if(issue){console.log('SECURITY ISSUE')};
+  });
+}
 
 FriendStore.__onDispatch = function(payload){
   switch(payload.actionType){
     case Constants.store_incoming:
       FriendStore.storeIncoming(payload.incoming);
+      FriendStore.securityCheck();
       this.__emitChange();
       break;
     case Constants.store_friends:
       FriendStore.addAll(payload.friends);
+      FriendStore.securityCheck();
       this.__emitChange();
       break;
     case Constants.remove_friend:
@@ -79,6 +88,7 @@ FriendStore.__onDispatch = function(payload){
     case Constants.accept_request:
       FriendStore.removeIncoming(payload.friend);
       FriendStore.add(payload.friend);
+      FriendStore.securityCheck();
       this.__emitChange();
       break;
     case Constants.empty_friends:

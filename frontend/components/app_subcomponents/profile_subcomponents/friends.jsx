@@ -24,7 +24,7 @@ const Friends = React.createClass({
   },
 
   componentWillReceiveProps(newProps){
-    if(newProps.params.id){
+    if(newProps.params.id && this.props.params.id && newProps.params.id !== this.props.params.id){
       ClientActions.selectUser(newProps.params.id);
     }
   },
