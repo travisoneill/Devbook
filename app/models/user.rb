@@ -191,7 +191,7 @@ class User < ActiveRecord::Base
   end
 
   def posts_plus_comments
-    Post.eager_load(comments: :user).where(user_id: self.id).limit(25)
+    Post.eager_load(:user, comments: :user).where(user_id: self.id).limit(25)
     # User.eager_load(posts: {comments: :user}).where(id: 1)
   end
 

@@ -58,29 +58,33 @@ class Api::PostsController < ApplicationController
   #into objects that can be used on the front end
   def personal_timeline
     @posts = User.find(params[:id]).tl_posts(25)
+    @posters = {};
     @comments = {};
     @commenters = {};
     @posts.each do |post|
+      @posters[post.id] = {name: post.user.full_name, url: post.user.profile_pic_url}
       @comments[post.id] = post.comments.sort {|x, y| x.created_at <=> y.created_at}
       post.comments.each do |comment|
         @commenters[comment.id] = {name: comment.user.full_name, url: comment.user.profile_pic_url}
       end
     end
-    render json: {posts: @posts, comments: @comments, commenters: @commenters}
+    render json: {posts: @posts, posters: @posters, comments: @comments, commenters: @commenters}
   end
 
   #does the same as personal_timeline but only for the selected users own posts
   def other_timeline
     @posts = User.find(params[:id]).posts_plus_comments
-    @comments = {}
+    @posters = {};
+    @comments = {};
     @commenters = {};
     @posts.each do |post|
+      @posters[post.id] = {name: post.user.full_name, url: post.user.profile_pic_url}
       @comments[post.id] = post.comments
       post.comments.each do |comment|
         @commenters[comment.id] = {name: comment.user.full_name, url: comment.user.profile_pic_url}
       end
     end
-    render json: {posts: @posts, comments: @comments, commenters: @commenters}
+    render json: {posts: @posts, posters: @posters, comments: @comments, commenters: @commenters}
   end
 
   private

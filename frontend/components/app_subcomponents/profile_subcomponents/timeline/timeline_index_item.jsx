@@ -1,10 +1,12 @@
 const React = require('react');
 const Transform = require('../../../../constants/transformations');
-const SelectedUserStore = require('../../../../stores/selected_user_store');
+// const SelectedUserStore = require('../../../../stores/selected_user_store');
 const CurrentUserStore = require('../../../../stores/current_user_store');
+const PostStore = require('../../../../stores/post_store');
 const Link = require('react-router').Link;
 const CommentIndex = require('./comment_index');
 const ClientActions = require('../../../../actions/client_actions');
+
 
 
 const TimelineIndexItem = React.createClass({
@@ -24,7 +26,6 @@ const TimelineIndexItem = React.createClass({
     const post = this.props.post;
     const val = this.state.comment;
     const id = CurrentUserStore.get().id;
-    debugger;
     ClientActions.addComment({body: this.state.comment, user_id: id, post_id: post.id});
     this.setState({comment: ''});
   },
@@ -45,14 +46,14 @@ const TimelineIndexItem = React.createClass({
 
   render(){
     const url = this.props.post.photo_url;
-    const user = SelectedUserStore.get();
+    const poster = PostStore.getPoster(this.props.post);
     const time = this.makeTimestamp();
 
     let profilePic = '';
     let thumbnail = '';
     let comment = '';
-    if(user){
-      profilePic = user.profile_pic_url;
+    if(poster){
+      profilePic = poster.url;
       thumbnail = Transform.profilePic2(profilePic);
       comment = Transform.profilePic3(CurrentUserStore.get().profile_pic_url);
     }
@@ -60,9 +61,9 @@ const TimelineIndexItem = React.createClass({
     return(
       <div className="timeline-index-item">
         <div className="post-display">
-          <Link to={`/timeline/${user.id}`}>
+          <Link to={`/timeline/${this.props.post.user_id}`}>
             <img className="post-header-pic" src={thumbnail} />
-            <span className="post-name">{user.full_name}</span><br/>
+            <span className="post-name">{poster.name}</span><br/>
             <span className="post-timestamp">{time}</span>
           </Link>
           <p className="post-text">{this.props.post.body}</p>

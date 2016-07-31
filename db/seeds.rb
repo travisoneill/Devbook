@@ -607,18 +607,27 @@ user_pics.length.times do |n|
 end
 
 seeder = Api::UsersController.new
+friender = Api::FriendshipsController.new
+requester = Api::RequestingsController.new
+poster = Api::PostsController.new
+photographer = Api::PhotosController.new
+commenter = Api::CommentsController.new
 
 seeds.each do |seed|
   seeder.user = User.new(seed)
   seeder.create
 end
 
-friender = Api::FriendshipsController.new
-requester = Api::RequestingsController.new
 
 combinations = []
 n = User.count
 map = Hash.new(false)
+(2..8).each do |n|
+  arr = [1, n]
+  map[arr.hash] = true
+  combinations << arr
+end
+
 until combinations.length == n * 30
   arr = [rand(n) + 1, rand(n) + 1].sort
   while arr[0] == arr[1]
@@ -645,9 +654,6 @@ combinations[n..-1].each_with_index do |r, idx|
   puts idx if idx % 1000 == 0
 end
 
-poster = Api::PostsController.new
-photo_seeder = Api::PhotosController.new
-comment_seeder = Api::CommentsController.new
 
 User.all.each do |user|
   10.times do |n|
@@ -661,7 +667,7 @@ User.all.each do |user|
 
   21.times do
     data2 = {user_id: user.id, url: pics.sample}
-    photo_seeder.seed(data2)
+    photographer.seed(data2)
   end
 end
 
@@ -670,9 +676,29 @@ User.all.each do |user|
   20.times do
     post = friends.sample.posts.sample
     data = {user_id: user.id, post_id: post.id, body: Faker::Lorem.paragraph(1)}
-    comment_seeder.seed(data)
+    commenter.seed(data)
   end
 end
+
+friends = User.first(8)
+25.times do |n|
+  friend = friends.sample
+  if n % 2 === 0
+    data = {user_id: friend.id, photo_url: pics.sample, body: Faker::Lorem.paragraph}
+  else
+    data = {user_id: friend.id, body: Faker::Lorem.paragraph}
+  end
+  poster.seed(data)
+end
+
+posts = Post.last(25)
+50.times do
+  post = posts.sample
+  user = post.user.friends.sample
+  data = {user_id: user.id, post_id: post.id, body: Faker::Lorem.paragraph(1)}
+  commenter.seed(data)
+end
+
 
 # def tester
 #   t0 = Time.now

@@ -10,7 +10,7 @@ class Post < ActiveRecord::Base
   # end
 
   def self.tl_posts(arr, lim)
-    Post.where(user_id: arr).order(created_at: :desc).limit(lim).eager_load(comments: :user)
+    Post.where(user_id: arr).order(created_at: :desc).limit(lim).eager_load(:user, comments: :user)
   end
 
 end

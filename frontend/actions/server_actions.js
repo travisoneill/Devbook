@@ -56,6 +56,7 @@ const ServerActions = {
     Dispatcher.dispatch({
       actionType: Constants.store_timeline,
       posts: resp.posts,
+      posters: resp.posters,
       comments: resp.comments,
       commenters: resp.commenters
     });
