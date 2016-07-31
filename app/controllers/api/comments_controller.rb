@@ -2,9 +2,10 @@ class Api::CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     post_author = @comment.post.user
+    commenter = @comment.user
     if @comment.save!
       Action.create!(initiator_id: @comment.user_id, recipient_id: post_author.id, action_type: 'comment')
-      render json: {comment: @comment, user: {name: post_author.full_name, url: post_author.profile_pic_url} }
+      render json: {comment: @comment, user: {name: commenter.full_name, url: commenter.profile_pic_url} }
     else
       flash[:errors] = "Error"
     end

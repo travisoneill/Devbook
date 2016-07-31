@@ -23,7 +23,9 @@ const TimelineIndexItem = React.createClass({
     e.preventDefault();
     const post = this.props.post;
     const val = this.state.comment;
-    ClientActions.addComment({body: this.state.comment, user_id: post.user_id, post_id: post.id});
+    const id = CurrentUserStore.get().id;
+    debugger;
+    ClientActions.addComment({body: this.state.comment, user_id: id, post_id: post.id});
     this.setState({comment: ''});
   },
 

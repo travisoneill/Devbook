@@ -61,7 +61,7 @@ class Api::PostsController < ApplicationController
     @comments = {};
     @commenters = {};
     @posts.each do |post|
-      @comments[post.id] = post.comments
+      @comments[post.id] = post.comments.sort {|x, y| x.created_at <=> y.created_at}
       post.comments.each do |comment|
         @commenters[comment.id] = {name: comment.user.full_name, url: comment.user.profile_pic_url}
       end
