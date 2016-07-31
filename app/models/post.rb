@@ -9,4 +9,8 @@ class Post < ActiveRecord::Base
   #   Post.eager_load(comments: :user).where(user_id: id)
   # end
 
+  def self.tl_posts(arr, lim)
+    Post.where(user_id: arr).order(created_at: :desc).limit(lim).eager_load(comments: :user)
+  end
+
 end

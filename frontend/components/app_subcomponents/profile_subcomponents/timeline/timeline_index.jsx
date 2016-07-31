@@ -7,7 +7,7 @@ const ClientActions = require('../../../../actions/client_actions');
 
 const TimelineIndex = React.createClass({
   getInitialState(){
-    return { user: this.props.user, posts: PostStore.all() };
+    return { posts: PostStore.all() };
   },
 
   componentDidMount(){
@@ -17,7 +17,6 @@ const TimelineIndex = React.createClass({
   },
 
   componentWillReceiveProps(newProps){
-    this.setState({user: newProps.user });
     if(newProps.user){
       const selector = newProps.user.id === CurrentUserStore.get().id;
       ClientActions.getTimeline(newProps.user.id, selector);

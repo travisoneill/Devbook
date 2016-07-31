@@ -19,7 +19,9 @@ const LoginForm = React.createClass({
     this.setState({password: val});
   },
 
-  handleSubmit(evt)
+  handleSubmit(evt){
+    evt.preventDefault();
+  }
 
   render(){
     let component = (

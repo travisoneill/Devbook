@@ -65,9 +65,30 @@ class User < ActiveRecord::Base
     user && user.is_password?(pw) ? user : nil
   end
 
-  def friends2
-    user = User.find(self.id)
-    user.friends_test1.union(user.friends_test2)
+  def self.friends2(id)
+    friends_query = <<-SQL
+
+      SELECT u1.*
+      FROM users AS u2
+      JOIN friendships AS f
+        ON u2.id = f.user_id2
+      JOIN users AS u1
+        ON u1.id = f.user_id1
+      WHERE u2.id = #{id}
+
+      UNION
+
+      SELECT u2.*
+      FROM users AS u1
+      JOIN friendships AS f
+        ON u1.id = f.user_id1
+      JOIN users AS u2
+        ON u2.id = f.user_id2
+      WHERE u1.id = #{id};
+
+    SQL
+
+    User.find_by_sql(friends_query)
   end
 
   def friends
@@ -100,6 +121,45 @@ class User < ActiveRecord::Base
 
   end
 
+  def t2
+
+    id = self.id
+
+    timeline_eager_load = <<-SQL
+      SELECT u1.*, p.*, c.*, u3.full_name, u3.profile_pic_url
+      FROM users AS u1
+      JOIN friendships AS f
+        ON u1.id = f.user_id1
+      JOIN users AS u2
+        ON u2.id = f.user_id2
+      JOIN posts AS p
+        ON u2.id = p.user_id
+      JOIN comments AS c
+        ON c.post_id = p.id
+      JOIN users as u3
+        ON c.user_id = u3.id
+      WHERE u1.id = 1
+
+      UNION
+
+      SELECT u1.*, p.*, c.*, u3.full_name, u3.profile_pic_url
+      FROM users AS u1
+      JOIN friendships AS f
+        ON u1.id = f.user_id2
+      JOIN users AS u2
+        ON u2.id = f.user_id1
+      JOIN posts AS p
+        ON u2.id = p.user_id
+      JOIN comments AS c
+        ON c.post_id = p.id
+      JOIN users as u3
+        ON c.user_id = u3.id
+      WHERE u1.id = 1
+      LIMIT 1
+    SQL
+    User.find_by_sql(timeline_eager_load)
+  end
+
   def posts_query
     posts_query = <<-SQL
 
@@ -114,8 +174,24 @@ class User < ActiveRecord::Base
     SQL
   end
 
+  def timeline
+      id = self.id
+      User.where(id: User.find(id).friends.map(&:id)).eager_load(posts: {comments: :user})
+  end
+
+  def tl_posts(n)
+    f_ids = self.friends.map(&:id) << self.id
+    Post.eager_load(comments: :user).where(user_id: f_ids).order(created_at: :desc).limit(n)
+  end
+
+  def remove_private
+    self.session_token = nil
+    self.password_digest = nil
+    self
+  end
+
   def posts_plus_comments
-    Post.eager_load(comments: :user).where(user_id: self.id)
+    Post.eager_load(comments: :user).where(user_id: self.id).limit(25)
     # User.eager_load(posts: {comments: :user}).where(id: 1)
   end
 

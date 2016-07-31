@@ -70,7 +70,8 @@ module.exports = {
   },
 
   getTimeline(id, selector){
-    ApiCalls.getTimeline(id, selector, ServerActions.storeTimeline);
+    let tlType = selector ? "own" : "other"
+    ApiCalls.getTimeline(id, tlType, ServerActions.storeTimeline);
   },
 
   userSearch(str){

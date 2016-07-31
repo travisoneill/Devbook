@@ -90,12 +90,12 @@ module.exports = {
     });
   },
 
-  getTimeline(id, selector, serverAction){
+  getTimeline(id, tlType, serverAction){
     $.ajax({
       url: `api/posts/timeline/${id}`,
       type: `GET`,
       dataType: `json`,
-      data: {selector: selector},
+      data: {tl_type: tlType},
       success(resp){
         console.log(resp);
         serverAction(resp);

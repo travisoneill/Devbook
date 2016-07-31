@@ -43,15 +43,34 @@ class Api::PostsController < ApplicationController
 
   end
 
-  def other_timeline
-
-  end
-
-  def personal_timeline
-
-  end
-
+  #API call for timeline hits here
+  #decides which type of timeline needs to be loaded based on AJAX req data
   def timeline
+    if params[:tl_type] == 'own'
+      personal_timeline
+    else
+      other_timeline
+    end
+  end
+
+  #selects most recent 25 comments by the current user or any of his friends
+  #selects all comments and relevant user data for comment authors and organizes
+  #into objects that can be used on the front end
+  def personal_timeline
+    @posts = User.find(params[:id]).tl_posts(25)
+    @comments = {};
+    @commenters = {};
+    @posts.each do |post|
+      @comments[post.id] = post.comments
+      post.comments.each do |comment|
+        @commenters[comment.id] = {name: comment.user.full_name, url: comment.user.profile_pic_url}
+      end
+    end
+    render json: {posts: @posts, comments: @comments, commenters: @commenters}
+  end
+
+  #does the same as personal_timeline but only for the selected users own posts
+  def other_timeline
     @posts = User.find(params[:id]).posts_plus_comments
     @comments = {}
     @commenters = {};
