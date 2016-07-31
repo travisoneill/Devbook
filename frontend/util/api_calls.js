@@ -91,6 +91,7 @@ module.exports = {
   },
 
   getTimeline(id, tlType, serverAction){
+    debugger;
     $.ajax({
       url: `api/posts/timeline/${id}`,
       type: `GET`,

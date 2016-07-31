@@ -3,7 +3,7 @@ const Store = require('flux/utils').Store;
 const Constants = require('../constants/constants');
 
 
-let _selectedUser = undefined;
+let _selectedUser = {};
 
 const SelectedUserStore = new Store(Dispatcher);
 
@@ -11,10 +11,17 @@ SelectedUserStore.get = function(){
   return _selectedUser;
 };
 
+SelectedUserStore.securityCheck = function(){
+  if(_selectedUser.session_token || _selectedUser.password_digest){
+    console.log('SECURITY ISSUE');
+  }
+}
+
 SelectedUserStore.__onDispatch = function(payload){
   switch(payload.actionType){
     case Constants.store_selected_user:
       _selectedUser = payload.user;
+      SelectedUserStore.securityCheck();
       localStorage.selected = _selectedUser;
       console.log(_selectedUser);
       this.__emitChange();

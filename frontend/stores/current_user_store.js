@@ -25,14 +25,22 @@ CurrentUserStore.setRelation = function(relation){
   _relation = relation;
 };
 
+CurrentUserStore.securityCheck = function(){
+  if(_currentUser.session_token || _currentUser.password_digest){
+    console.log('SECURITY ISSUE');
+  }
+}
+
 CurrentUserStore.__onDispatch = function(payload){
   switch(payload.actionType){
     case Constants.store_current_user:
       CurrentUserStore.store(payload);
+      CurrentUserStore.securityCheck();
       this.__emitChange();
       break;
     case Constants.set_relation:
-      CurrentUserStore.setRelation(payload.relation)
+      CurrentUserStore.setRelation(payload.relation);
+      CurrentUserStore.securityCheck();
       console.log(_relation);
       break;
     case Constants.logout:

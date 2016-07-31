@@ -46,7 +46,7 @@ const CommentIndex = React.createClass({
   },
 
   componentDidMount(){
-    this.listener = PostStore.addListener(this._onChange);
+    // this.listener = PostStore.addListener(this._onChange);
     this.setState({comments: PostStore.comments(this.props.post)})
   },
 
@@ -55,7 +55,7 @@ const CommentIndex = React.createClass({
   },
 
   componentWillUnmount(){
-    this.listener.remove();
+    // this.listener.remove();
   },
 
   render(){

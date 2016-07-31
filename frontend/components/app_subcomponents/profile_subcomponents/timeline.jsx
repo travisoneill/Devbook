@@ -8,39 +8,40 @@ const SelectedUserStore = require('../../../stores/selected_user_store');
 
 const Timeline = React.createClass({
 
-  getInitialState(){
-    return({user: SelectedUserStore.get()});
-  },
+  // getInitialState(){
+  //   return({user: SelectedUserStore.get()});
+  // },
 
   componentDidMount(){
-    this.listener = SelectedUserStore.addListener(this._onChange);
+    // this.listener = SelectedUserStore.addListener(this._onChange);
     if(this.props.params.id){
       ClientActions.selectUser(this.props.params.id);
     }
   },
 
   componentWillReceiveProps(newProps){
-    if(newProps.params.id){
+    let id = newProps.params.id
+    if(id && id !== this.props.params.id){
       ClientActions.selectUser(newProps.params.id);
     }
   },
 
-  _onChange(){
-    this.setState({user: SelectedUserStore.get()});
-  },
+  // _onChange(){
+  //   this.setState({user: SelectedUserStore.get()});
+  // },
 
   componentWillUnmount(){
-    this.listener.remove();
+    // this.listener.remove();
     ServerActions.emptyFriends();
   },
 
   render(){
     return(
       <div className="profile-container">
-        <TimelineSidebar user={this.state.user} />
+        <TimelineSidebar user={this.props.user} />
         <div className="profile-content">
-          <NewPostForm user={this.state.user} />
-          <TimelineIndex user={this.state.user} />
+          <NewPostForm user={this.props.user} />
+          <TimelineIndex user={this.props.user} />
         </div>
       </div>
     );

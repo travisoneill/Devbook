@@ -17,7 +17,7 @@ const TimelineIndex = React.createClass({
   },
 
   componentWillReceiveProps(newProps){
-    if(newProps.user){
+    if(newProps.user && this.props.user && newProps.user.id !== this.props.user.id){
       const selector = newProps.user.id === CurrentUserStore.get().id;
       ClientActions.getTimeline(newProps.user.id, selector);
     }
