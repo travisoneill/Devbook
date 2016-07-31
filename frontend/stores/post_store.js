@@ -1,6 +1,7 @@
 const Dispatcher = require('../dispatcher/dispatcher');
 const Store = require('flux/utils').Store;
 const Constants = require('../constants/constants');
+const CurrentUserStore = require('./current_user_store');
 
 let _posts = [];
 let _posters = {};
@@ -48,7 +49,9 @@ PostStore.empty = function(){
 
 PostStore.add = function(post){
   // _posts[post.id] = post;
+  let poster = CurrentUserStore.get();
   _posts.unshift(post);
+  _posters[post.id] = {name: poster.full_name, url: poster.profile_pic_url};
   _comments[post.id] = [];
 };
 
