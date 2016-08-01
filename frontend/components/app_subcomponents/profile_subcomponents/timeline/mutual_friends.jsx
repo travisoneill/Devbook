@@ -48,8 +48,16 @@ const MutualFriends = React.createClass({
           <img className='header-icon mf' src={Default.mf_icon}/>
           <h4 className='header mf'>{title} - {count}</h4>
         </Link>
-          <div className="mutual-friends-index">
-          {index}
+        <div className="mutual-friends-index">
+          <div className="mutual-friends-row">
+            {index.slice(0,3)}
+          </div>
+          <div className="mutual-friends-row">
+            {index.slice(3,6)}
+          </div>
+          <div className="mutual-friends-row">
+            {index.slice(6,9)}
+          </div>
         </div>
       </div>
     );
@@ -67,8 +75,8 @@ const IndexItem = React.createClass({
 
     return(
       <div className="mutual-friend-container">
-        <Link to={`timeline/${user.id}`}>
-          <img src={url} className="mutual-friend-image" />
+        <Link className='mutual-friend-link' to={`timeline/${user.id}`}>
+          <img className='mutual-friend-image' src={url} className="mutual-friend-image" />
           <div className="mutual-friend-overlay">
             <p className='mutual-friend-text'>{name}</p>
           </div>

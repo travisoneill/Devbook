@@ -57,28 +57,48 @@ const TimelineIndexItem = React.createClass({
       thumbnail = Transform.profilePic2(profilePic);
       comment = Transform.profilePic3(CurrentUserStore.get().profile_pic_url);
     }
-    const photo = url ? Transform.postPic(url) : '';
+
+    let photo = <div/>
+
+    if(url){
+      photo = (<div className='flex-row image'>
+          <img className="post-photo" src={Transform.postPic(url)} />
+      </div>)
+    }
+
     return(
       <div className="timeline-index-item">
         <div className="post-display">
-          <Link to={`/timeline/${this.props.post.user_id}`}>
-            <img className="post-header-pic" src={thumbnail} />
-            <span className="post-name">{poster.name}</span><br/>
-            <span className="post-timestamp">{time}</span>
-          </Link>
-          <p className="post-text">{this.props.post.body}</p>
-          <img className="post-photo" src={photo} />
+          <div className='flex-row' >
+            <Link className='post-header-link' to={`/timeline/${this.props.post.user_id}`}>
+              <div className='flex-img-container' >
+                <img className="post-header-pic" src={thumbnail} />
+              </div>
+              <div className='flex-text-container'>
+                <span className="post-name">{poster.name}</span>
+                <span className="post-timestamp">{time}</span>
+              </div>
+            </Link>
+          </div>
+          <div className='flex-row'>
+            <div className='flex-text-container2'>
+              <p className="post-text">{this.props.post.body}</p>
+            </div>
+          </div>
+          {photo}
         </div>
-        <CommentIndex post={this.props.post} />
-        <div className="comment">
-          <img className="comment-thumbnail" src={comment} />
-          <form className="comment-form" onSubmit={this.handleSubmit}>
-            <input type="text"
-                  className="comment-form-input"
-                  placeholder="Write a Comment..."
-                  onChange={this.commentChange}
-                  value={this.state.comment} />
-          </form>
+        <div className='comment-container'>
+          <CommentIndex post={this.props.post} />
+          <div className="comment">
+            <img className="comment-thumbnail" src={comment} />
+            <form className="comment-form" onSubmit={this.handleSubmit}>
+              <input type="text"
+                className="comment-form-input"
+                placeholder="Write a Comment..."
+                onChange={this.commentChange}
+                value={this.state.comment} />
+            </form>
+          </div>
         </div>
       </div>
     );

@@ -17,7 +17,7 @@ module.exports = {
   },
 
   postPic(url){
-    return this.transformPic(url, 476, 476);
+    return this.transformPic(url, 600, 600);
   },
 
   photoWall(url){

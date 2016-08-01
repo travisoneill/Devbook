@@ -28,12 +28,18 @@ const CommentIndexItem = React.createClass({
     const name = info.name;
     return(
       <div className="comment-display">
-        <Link to={`/timeline/${this.props.comment.user_id}`}>
-          <img className="comment-thumbnail-pic" src={url} />
-          <span className="comment-name">{name}</span><br/>
-        </Link>
-        <p className="comment-text">{body}</p>
-        <span className="comment-timestamp">{time}</span>
+        <div className='comment-img-container'>
+          <Link to={`/timeline/${this.props.comment.user_id}`}>
+            <img className="comment-thumbnail-pic" src={url} />
+          </Link>
+        </div>
+        <div className='comment-text-container'>
+          <Link to={`/timeline/${this.props.comment.user_id}`}>
+            <span className="comment-name">{name}</span>
+          </Link>
+          <span className="comment-timestamp">{time}</span><br/>
+          <span className="comment-text">{body}</span>
+        </div>
       </div>
     );
   }

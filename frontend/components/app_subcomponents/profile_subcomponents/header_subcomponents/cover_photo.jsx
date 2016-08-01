@@ -9,11 +9,11 @@ const CoverPhoto = React.createClass({
     let cover = Transform.coverPhoto(coverUrl);
     let name = this.props.user ? this.props.user.full_name : "";
     return (
-      <div className="cover-photo">
+      <div className="cover-photo-container">
         <div className="cover-photo-overlay">
           <PhotoUploadButton action="cover" location={"cover"} />
         </div>
-        <img src={cover} />
+        <img className='cover-photo' src={cover} />
         <h4 className="profile-name">{name}</h4>
       </div>
     );

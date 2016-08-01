@@ -766,6 +766,14 @@ div {
   margin: 5px;
 }
 
+.mutual-friend-text {
+
+}
+
+.mutual-friend-link {
+
+}
+
 .mutual-friend-text:hover {
   text-decoration: underline;
 }

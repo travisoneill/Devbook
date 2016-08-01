@@ -15,9 +15,9 @@ const IndexItem = React.createClass({
     const url = Transform.transformPic(photo.url, 100, 100);
 
     return(
-      <div className="recent-photo-container">
-        <img src={url} className="recent-photo-image" />
-        <div className="recent-photo-overlay">
+      <div className="mutual-friend-container">
+        <img src={url} className="mutual-friend-image" />
+        <div className="mutual-friend-overlay">
         </div>
       </div>
     );
@@ -57,13 +57,21 @@ const RecentPhotos = React.createClass({
     const id = (this.state.photos[0] || {}).user_id;
 
     return(
-      <div className="recent-photos">
-        <Link to={`photos/${id}`}>
+      <div className="mutual-friends">
+        <Link className='mutual-friend-link' to={`photos/${id}`}>
           <img className='header-icon pm' src={Default.pm_icon}/>
           <h4 className='header rp'>{title}</h4>
         </Link>
-        <div className="recent-photos-index">
-          {index}
+        <div className="mutual-friends-index">
+          <div className="mutual-friends-row">
+            {index.slice(0,3)}
+          </div>
+          <div className="mutual-friends-row">
+            {index.slice(3,6)}
+          </div>
+          <div className="mutual-friends-row">
+            {index.slice(6,9)}
+          </div>
         </div>
       </div>
     );
