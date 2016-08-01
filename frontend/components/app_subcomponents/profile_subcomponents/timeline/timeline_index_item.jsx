@@ -90,7 +90,9 @@ const TimelineIndexItem = React.createClass({
         <div className='comment-container'>
           <CommentIndex post={this.props.post} />
           <div className="comment">
-            <img className="comment-thumbnail" src={comment} />
+            <div className='comment-img-container'>
+              <img className="comment-thumbnail" src={comment} />
+            </div>
             <form className="comment-form" onSubmit={this.handleSubmit}>
               <input type="text"
                 className="comment-form-input"
