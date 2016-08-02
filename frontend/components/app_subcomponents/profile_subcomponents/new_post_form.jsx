@@ -36,7 +36,9 @@ const NewPostForm = React.createClass({
     const thumbnail = profileUrl ? Transform.profilePic2(profileUrl) : "";
     return(
       <div className="new-post-form">
-        <img className="post-form-thumbnail" src={thumbnail} />
+        <div className='flex-img-container'>
+          <img className="post-form-thumbnail" src={thumbnail} />
+        </div>
         <PhotoUploadButton action="post" />
         <form className="post-form" onSubmit={this.handleSubmit}>
           <input type="text"

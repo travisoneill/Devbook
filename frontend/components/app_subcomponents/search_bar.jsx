@@ -40,9 +40,7 @@ const SearchBar = React.createClass({
     let dropdown = this.state.results.map( (result) => {
       return <SearchIndexItem key={result.id} result={result} />;
     });
-    let component = (<div className="search-dropdown">
-      <ul className="search-list">{dropdown}</ul>
-    </div>);
+    let component = (<div className="search-dropdown">{dropdown}</div>);
     if(dropdown.length < 1){ component = <div/> }
     return(
       <div className="search-bar">

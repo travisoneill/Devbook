@@ -19,7 +19,7 @@ const SearchIndexItem = React.createClass({
     const name = this.props.result.full_name;
     const id = this.props.result.id;
     return(
-      <li className="search-dropdown-item" >
+      <div className="search-dropdown-item" >
         <Link to={`/timeline/${id}`}
               className="search-link"
               onClick={this.handleClick}>
@@ -29,7 +29,7 @@ const SearchIndexItem = React.createClass({
                         selected={this.props.result}
                         location={"search-friend-button"} />
         </Link>
-      </li>
+      </div>
     );
   }
 });

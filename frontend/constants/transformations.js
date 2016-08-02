@@ -1,15 +1,15 @@
 module.exports = {
 
   profilePic(url){
-    return this.transformPic(url, 160, 160);
+    return this.transformPic(url, 250, 250);
   },
 
   profilePic2(url){
-    return this.transformPic(url, 40, 40);
+    return this.transformPic(url, 70, 70);
   },
 
   profilePic3(url){
-    return this.transformPic(url, 32, 32);
+    return this.transformPic(url, 70, 70);
   },
 
   coverPhoto(url){
@@ -17,7 +17,7 @@ module.exports = {
   },
 
   postPic(url){
-    return this.transformPic(url, 600, 600);
+    return this.transformPic(url, 700, 700);
   },
 
   photoWall(url){

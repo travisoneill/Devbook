@@ -22,18 +22,22 @@ const AppTitlebar = React.createClass({
     const thumbnail = Transform.profilePic3(user.profile_pic_url);
     return(
       <div className="app-titlebar">
-        <div className="titlebar-logo-container" >
-          <img src={url} className="titlebar-logo" />
+        <div className="titlebar-logo-container">
+          <img src={url} className="titlebar-logo"/>
         </div>
         <SearchBar />
-        <div className="titlebar-thumbnail-container">
-          <img className='titlebar-thumbnail' src={thumbnail} />
+        <div className='titlebar-name-container'>
+          <div className="titlebar-thumbnail-container">
+            <img className='titlebar-thumbnail' src={thumbnail} />
+          </div>
+          <p className='titlebar-name'>{name}</p>
         </div>
-        <p className='titlebar-name'>{name}</p>
-        <button className="logout-button" onClick={this.logout}>Logout</button>
-        <Link to={`timeline/${user.id}`}>
-          <button className="titlebar-link">Home</button>
-        </Link>
+        <div className='titlebar-button-container'>
+          <Link to={`timeline/${user.id}`}>
+            <button className="titlebar-link">Home</button>
+          </Link>
+          <button className="logout-button" onClick={this.logout}>Logout</button>
+        </div>
       </div>
     );
   }
