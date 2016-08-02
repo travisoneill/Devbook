@@ -16,14 +16,14 @@ const AppTitlebar = React.createClass({
   },
 
   render(){
-    const url = Transform.titlebarLogo(Defaults.logo_pic_white_blue);
+    const url = Defaults.app_logo;
     const user = CurrentUserStore.get()
     const name = user.full_name;
     const thumbnail = Transform.profilePic3(user.profile_pic_url);
     return(
       <div className="app-titlebar">
         <div className="titlebar-logo-container">
-          <img src={url} className="titlebar-logo"/>
+          <img className='app-logo' src={url} className="titlebar-logo"/>
         </div>
         <SearchBar />
         <div className='titlebar-name-container'>

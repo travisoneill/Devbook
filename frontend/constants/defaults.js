@@ -10,6 +10,7 @@ module.exports = {
   logo_text_black: 'http://res.cloudinary.com/devbook/image/upload/v1468019292/devbook/app-images/DB-logo-text-black.png',
   logo_text_blue: 'http://res.cloudinary.com/devbook/image/upload/v1468019293/devbook/app-images/DB-logo-pic-blue.png',
   logo_text_white: 'http://res.cloudinary.com/devbook/image/upload/v1468019292/devbook/app-images/DB-logo-text-white.png',
+  app_logo: 'http://res.cloudinary.com/devbook/image/upload/h_32,c_scale/v1468019292/devbook/app-images/DB-logo-text-white.png',
   trashcan: 'http://res.cloudinary.com/devbook/image/upload/h_40,c_fill/v1468105768/Trashcan_o6g7ip.png',
   about_icon: 'http://res.cloudinary.com/devbook/image/upload/v1469661752/devbook/app-images/info_24.png',
   pm_icon: 'http://res.cloudinary.com/devbook/image/upload/v1469665377/devbook/app-images/photos-icon.png',

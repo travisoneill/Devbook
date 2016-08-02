@@ -2,6 +2,7 @@ const React = require('react');
 const ClientActions = require('../actions/client_actions');
 const LoginForm = require('./splash_subcomponents/login_form2');
 const SignupForm = require('./splash_subcomponents/new_user_form2');
+const Default = require('../constants/defaults');
 
 const Splash = React.createClass({
   render() {
@@ -12,7 +13,9 @@ const Splash = React.createClass({
         </div>
         <SplashPanel/>
         <div className='splash-lower'>
-
+          <div className='splash-text-container'>
+            <h4 className='splash-text'>Kinda Like Facebook. But with more Flex Box!</h4>
+          </div>
         </div>
       </div>
     );
@@ -67,6 +70,9 @@ const SplashPanel = React.createClass({
 
     return(
       <div className='splash-panel'>
+        <div className='splash-logo-container'>
+          <img className='splash-image' src={Default.logo_text_white}/>
+        </div>
         <div className='splash-form-container'>
           {form}
         </div>

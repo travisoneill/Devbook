@@ -557,7 +557,20 @@ body {
  background: #000000;
  flex: 1;
  height: 10%;
+ display: flex;
+ justify-content: center;
+}
 
+.splash-image {width: 45vw;}
+
+.splash-text-container {
+
+}
+
+.splash-text {
+  margin: 0px;
+  color: #ffffff;
+  font-size: 24px;
 }
 
 .splash-titlebar {
