@@ -32,14 +32,12 @@ const SplashPanel = React.createClass({
     evt.preventDefault();
     if(this.state.view === 'login' && evt.target.id === 'login'){this.handleSubmit();}
     this.setState({view: evt.target.id});
-    // console.log(evt.target.id);
   },
 
   handleSubmit(){
     const email = document.getElementById('login-email').value;
     const pw = document.getElementById('login-pw').value;
     const data = { user: {email: email, password: pw} };
-    console.log(data);
     ClientActions.login(data);
   },
 

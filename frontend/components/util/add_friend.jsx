@@ -35,16 +35,13 @@ const AddFriend = React.createClass({
   },
 
   _onResponse(resp){
-    // console.log(resp);
     if(this.isMounted()){
       this.setState({status: resp[0]});
     }
   },
 
   getStatus(current, selected){
-    // debugger;
     this.setState({status: CurrentUserStore.relation(selected.id)});
-    // Api.buttonState(current, selected, this._onResponse);
   },
 
 

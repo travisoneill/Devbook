@@ -99,8 +99,6 @@ body {
 }
 
 .titlebar-logo-container {
-  flex: 1;
-  max-width: 42px;
 }
 
 .titlebar-link {

@@ -15,7 +15,6 @@ PhotoUrlStore.__onDispatch = function(payload){
   switch(payload.actionType){
     case Constants.store_url:
       _url = payload.url;
-      console.log(`stored: ${_url}`);
       this.__emitChange();
       break;
     case Constants.reset_url:

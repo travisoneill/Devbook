@@ -42,7 +42,6 @@ CurrentUserStore.__onDispatch = function(payload){
     case Constants.set_relation:
       CurrentUserStore.setRelation(payload.relation);
       CurrentUserStore.securityCheck();
-      console.log(_relation);
       break;
     case Constants.logout:
       _currentUser = undefined;

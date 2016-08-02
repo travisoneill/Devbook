@@ -24,7 +24,6 @@ SelectedUserStore.__onDispatch = function(payload){
       _selectedUser = payload.user;
       SelectedUserStore.securityCheck();
       localStorage.selected = _selectedUser;
-      console.log(_selectedUser);
       this.__emitChange();
       break;
     // case Constants.store_current_user:

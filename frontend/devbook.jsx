@@ -21,62 +21,13 @@ const Friends = require('./components/app_subcomponents/profile_subcomponents/fr
 const CurrentUserStore = require('./stores/current_user_store');
 const SelectedUserStore = require('./stores/selected_user_store');
 
-// const Root = React.createClass({
-//
-//   getInitialState() {
-//     return { user : CurrentUserStore.get(),
-//       selectedUser: SelectedUserStore.get()
-//     };
-//   },
-//   //
-//   componentDidMount() {
-//     this.listener1 = CurrentUserStore.addListener(this._onChange1);
-//     this.listener2 = SelectedUserStore.addListener(this._onChange2);
-//   },
-//   //
-//   _onChange1(){
-//     this.setState({user: CurrentUserStore.get()});
-//   },
-//   //
-//   _onChange2(){
-//     this.setState({selectedUser: SelectedUserStore.get()});
-//   },
-//   //
-//   componentWillUnmount(){
-//     this.listener1.remove();
-//     this.listener2.remove();
-//   },
-//
-//   render(){
-//     let text = '';
-//     let component = <Splash />;
-//     let user = this.state.user;
-//     let selectedUser = SelectedUserStore.get();
-//     if(user){
-//       text = `Logged in as ${user.full_name}`;
-//       component = AppRouter;
-//     }
-//
-//     return(
-//     <div className="root">
-//       {component}<br/>
-//       <h4>{text}</h4>
-//     </div>
-//     );
-//   }
-//
-// });
-
 const Setup = {
   currentUser(){
     let user = window.bootstrap.user;
-    console.log(user);
     ServerActions.reload(user);
-        //This could be a problem later!!!
-    //need to seperate from filling selscted user store.
   }
 };
-//
+
 const AppRouter = (
   <Router history={hashHistory} >
     <Route path="/" component={App} onEnter={_ensureLogin} >

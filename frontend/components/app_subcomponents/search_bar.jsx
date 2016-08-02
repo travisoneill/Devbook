@@ -32,7 +32,6 @@ const SearchBar = React.createClass({
   handleSubmit(e){
     e.preventDefault();
     const val = e.target.value;
-    console.log("No functionality here yet!");
     this.setState({text: ""});
   },
 
