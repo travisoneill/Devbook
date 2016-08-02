@@ -16,6 +16,12 @@ FriendStore.count = function(){
   return _count;
 };
 
+FriendStore.grab = function(id){
+  for (let i = 0; i < _friends.length; i++) {
+    _friends[i]
+  }
+}
+
 FriendStore.incoming = function(){
   return _incoming.slice(0);
 };

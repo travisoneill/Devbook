@@ -72,7 +72,6 @@ module.exports = {
       dataType: `json`,
       data: data,
       success(resp){
-        console.log(resp);
         serverAction(resp);
       }
     });
@@ -97,7 +96,6 @@ module.exports = {
       dataType: `json`,
       data: {tl_type: tlType},
       success(resp){
-        console.log(resp);
         serverAction(resp);
       }
     });
@@ -221,7 +219,6 @@ module.exports = {
       dataType: `json`,
       data: '',
       success(resp){
-        // console.log(resp);
         serverAction(resp);
       }
     });
@@ -234,7 +231,6 @@ module.exports = {
       dataType: `json`,
       data: '',
       success(resp){
-        // console.log(resp);
         serverAction(resp);
       }
     });
@@ -259,7 +255,6 @@ module.exports = {
       dataType: 'json',
       data: {comment: data},
       success(resp){
-        console.log(resp);
         action(resp);
       }
     });
@@ -272,7 +267,6 @@ module.exports = {
       dataType: 'json',
       data: '',
       success(resp){
-        console.log(resp);
         action(resp);
       }
     });

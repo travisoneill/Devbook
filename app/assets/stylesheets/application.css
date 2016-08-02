@@ -99,6 +99,9 @@ body {
 }
 
 .titlebar-logo-container {
+  display: flex;
+  align-items: center;
+  margin-left: 1%;
 }
 
 .titlebar-link {

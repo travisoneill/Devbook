@@ -61,7 +61,6 @@ const FriendIndex = React.createClass({
 
     let index = incoming.concat(friends);
     let n = (5 - index.length % 5) % 5;
-    debugger;
     for (let i = 0; i < n; i++){index.push(<div key={9999999999999999} className='friend-container'/>);}
 
     let arr1 = index.filter( (el, idx) => idx % 5 === 0);
