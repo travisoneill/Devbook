@@ -30,14 +30,33 @@ const PhotoIndex = React.createClass({
     const index = this.state.photos.map( (photo) => {
       return <PhotoIndexItem key={photo.id} photo={photo} />;
     });
+
+    let component = (<div key={888888888888888} className="photo-container first">
+      <p className="photo-overlay">Add New Photo</p>
+      <img className='photo-wall-item' src={Defaults.photo_wall} />
+      <PhotoUploadButton location={"wall"} />
+    </div>);
+
+    index.unshift(component);
+
+    let n = (3 - index.length % 3) % 3;
+    for (let i = 0; i < n; i++){index.push(<div key={9999999999999999} className='photo-container'/>);}
+
+    let arr1 = index.filter( (el, idx) => idx % 3 === 0);
+    let arr2 = index.filter( (el, idx) => idx % 3 === 1);
+    let arr3 = index.filter( (el, idx) => idx % 3 === 2);
+
     return(
       <div className="photo-index">
-        <div className="photo-container first">
-          <p className="photo-overlay">Add New Photo</p>
-          <img src={Defaults.photo_wall} />
-          <PhotoUploadButton location={"wall"} />
+        <div className='photo-column'>
+          {arr1}
         </div>
-        {index}
+        <div className='photo-column'>
+          {arr2}
+        </div>
+        <div className='photo-column'>
+          {arr3}
+        </div>
       </div>
     );
   }

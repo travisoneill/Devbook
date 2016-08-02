@@ -40,11 +40,25 @@ body {
   flex-direction: column;
 }
 
+.photo-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 .flex-row.tl1 {
 
 }
 
 .flex-column.tl1 {
+
+}
+
+.photo-wall-item {
+
+}
+
+.photo-container {
 
 }
 
@@ -125,6 +139,7 @@ body {
  flex: 1;
  flex-direction: column;
  margin-left: 5%;
+ margin-right: 2%;
  max-width: 1054px;
 }
 
@@ -635,7 +650,7 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding-left: 7px;
+  padding-left: 15px;
 }
 
 .flex-img-container {
@@ -854,6 +869,7 @@ body {
 
 .photo-index {
  margin-top: 23px;
+ display: flex;
 }
 
 .photos-header-text {
@@ -868,6 +884,12 @@ body {
  font-weight: 600;
  color: #4b4f56;
  margin: 23px;
+}
+
+.friend-row {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .comment-thumbnail {
@@ -1020,7 +1042,13 @@ body {
 }
 
 .request-button {
- border: 1px solid black
+ border: 1px solid black;
+ margin-top: 30%;
+ text-shadow: inherit;
+}
+
+.request-button.friend-index {
+  border: 0px;
 }
 
 .request-button:hover {
@@ -1053,19 +1081,19 @@ body {
 }
 
 .photos-content {
- width: 821px;
- margin-top: 375px;
+ /* width: 821px; */
+ /* margin-top: 375px; */
  background: white;
- display: inline-block;
+ /* display: inline-block; */
  padding: 5px;
  border: 1px solid #D4D6DA;
  line-height: 0px;
 }
 
 .photo-container {
- display: inline-block;
- width: 261px;
- height: 261px;
+ /* display: inline-block; */
+ /* width: 261px; */
+ /* height: 261px; */
  margin: 5px;
  color: transparent;
  position: relative;
@@ -1118,19 +1146,20 @@ body {
 
 
 .friends-content {
- width: 821px;
- margin-top: 375px;
+ /* width: 821px; */
+ margin-top: 2%;
  background: white;
- display: inline-block;
+ /* display: inline-block; */
  padding: 5px;
  border: 1px solid #D4D6DA;
  line-height: 0px;
 }
 
 .friend-container {
- display: inline-block;
- width: 152px;
- height: 152px;
+ /* display: inline-block; */
+ /* width: 152px; */
+ /* height: 152px; */
+ flex: 1;
  margin: 5px;
  color: transparent;
  position: relative;
@@ -1141,15 +1170,14 @@ body {
 .friend-container:hover {
  color: white;
  text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
- background-image: linear-gradient(#fff, #000, 10%);
 }
 
 .friend-overlay {
  color: inherit;
- text-shadow: inherit;
+ /* text-shadow: inherit; */
  position: absolute;
  bottom: 5px;
- margin: 5px;
+ /* margin: 5px; */
  line-height: normal;
 }
 
@@ -1161,6 +1189,8 @@ body {
  position: absolute;
  width: 100%;
  height: 100%;
+ display: flex;
+ justify-content: center;
  font-size: 15px;
 }
 
@@ -1168,8 +1198,7 @@ body {
  position: absolute;
  width: 100%;
  height: 100%;
- background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 30%);
- background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 30%);
+ background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0), rgba(0,0,0,0.3));
 }
 
 .friend-wall-upload {
@@ -1182,9 +1211,9 @@ body {
  position: relative;
 }
 
-.friend-wall-img {
+.friend-wall-item {width: 100%;}
 
-}
+f
 
 .request-button.friend-index {
  border: none;

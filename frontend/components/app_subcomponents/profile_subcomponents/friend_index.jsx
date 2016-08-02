@@ -60,10 +60,34 @@ const FriendIndex = React.createClass({
     });
 
     let index = incoming.concat(friends);
+    let n = (5 - index.length % 5) % 5;
+    debugger;
+    for (let i = 0; i < n; i++){index.push(<div key={9999999999999999} className='friend-container'/>);}
+
+    let arr1 = index.filter( (el, idx) => idx % 5 === 0);
+    let arr2 = index.filter( (el, idx) => idx % 5 === 1);
+    let arr3 = index.filter( (el, idx) => idx % 5 === 2);
+    let arr4 = index.filter( (el, idx) => idx % 5 === 3);
+    let arr5 = index.filter( (el, idx) => idx % 5 === 4);
+
 
     return(
       <div className="photo-index">
-        {index}
+        <div className='friend-row'>
+          {arr1}
+        </div>
+        <div className='friend-row'>
+          {arr2}
+        </div>
+        <div className='friend-row'>
+          {arr3}
+        </div>
+        <div className='friend-row'>
+          {arr4}
+        </div>
+        <div className='friend-row'>
+          {arr5}
+        </div>
       </div>
     );
   }
