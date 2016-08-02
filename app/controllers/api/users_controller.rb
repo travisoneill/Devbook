@@ -136,7 +136,7 @@ class Api::UsersController < ApplicationController
   end
 
   DEFAULTS = {
-    profile_pic: 'http://res.cloudinary.com/devbook/image/upload/v1467400087/devbook/app-images/default-profile-1.png',
-    cover_photo: 'http://res.cloudinary.com/devbook/image/upload/o_20/v1467420996/devbook/app-images/default-cover.png'
+    profile_pic: 'https://res.cloudinary.com/devbook/image/upload/v1467400087/devbook/app-images/default-profile-1.png',
+    cover_photo: 'https://res.cloudinary.com/devbook/image/upload/o_20/v1467420996/devbook/app-images/default-cover.png'
   }
 end

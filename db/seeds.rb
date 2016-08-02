@@ -426,7 +426,7 @@ user_pics = [
 "https://res.cloudinary.com/devbook/image/upload/v1468730310/uzyk0l2gzm1rcwwn2gn8.jpg",
 "https://res.cloudinary.com/devbook/image/upload/v1468730311/wgse4sqn878j7lbjxdyn.jpg",
 "https://res.cloudinary.com/devbook/image/upload/v1468730312/gsaxrygebyr6gojs6zrc.jpg",
-"http://res.cloudinary.com/devbook/image/upload/v1468730312/mafkd4frne4anlae6irw.jpg",
+"https://res.cloudinary.com/devbook/image/upload/v1468730312/mafkd4frne4anlae6irw.jpg",
 "https://res.cloudinary.com/dywbzmakl/image/upload/v1467772906/url_b6xfhb.jpg",
 "https://res.cloudinary.com/dywbzmakl/image/upload/v1467772906/url-1_mn7ltf.jpg",
 "https://res.cloudinary.com/dywbzmakl/image/upload/v1467772906/tsm_bjergsen-profile_image-d743788675571b95-300x300_aczxat.jpg",
@@ -505,19 +505,19 @@ user_pics = [
 
 
 assigned_profile = [
-  'http://res.cloudinary.com/devbook/image/upload/v1467419720/devbook/user-uploads/auvcnpvva15mtgiuafuj.jpg',
-  'http://res.cloudinary.com/devbook/image/upload/v1467924865/devbook/user-uploads/m9tur8fvbyti0pamobzf.jpg',
-  'http://res.cloudinary.com/devbook/image/upload/v1467924901/devbook/user-uploads/jd5ckn6pfx1j342bq3p7.jpg',
-  'http://res.cloudinary.com/devbook/image/upload/v1467924982/devbook/user-uploads/kybxfedfdfgkrlpsi0gk.jpg',
-  'http://res.cloudinary.com/devbook/image/upload/v1467925077/devbook/user-uploads/hu4awbvsiuzuymjgw7sc.jpg',
-  'http://res.cloudinary.com/devbook/image/upload/v1467925026/devbook/user-uploads/lcjssntasqe4l6ijcbt5.jpg',
-  'http://res.cloudinary.com/devbook/image/upload/v1467925101/devbook/user-uploads/fqgkbi4eatrdhfe8z1ev.jpg',
-  'http://res.cloudinary.com/devbook/image/upload/v1467778210/devbook/user-uploads/ixa40rhwd4vwgcrwbnos.jpg'
+  'https://res.cloudinary.com/devbook/image/upload/v1467419720/devbook/user-uploads/auvcnpvva15mtgiuafuj.jpg',
+  'https://res.cloudinary.com/devbook/image/upload/v1467924865/devbook/user-uploads/m9tur8fvbyti0pamobzf.jpg',
+  'https://res.cloudinary.com/devbook/image/upload/v1467924901/devbook/user-uploads/jd5ckn6pfx1j342bq3p7.jpg',
+  'https://res.cloudinary.com/devbook/image/upload/v1467924982/devbook/user-uploads/kybxfedfdfgkrlpsi0gk.jpg',
+  'https://res.cloudinary.com/devbook/image/upload/v1467925077/devbook/user-uploads/hu4awbvsiuzuymjgw7sc.jpg',
+  'https://res.cloudinary.com/devbook/image/upload/v1467925026/devbook/user-uploads/lcjssntasqe4l6ijcbt5.jpg',
+  'https://res.cloudinary.com/devbook/image/upload/v1467925101/devbook/user-uploads/fqgkbi4eatrdhfe8z1ev.jpg',
+  'https://res.cloudinary.com/devbook/image/upload/v1467778210/devbook/user-uploads/ixa40rhwd4vwgcrwbnos.jpg'
 ]
 
 assigned_cover = [
-  'http://res.cloudinary.com/devbook/image/upload/v1467419939/devbook/user-uploads/imnmqu5on8zofprbwp8y.jpg',
-  'http://res.cloudinary.com/devbook/image/upload/v1469836130/devbook/user-uploads/babbage-engine-main_copy.jpg',
+  'https://res.cloudinary.com/devbook/image/upload/v1467419939/devbook/user-uploads/imnmqu5on8zofprbwp8y.jpg',
+  'https://res.cloudinary.com/devbook/image/upload/v1469836130/devbook/user-uploads/babbage-engine-main_copy.jpg',
   "https://res.cloudinary.com/devbook/image/upload/v1469837054/yryrhjxzqtbft9t1dchh.jpg",
   "https://res.cloudinary.com/devbook/image/upload/v1469837056/ktrvaa3mmf8bdd6rkgra.jpg",
   "https://res.cloudinary.com/devbook/image/upload/v1469837057/pqspdzau1kddf2p5czqq.jpg",
