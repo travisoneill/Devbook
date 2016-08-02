@@ -11,7 +11,8 @@ const SearchIndexItem = React.createClass({
   handleClick(e){
     ServerActions.clearSearch();
     // let input = document.getElementsByClassName('search-input');
-    // input.value = '';
+    // input[0].setAttribute('value', '');
+    // input[0].forceUpdate();
   },
 
   render(){

@@ -40,19 +40,44 @@ const SearchBar = React.createClass({
     let dropdown = this.state.results.map( (result) => {
       return <SearchIndexItem key={result.id} result={result} />;
     });
-    let component = (<div className="search-dropdown">{dropdown}</div>);
+    let component = <Dropdown results={dropdown} />;
     if(dropdown.length < 1){ component = <div/> }
     return(
-      <div className="search-bar">
-        <form className="search-form" onSubmit={this.handleSubmit}>
-          <input className="search-input"
+      <div className="search-bar" id='search-bar'>
+        <form className="search-form" id='search-bar' onSubmit={this.handleSubmit}>
+          <input className="search-input" id='search-bar'
                 type="search"
                 placeholder="User Search"
                 onChange={this.search}
                 value={this.state.text}/>
-
         </form>
         {component}
+      </div>
+    );
+  }
+});
+
+const Dropdown = React.createClass({
+
+  handleClick(evt){
+    if(evt.target.id !== 'search-bar'){
+      evt.preventDefault();
+      ClientActions.clearSearch();
+    }
+  },
+
+  componentDidMount(){
+    document.addEventListener('click', this.handleClick, false);
+  },
+
+  componentWillUnmount(){
+    document.removeEventListener('click', this.handleClick, false);
+  },
+
+  render(){
+    return(
+      <div className="search-dropdown">
+        {this.props.results}
       </div>
     );
   }
