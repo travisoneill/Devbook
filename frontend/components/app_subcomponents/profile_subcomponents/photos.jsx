@@ -7,8 +7,10 @@ const Photos = React.createClass({
   render(){
     return(
       <div className="photos-content">
-        <img className='header-icon' src={Default.ph_icon}/>
-        <h4 className="photos-header-text">Photos</h4>
+        <div className='photo-header-container'>
+          <img className='header-icon' src={Default.ph_icon}/>
+          <h4 className="photos-header-text">Photos</h4>
+        </div>
         <PhotoIndex />
       </div>
     );

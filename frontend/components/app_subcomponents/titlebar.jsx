@@ -23,14 +23,20 @@ const AppTitlebar = React.createClass({
     return(
       <div className="app-titlebar">
         <div className="titlebar-logo-container">
-          <img className='app-logo' src={url} className="titlebar-logo"/>
+          <Link to={`timeline/${user.id}`}>
+            <img className='app-logo' src={url} className="titlebar-logo"/>
+          </Link>
         </div>
         <SearchBar />
         <div className='titlebar-name-container'>
           <div className="titlebar-thumbnail-container">
-            <img className='titlebar-thumbnail' src={thumbnail} />
+            <Link to={`timeline/${user.id}`}>
+              <img className='titlebar-thumbnail' src={thumbnail} />
+            </Link>
           </div>
-          <p className='titlebar-name'>{name}</p>
+          <Link to={`timeline/${user.id}`}>
+            <p className='titlebar-name'>{name}</p>
+          </Link>
         </div>
         <div className='titlebar-button-container'>
           <Link to={`timeline/${user.id}`}>

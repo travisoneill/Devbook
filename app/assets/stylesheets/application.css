@@ -1,674 +1,632 @@
 html,body,header,nav,h1,a,ul,li,strong,main,button,i,section,img,div,h2,p,form,fieldset,label,input,textarea,span,article,footer,time,small {
-   margin: 0;
-   padding: 0;
-   border: 0;
-   outline: 0;
-   font: inherit;
-   color: inherit;
-   text-align: inherit;
-   text-decoration: inherit;
-   vertical-align: inherit;
-   box-sizing: inherit;
-   background: transparent
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    color: inherit;
+    text-align: inherit;
+    text-decoration: inherit;
+    vertical-align: inherit;
+    box-sizing: inherit;
+    background: transparent
 }
 
-/*html {
-
-  @media (
-  min-width: 900px) {
-    font-size: 36px;
-  }
-}*/
-
 body {
- background: #EAEBEE;
- font-family: 'Lato', sans-serif;
- font-weight: 400;
+    background: #EAEBEE;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400
 }
 
 .flex-row {
-  flex: 1;
-  padding: 1%;
+    flex: 1;
+    padding: 2%;
 }
 
 .flex-row.image {
-  padding: 2%;
+    padding: 2%
 }
 
 .flex-column {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column
 }
 
 .photo-column {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.flex-row.tl1 {
-
-}
-
-.flex-column.tl1 {
-
-}
-
-.photo-wall-item {
-
-}
-
-.photo-container {
-
+    flex: 1;
+    display: flex;
+    flex-direction: column
 }
 
 .search-link {
-  display: flex;
-  flex: 1;
+    display: flex;
+    flex: 1
 }
-
 
 .comment-container {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column
 }
 
-.comment-text-container {flex: 12;padding: 2%;}
+.comment-text-container {
+    flex: 12;
+    padding: 2%
+}
 
 .comment-img-container {
     margin: 2%;
     flex: 1;
+    display: flex;
+    align-items: center;
 }
 
 .app-container {
- position: relative;
- display: flex;
+    position: relative;
+    display: flex
 }
 
 .app-titlebar {
- position: fixed;
- z-index: 1;
- height: 42px;
- top: 0px;
- left: 0px;
- width: 100%;
- background: #445D92;
- color: white;
- border: 1px solid #334B78;
- display: flex;
+    position: fixed;
+    z-index: 1;
+    height: 42px;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    background: #445D92;
+    color: white;
+    border: 1px solid #334B78;
+    display: flex
 }
 
 .titlebar-logo-container {
-  display: flex;
-  align-items: center;
-  margin-left: 1%;
+    display: flex;
+    align-items: center;
+    margin-left: 1%
 }
 
 .titlebar-link {
- padding: 5px;
- margin-top: 6px;
- margin-bottom: 6px;
- padding-right: 8px;
- padding-left: 8px;
- border-radius: 2px;
- border-right: 1px solid #355089;
+    padding: 5px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding-right: 8px;
+    padding-left: 8px;
+    border-radius: 2px;
+    border-right: 1px solid #355089
 }
 
 .titlebar-link:hover {
- background: #355089;
+    background: #355089
 }
 
 .titlebar-name-container {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center
 }
-.titlebar-button-container {flex: 1;display: flex;justify-content: flex-end;}
+
+.titlebar-button-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
 
 .app-sidebar {
- margin-top: 44px;
- width: 250px;
- float: right;
- position: absolute;
- top: 0px;
- right: 0px;
+    margin-top: 44px;
+    width: 250px;
+    float: right;
+    position: absolute;
+    top: 0px;
+    right: 0px
 }
 
 .profile-pane {
- margin-top: 44px;
- flex: 1;
- flex-direction: column;
- margin-left: 5%;
- margin-right: 2%;
- max-width: 1054px;
+    margin-top: 44px;
+    flex: 1;
+    flex-direction: column;
+    margin-left: 5%;
+    margin-right: 2%;
+    max-width: 1054px
 }
 
 .profile-header {
- position: relative;
- background: white;
- border: 1px solid #D4D6DA;
- border-top: 0px;
- display: flex;
- flex: 1;
- flex-direction: column;
+    position: relative;
+    background: white;
+    border: 1px solid #D4D6DA;
+    border-top: 0px;
+    display: flex;
+    flex: 1;
+    flex-direction: column
 }
 
 .cover-photo-container {
- position: relative;
- flex: 80%;
- display: flex;
- height: 80%;
+    position: relative;
+    flex: 80%;
+    display: flex;
+    height: 80%
 }
 
 .cover-photo {
-  height: 100%;
-  width: 100%;
+    height: 100%;
+    width: 100%
 }
 
 .profile-pic {
- height: 47%;
- width: 21%;
- position: absolute;
- bottom: 8%;
- left: 2%;
- box-shadow: 0px 0px 2px 1px #000;
+    height: 47%;
+    width: 21%;
+    position: absolute;
+    bottom: 8%;
+    left: 2%;
+    box-shadow: 0px 0px 2px 1px #000
 }
 
 .profile-pic-overlay {
- position: absolute;
- width: 100%;
- height: 100%;
- opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0
 }
 
 .profile-pic-overlay:hover {
- opacity: 1;
+    opacity: 1
 }
 
 .cover-photo-overlay {
- position: absolute;
- width: 100%;
- height: 100%;
- opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0
 }
 
 .cover-photo-overlay:hover {
- opacity: 1;
+    opacity: 1
 }
-
-.upload-image {
-}
-
-.upload-image:hover {
-}
-
 
 .profile-img {
- border: 4px solid #fff;
- border-radius: 3px;
- height: 100%;
- width: 100%;
- box-sizing: border-box;
+    border: 4px solid #fff;
+    border-radius: 3px;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box
 }
 
 .profile-tab-bar {
- flex: 20%;
- height: 20%;
- display: flex;
+    flex: 20%;
+    height: 20%;
+    display: flex
 }
 
 .profile-tabs {
- margin-right: 10%;
- margin-left: 30%;
- flex: 1;
- display: flex;
- height: 100%;
+    margin-right: 10%;
+    margin-left: 30%;
+    flex: 1;
+    display: flex;
+    height: 100%
 }
 
 .profile-tab-button {
- border-left: 1px solid #E9EAED;
- display: flex;
- justify-content: center;
- height: 100%;
- min-height: 50px;
- flex: 1;
- color: #445D92;
+    border-left: 1px solid #E9EAED;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    min-height: 50px;
+    flex: 1;
+    color: #445D92
 }
 
 .profile-tab-button:hover {
- background: #F6F7F9;
+    background: #F6F7F9
 }
 
 .profile-tab-button:disabled {
- background: #F6F7F9;
- color: darkgray;
+    background: #F6F7F9;
+    color: darkgray
 }
 
 .photos-tab {
- border-right: 1px solid #E9EAED;
+    border-right: 1px solid #E9EAED
 }
 
 .profile-sidebar {
- float: left;
- margin-top: 385px;
- width: 300px;
- position: relative;
+    float: left;
+    margin-top: 385px;
+    width: 300px;
+    position: relative
 }
 
 .profile-container {
- display: flex;
- flex: 1;
- margin-top: 10px;
+    display: flex;
+    flex: 1;
+    margin-top: 10px
 }
 
 .profile-content {
- margin-left: 5%;
- flex: 2;
- min-width: 336px;
- display: flex;
- flex-direction: column;
+    margin-left: 5%;
+    flex: 2;
+    min-width: 336px;
+    display: flex;
+    flex-direction: column
 }
 
-
-
 .login-input {
- border: 1px solid #bdc7d8;
- padding: 5px;
- margin: 5px;
- border-radius: 5px;
- background: white;
- flex: 1;
- opacity: 1;
- box-shadow: 0 0 1px 1px rgba(62, 124, 205, 0.7);
+    border: 1px solid #bdc7d8;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    background: white;
+    flex: 1;
+    opacity: 1;
+    box-shadow: 0 0 1px 1px rgba(62,124,205,0.7)
 }
 
 .login-button {
- background: none;
- border: 0;
- color: #4b4f56;
- cursor: pointer;
- display: inline-block;
- font-family: helvetica, arial, sans-serif;
- font-size: 12px;
- font-weight: bold;
- line-height: 18px;
- margin: 0;
- padding: 0;
- white-space: nowrap;
+    background: none;
+    border: 0;
+    color: #4b4f56;
+    cursor: pointer;
+    display: inline-block;
+    font-family: helvetica, arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 18px;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap
 }
 
 .demo-login-button {
- background: blue;
- color: white;
- border-radius: 10px;
- font-size: 24px;
- padding: 5px;
+    background: blue;
+    color: white;
+    border-radius: 10px;
+    font-size: 24px;
+    padding: 5px
 }
 
 .splash-titlebar {
- height: 50px;
- position: absolute;
- width: 100%;
- background: #3B5998;
+    height: 50px;
+    position: absolute;
+    width: 100%;
+    background: #3B5998
 }
 
 .login-form-container {
- display: flex;
- flex: 1;
+    display: flex;
+    flex: 1
 }
 
 .logo-container {
- display: flex;
- float: left;
+    display: flex;
+    float: left
 }
 
 .login-form {
- flex: 1;
- display: flex;
- padding: 10px;
+    flex: 1;
+    display: flex;
+    padding: 10px
 }
 
 .logo-text {
- float: left;
- color: white;
- font-size: 24px;
- padding: 5px;
- padding-left: 15px;
+    float: left;
+    color: white;
+    font-size: 24px;
+    padding: 5px;
+    padding-left: 15px
 }
 
-
 .login-submit {
- border: 1px solid;
- padding: 5px;
- float: left;
- border-radius: 5px;
- box-shadow: 0 0 2px 2px rgba(62, 124, 205, 0.7);
- width: 30%;
- margin-left: 35%;
- margin-top: 15px;
- background: rgba(62, 124, 205, 0.7);
- color: white;
- text-align: center;
+    border: 1px solid;
+    padding: 5px;
+    float: left;
+    border-radius: 5px;
+    box-shadow: 0 0 2px 2px rgba(62,124,205,0.7);
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 15px;
+    background: rgba(62,124,205,0.7);
+    color: white;
+    text-align: center
 }
 
 .login-submit:hover {
- background: rgba(62, 124, 205, 1);
- box-shadow: 0 0 8px 8px rgba(62, 124, 205, 0.7);
+    background: #3e7ccd;
+    box-shadow: 0 0 8px 8px rgba(62,124,205,0.7)
 }
 
 .login-submit:disabled {
- height: 0px;
- width: 0px;
- border: 0px;
- margin: 0px;
- padding: 0px;
- box-shadow: none;
- background: transparent;
- color: transparent;
+    height: 0px;
+    width: 0px;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    box-shadow: none;
+    background: transparent;
+    color: transparent
 }
 
 .new-user-form-container {
- flex: 1;
- display: flex;
+    flex: 1;
+    display: flex
 }
 
 .new-user-form {
- padding: 10px;
- display: flex;
- flex-direction: column;
- padding-bottom: 0px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0px
 }
 
 .new-user-form-row {
- flex: 1;
- display: flex;
+    flex: 1;
+    display: flex
 }
 
-
 .new-user-input {
- border: 1px solid #bdc7d8;
- padding: 5px;
- margin: 5px;
- flex: 1;
- border-radius: 5px;
- background: white;
- opacity: 1;
- box-shadow: 0 0 1px 1px rgba(62, 124, 205, 0.7);
- width: 100%;
+    border: 1px solid #bdc7d8;
+    padding: 5px;
+    margin: 5px;
+    flex: 1;
+    border-radius: 5px;
+    background: white;
+    opacity: 1;
+    box-shadow: 0 0 1px 1px rgba(62,124,205,0.7);
+    width: 100%
 }
 
 .new-user-input:hover {
- opacity: 1;
- box-shadow: 0 0 2px 2px rgba(62, 124, 205, 0.7);
-
+    opacity: 1;
+    box-shadow: 0 0 2px 2px rgba(62,124,205,0.7)
 }
 
 .pw {
- flex: 4;
+    flex: 4
 }
 
 .dd {
- flex: 1;
+    flex: 1
 }
 
 .mm {
- flex: 1;
+    flex: 1
 }
 
 .yyyy {
- flex: 2;
+    flex: 2
 }
 
 .new-user-input:focus {
- opacity: 1;
- box-shadow: 0 0 4px 4px rgba(62, 124, 205, 0.7);
+    opacity: 1;
+    box-shadow: 0 0 4px 4px rgba(62,124,205,0.7)
 }
 
 .slash {
- font-size: 24px;
+    font-size: 24px
 }
 
 .signup-submit {
- padding: 5px;
- border-radius: 5px;
- box-shadow: 0 0 2px 2px rgba(62, 124, 205, 0.7);
- width: 30%;
- margin-left: 35%;
- margin-top: 35px;
- background: rgba(62, 124, 205, 0.7);
- color: white;
- text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 2px 2px rgba(62,124,205,0.7);
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 35px;
+    background: rgba(62,124,205,0.7);
+    color: white;
+    text-align: center
 }
 
 .signup-submit:hover {
- background: rgba(62, 124, 205, 1);
- box-shadow: 0 0 8px 8px rgba(62, 124, 205, 0.7);
+    background: #3e7ccd;
+    box-shadow: 0 0 8px 8px rgba(62,124,205,0.7)
 }
 
-
 .signup-submit:disabled {
- height: 0px;
- width: 0px;
- border: 0px;
- margin: 0px;
- padding: 0px;
- box-shadow: none;
- background: transparent;
- color: transparent;
+    height: 0px;
+    width: 0px;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    box-shadow: none;
+    background: transparent;
+    color: transparent
 }
 
 .radio {
- width: auto;
-}
-
-.titlebar-logo {
+    width: auto
 }
 
 .logout-button {
- padding: 5px;
- margin-top: 6px;
- margin-bottom: 6px;
- padding-right: 8px;
- padding-left: 8px;
- height: 20px;
- border-radius: 2px;
+    padding: 5px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding-right: 8px;
+    padding-left: 8px;
+    height: 20px;
+    border-radius: 2px
 }
 
 .logout-button:hover {
- background: #355089;
+    background: #355089
 }
 
 .splash-container {
- width: 100vw;
- height: 100vh;
-
- position: relative;
+    width: 100vw;
+    height: 100vh;
+    position: relative
 }
 
 .splash-upper {
- background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 1) 100%), url('https://res.cloudinary.com/devbook/image/upload/v1469830335/devbook/app-images/splash_img.jpg') no-repeat;
- background-size: cover;
- width: 100%;
- height: 90%;
- background-position: center top;
+    background: linear-gradient(to bottom, transparent 59%, #000 100%),url("https://res.cloudinary.com/devbook/image/upload/v1469830335/devbook/app-images/splash_img.jpg") no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 90%;
+    background-position: center top
 }
 
 .splash-panel {
- position: absolute;
-   top: 60%;
-   left: 50%;
-   background-color: rgba(0, 0, 0, 0.8);
-   border-radius: 10px;
-   display: flex;
-   flex-direction: column;
-   transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-50%) translateY(-50%)
 }
 
 .splash-button-bar {
- display: flex;
- flex-direction: row;
- height: 50px;
+    display: flex;
+    flex-direction: row;
+    height: 50px
 }
 
 .splash-button {
- flex: 1;
- color: #ffffff;
- display: flex;
- justify-content: center;
- align-items: center;
- min-width: 100px;
+    flex: 1;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100px
 }
 
 .signup {
- border-bottom-left-radius: 10px;
- border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px
 }
 
 .submit {
- min-width: 120px;
+    min-width: 120px
 }
 
 .login {
- border-bottom-right-radius: 10px;
- border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px
 }
 
 .splash-button:hover {
- background: #000000;
-}
-
-.splash-button:disabled {
-
+    background: #000000
 }
 
 .splash-form-container {
- flex:1;
- display: flex;
-}
-
-.splash-form {
-
+    flex: 1;
+    display: flex
 }
 
 .splash-lower {
- background: #000000;
- flex: 1;
- height: 10%;
- display: flex;
- justify-content: center;
+    background: #000000;
+    flex: 1;
+    height: 10%;
+    display: flex;
+    justify-content: center
 }
 
-.splash-image {width: 45vw;}
-
-.splash-text-container {
-
+.splash-image {
+    width: 45vw
 }
 
 .splash-text {
-  margin: 0px;
-  color: #ffffff;
-  font-size: 24px;
+    margin: 0px;
+    color: #ffffff;
+    font-size: 24px
 }
 
 .splash-titlebar {
- position: absolute;
- left: 0px;
- top: 0px;
- height: 60px;
- width: 100%;
- background: rgba(255, 255, 255, 0.5);
- background-image: linear-gradient(#4e69a2, #3b5998 50%);
- border-bottom: 1px solid #133783;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 60px;
+    width: 100%;
+    background: rgba(255,255,255,0.5);
+    background-image: linear-gradient(#4e69a2, #3b5998 50%);
+    border-bottom: 1px solid #133783
 }
 
 .splash-logo {
- float: left;
- margin: 10px;
+    float: left;
+    margin: 10px
 }
 
 .splash-logo-container {
- padding: 10px;
- margin: 10px;
+    padding: 10px;
+    margin: 10px
 }
 
 .splash-left-pane {
- position: relative;
- flex: 1;
+    position: relative;
+    flex: 1
 }
 
 .splash-right-pane {
- flex: 1;
- position: relative;
+    flex: 1;
+    position: relative
 }
 
 .photo-upload-button {
- position: absolute;
- right: 5px;
- top: 5px;
+    position: absolute;
+    right: 5px;
+    top: 5px
 }
 
 .profile-name {
- position: absolute;
- left: 25%;
- bottom: 5%;
- margin: 0px;
- font-size: 36px;
- color: white;
- text-shadow: 0 0 3px rgba(0,0,0,.8);
+    position: absolute;
+    left: 25%;
+    bottom: 5%;
+    margin: 0px;
+    font-size: 36px;
+    color: white;
+    text-shadow: 0 0 3px rgba(0,0,0,0.8)
 }
 
 .new-post-form {
- position: relative;
- background-color: white;
- border: 1px solid #E5E6E9;
- border-bottom: 1px solid #D0D1D4;
- display: flex;
+    position: relative;
+    background-color: white;
+    border: 1px solid #E5E6E9;
+    border-bottom: 1px solid #D0D1D4;
+    display: flex
 }
 
 .post-form-thumbnail {
- margin: 10%;
- width: 100%;
- flex: 1;
- height: 100%;
+    margin: 10%;
+    width: 100%;
+    flex: 1;
+    height: 100%
 }
 
 .post-form {
- margin: 1%;
- margin-left: 2%;
- margin-right: 10%;
- flex: 8;
- display: flex;
+    margin: 1%;
+    margin-left: 2%;
+    margin-right: 10%;
+    flex: 8;
+    display: flex
 }
 
 .post-form-input {
- border: 1px solid #E9EAED;
- flex: 1;
- padding-left: 5px;
+    border: 1px solid #E9EAED;
+    flex: 1;
+    padding-left: 5px
 }
 
 .post-form-input:hover {
- box-shadow: 0 0 1px 1px rgba(62, 124, 205, 0.7);
+    box-shadow: 0 0 1px 1px rgba(62,124,205,0.7)
 }
 
 .post-form-input:focus {
- box-shadow: 0 0 2px 2px rgba(62, 124, 205, 0.7);
+    box-shadow: 0 0 2px 2px rgba(62,124,205,0.7)
 }
 
 .flex-text-container {
-  flex: 9;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  padding-left: 15px;
+    flex: 9;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 15px
 }
 
 .flex-img-container {
-  display: flex;
-  flex: 1;
+    display: flex;
+    flex: 1
 }
 
 .flex-text-container2 {
-  flex: 1;
-  display: flex;
+    flex: 1;
+    display: flex
 }
 
 .flex-img-container2 {
@@ -676,622 +634,601 @@ body {
     flex: 100%;
     flex: 1;
     width: 100%;
-    height: 100%;
+    height: 100%
 }
 
 .post-name {
- color: #385899;
- display: inline-block;
- padding-left: 0px;
- flex: 1;
- margin-left: 0px;
+    color: #385899;
+    display: inline-block;
+    padding-left: 0px;
+    flex: 1;
+    margin-left: 0px
 }
 
 .post-name:hover {
- text-decoration: underline;
+    text-decoration: underline
 }
 
 .post-timestamp {
- color: #9094ba;
- flex: 1;
+    color: #9094ba;
+    flex: 1
 }
 
 .timeline-index {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
+    display: flex;
+    flex: 1;
+    flex-direction: column
 }
 
-
 .timeline-index-item {
- margin-top: 10px;
- margin-bottom: 10px;
- display: flex;
- flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column
 }
 
 .timeline-sidebar {
- flex: 1;
- display: flex;
- flex-direction: column;
- min-width: 168px;
- max-width: 400px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 168px;
+    max-width: 400px
 }
 
 .recent-photos {
- border: 1px solid #E5E6E9;
- border-bottom: 1px solid #D0D1D4;
- border-right: 1px solid #DFE0E3;
- background: white;
- margin-top: 10px;
+    border: 1px solid #E5E6E9;
+    border-bottom: 1px solid #D0D1D4;
+    border-right: 1px solid #DFE0E3;
+    background: white;
+    margin-top: 10px
 }
 
 .recent-photos-index {
- line-height: 0px;
- padding: 2px;
- margin-top: 13px;
+    line-height: 0px;
+    padding: 2px;
+    margin-top: 13px
 }
 
 .recent-photo-container {
- display: inline-block;
- width: 98px;
- height: 98px;
- position: relative;
- margin: 2px;
-
+    display: inline-block;
+    width: 98px;
+    height: 98px;
+    position: relative;
+    margin: 2px
 }
 
 .recent-photo-overlay {
- position: absolute;
- height: 100%;
- width: 100%;
- top: 0px;
- left: 0px;
- opacity: 0;
- line-height: normal;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    line-height: normal
 }
 
 .recent-photo-overlay:hover {
- transition-property: opacity;
- transition-duration: 0.5;
- opacity: 1;
+    transition-property: opacity;
+    transition-duration: 0.5;
+    opacity: 1
 }
 
 .mutual-friends {
- border: 1px solid #E5E6E9;
- border-bottom: 1px solid #D0D1D4;
- border-right: 1px solid #DFE0E3;
- background: white;
- display: flex;
- flex-direction: column;
+    border: 1px solid #E5E6E9;
+    border-bottom: 1px solid #D0D1D4;
+    border-right: 1px solid #DFE0E3;
+    background: white;
+    display: flex;
+    flex-direction: column
 }
 
 .mutual-friends-index {
- line-height: 0px;
- padding: 2px;
+    line-height: 0px;
+    padding: 2px
 }
 
 .mutual-friends-row {
-  flex: 1;
-  display: flex;
+    flex: 1;
+    display: flex
 }
 
 .header:hover {
- text-decoration: underline;
+    text-decoration: underline
 }
 
 .header.rp {
- margin-top: 12px;
- margin-bottom: 12px;
+    margin-top: 12px;
+    margin-bottom: 12px
 }
 
 .header.mf {
- margin-top: 12px;
- margin-bottom: 12px;
+    margin-top: 12px;
+    margin-bottom: 12px
 }
 
 .mutual-friend-container {
- position: relative;
- flex: 1;
- display: flex;
- margin: 1px;
- color: #ffffff;
- text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+    position: relative;
+    flex: 1;
+    display: flex;
+    margin: 1px;
+    color: #ffffff;
+    text-shadow: 0 0 3px rgba(0,0,0,0.8)
 }
 
 .mutual-friend-overlay {
- position: absolute;
- height: 100%;
- width: 100%;
- top: 0px;
- left: 0px;
- opacity: 0;
- line-height: normal;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    line-height: normal
 }
 
 .mutual-friend-overlay:hover {
- position: absolute;
- width: 100%;
- height: 100%;
- background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 30%);
- transition-property: opacity;
- transition-duration: 0.5s;
- opacity: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, rgba(0,0,0,0.5), transparent 30%);
+    transition-property: opacity;
+    transition-duration: 0.5s;
+    opacity: 1
 }
 
 .mutual-friend-text {
- position: absolute;
- bottom: 0px;
- left: 0px;
- margin: 5px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    margin: 5px
 }
 
 .mutual-friend-text:hover {
- text-decoration: underline;
+    text-decoration: underline
 }
 
 .mutual-friend-link {
-  height: 100%;
-  width: 100%;
+    height: 100%;
+    width: 100%
 }
 
 .mutual-friend-image {
-  height: 100%;
-  width: 100%;
+    height: 100%;
+    width: 100%
 }
 
 .post-display {
- background: white;
- border: 1px solid #DFE0E2;
- display: flex;
- flex-direction: column;
+    background: white;
+    border: 1px solid #DFE0E2;
+    display: flex;
+    flex-direction: column
 }
 
 .comment {
- background: #f6f7f9;
- border: 1px solid #DFE0E2;
- border-bottom: 1px solid #D0D1D4;
- display: flex;
- align-items: center;
- justify-content: center;
+    background: #f6f7f9;
+    border: 1px solid #DFE0E2;
+    border-bottom: 1px solid #D0D1D4;
+    display: flex;
+    align-items: center;
+    justify-content: center
 }
 
 .post-header-pic {
- flex: 1;
- height: 100%;
- width: 100%;
+    flex: 1;
+    height: 100%;
+    width: 100%
 }
 
 .post-header-link {
-  flex: 1;
-  display: flex;
+    flex: 1;
+    display: flex
 }
 
 .post-text {
- display: inline-block;
+    display: inline-block
 }
 
 .post-photo {
- max-width: 100%;
- max-height: 100%;
- flex: 1;
- display: flex;
+    max-width: 100%;
+    max-height: 100%;
+    flex: 1;
+    display: flex
 }
 
 .photo-index {
- margin-top: 23px;
- display: flex;
+    margin-top: 23px;
+    display: flex
 }
 
 .photos-header-text {
- font-size: 24px;
- font-weight: 600;
- color: #4b4f56;
- margin: 23px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #4b4f56;
+    margin: 23px
+}
+
+.photo-header-container {
+  
 }
 
 .friends-header-title {
- font-size: 24px;
- font-weight: 600;
- color: #4b4f56;
- margin: 23px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #4b4f56;
+    margin: 23px
 }
 
 .friend-row {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+    flex: 1;
+    display: flex;
+    flex-direction: column
 }
 
 .comment-thumbnail {
- flex: 1;
- width: 100%;
- height: 100%;
+    flex: 1;
+    width: 100%;
+    height: 100%
 }
 
 .comment-form {
-  flex: 12;
-  display: flex;
+    flex: 12;
+    display: flex
 }
 
 .comment-form-input {
- padding: 2.5%;
- border: 1px solid #DEDFE2;
- width: 94%;
- background: white;
- padding-left: 5px;
+    padding: 2.5%;
+    border: 1px solid #DEDFE2;
+    width: 94%;
+    background: white;
+    padding-left: 5px
 }
 
 .comment-form-input:hover {
- box-shadow: 0 0 1px 1px rgba(62, 124, 205, 0.7);
+    box-shadow: 0 0 1px 1px rgba(62,124,205,0.7)
 }
 
 .comment-form-input:focus {
- box-shadow: 0 0 2px 2px rgba(62, 124, 205, 0.7);
+    box-shadow: 0 0 2px 2px rgba(62,124,205,0.7)
 }
 
 .comment-index {
- background-color: #F6F7F9;
- border-left: 1px solid #DFE0E2;
- border-right: 1px solid #DFE0E2;
- display: flex;
- flex-direction: column;
+    background-color: #F6F7F9;
+    border-left: 1px solid #DFE0E2;
+    border-right: 1px solid #DFE0E2;
+    display: flex;
+    flex-direction: column
 }
-
-
 
 .comment-name:hover {
- text-decoration: underline;
+    text-decoration: underline
 }
-
-
 
 .comment-text {
- font-size: smaller;
+    font-size: smaller
 }
 
-.comment-thumbnail-pic{
- width: 100%;
- height: 100%;
+.comment-thumbnail-pic {
+    width: 100%;
+    height: 100%
 }
 
 .comment-name {
- color: #385899;
- padding-left: 10px;
- padding-bottom: 0px;
- padding-left: 0px;
- margin-left: 0px;
- font-size: smaller;
+    color: #385899;
+    padding-left: 10px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    margin-left: 0px;
+    font-size: smaller
 }
 
 .comment-timestamp {
- color: #9094ba;
- padding-bottom: 0px;
- font-size: smaller;
- padding-left: 10px;
+    color: #9094ba;
+    padding-bottom: 0px;
+    font-size: smaller;
+    padding-left: 10px
 }
 
 .comment-display {
- padding-bottom: 4px;
- flex: 1;
- display: flex;
+    padding-bottom: 4px;
+    flex: 1;
+    display: flex
 }
 
 .comment-thumbnail-container {
- height: 32px;
- width: 32px;
+    height: 32px;
+    width: 32px
 }
 
 .search-bar {
- margin: 9px;
- max-width: 500px;
- min-width: 100px;
- flex: 1;
+    margin: 9px;
+    max-width: 500px;
+    min-width: 100px;
+    flex: 1
 }
 
 .search-dropdown {
- position: absolute;
- top: 34px;
- width: 50%;
- color: black;
- background: white;
- z-index: 1;
- border-radius: 2px;
- box-shadow: 0 4px 6px 2px rgba(0, 0, 0, .40);
- display: flex;
- flex-direction: column;
+    position: absolute;
+    top: 34px;
+    width: 50%;
+    color: black;
+    background: white;
+    z-index: 1;
+    border-radius: 2px;
+    box-shadow: 0 4px 6px 2px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column
 }
 
-
-
 .search-name {
- padding: 11px;
- float: left;
+    padding: 11px;
+    float: left
 }
 
 .search-list {
- list-style-type: none;
+    list-style-type: none
 }
 
 .search-thumbnail {
- margin-left: 4px;
- height: 10%;
- width: 10%;
+    margin-left: 4px;
+    height: 10%;
+    width: 10%
 }
 
 .search-dropdown-item {
- width: 100%;
- padding-bottom: 4px;
- padding-top: 4px;
- display: flex;
+    width: 100%;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    display: flex
 }
 
 .search-dropdown-item:hover {
- background: #EDF0F6
-}
-
-.search-form {
-
+    background: #EDF0F6
 }
 
 .search-input {
- background: #fff;
- border-radius: 3px;
- padding: 3px;
- width: 100%;
- color: #000;
+    background: #fff;
+    border-radius: 3px;
+    padding: 3px;
+    width: 100%;
+    color: #000
 }
 
 .request-button-container {
- border: 1px solid black
+    border: 1px solid #000
 }
 
 .request-button {
- border: 1px solid black;
- margin-top: 30%;
- text-shadow: inherit;
+    border: 1px solid black;
+    margin-top: 30%;
+    text-shadow: inherit
 }
 
 .request-button.friend-index {
-  border: 0px;
+    border: 0px
 }
 
 .request-button:hover {
- text-decoration: underline;;
+    text-decoration: underline
 }
 
 .header-friend-button {
- position: absolute;
- bottom: 35px;
- right: 20px;
- float: right;
- padding: 2px;
- margin: 9px;
- border: 0px;
- padding: 5px;
- padding-right: 15px;
- padding-left: 15px;
- background: rgba(75, 96, 140, 1);
- color: white;
- border-radius: 2px;
+    position: absolute;
+    bottom: 35px;
+    right: 20px;
+    float: right;
+    padding: 2px;
+    margin: 9px;
+    border: 0px;
+    padding: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
+    background: #4b608c;
+    color: white;
+    border-radius: 2px
 }
 
 .header-friend-button:hover {
- box-shadow: 0 0 2px 2px rgba(75, 96, 140, 1);
+    box-shadow: 0 0 2px 2px #4b608c
 }
 
 .search-friend-button {
- position: relative;
- flex: 1;
+    position: relative;
+    flex: 1
 }
 
 .photos-content {
- background: white;
- padding: 5px;
- border: 1px solid #D4D6DA;
- line-height: 0px;
+    background: white;
+    padding: 5px;
+    border: 1px solid #D4D6DA;
+    line-height: 0px
 }
 
 .photo-container {
- margin: 5px;
- color: transparent;
- position: relative;
- border: 1px solid #EAEBEE;
+    margin: 5px;
+    color: transparent;
+    position: relative;
+    border: 1px solid #EAEBEE
 }
 
 .photo-overlay {
- position: absolute;
- width: 100%;
- height: 100%;
- font-size: 15px;
- opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    opacity: 0
 }
 
 .photo-overlay:hover {
- position: absolute;
- width: 100%;
- opacity: 1;
- height: 100%;
- background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 30%);
-}
-
-.photo-delete-button {
-
+    position: absolute;
+    width: 100%;
+    opacity: 1;
+    height: 100%;
+    background-image: linear-gradient(to top, rgba(0,0,0,0.5), transparent 30%)
 }
 
 .photo-container:hover {
- color: black;
+    color: black
 }
 
 .photo-wall-upload {
- border: 1px solid #000;
- display: inline-block;
- width: 261px;
- height: 261px;
- margin: 5px;
- color: transparent;
- position: relative;
+    border: 1px solid #000;
+    display: inline-block;
+    width: 261px;
+    height: 261px;
+    margin: 5px;
+    color: transparent;
+    position: relative
 }
-
-.photo-wall-img {
-
-}
-
 
 .photo-overlay {
- color: inherit;
- position: absolute;
+    color: inherit;
+    position: absolute
 }
 
-
 .friends-content {
- margin-top: 2%;
- background: white;
- padding: 5px;
- border: 1px solid #D4D6DA;
- line-height: 0px;
+    margin-top: 2%;
+    background: white;
+    padding: 5px;
+    border: 1px solid #D4D6DA;
+    line-height: 0px
 }
 
 .friend-container {
- flex: 1;
- margin: 5px;
- color: transparent;
- position: relative;
- text-shadow: none;
- border: 1px solid #EAEBEE;
+    flex: 1;
+    margin: 5px;
+    color: transparent;
+    position: relative;
+    text-shadow: none;
+    border: 1px solid #EAEBEE
 }
 
 .friend-container:hover {
- color: white;
- text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+    color: white;
+    text-shadow: 0 0 3px rgba(0,0,0,0.8)
 }
 
 .friend-overlay {
- color: inherit;
- position: absolute;
- bottom: 5px;
- line-height: normal;
+    color: inherit;
+    position: absolute;
+    bottom: 5px;
+    line-height: normal
 }
 
 .friend-overlay:hover {
- text-decoration: underline;
+    text-decoration: underline
 }
 
 .friend-overlay-div {
- position: absolute;
- width: 100%;
- height: 100%;
- display: flex;
- justify-content: center;
- font-size: 15px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 15px
 }
 
 .friend-overlay-div:hover {
- position: absolute;
- width: 100%;
- height: 100%;
- background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0), rgba(0,0,0,0.3));
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.3), transparent, rgba(0,0,0,0.3))
 }
 
 .friend-wall-upload {
- border: 1px solid #000;
- display: inline-block;
- width: 152px;
- height: 152px;
- margin: 5px;
- color: transparent;
- position: relative;
+    border: 1px solid #000;
+    display: inline-block;
+    width: 152px;
+    height: 152px;
+    margin: 5px;
+    color: transparent;
+    position: relative
 }
 
-.friend-wall-item {width: 100%;}
+.friend-wall-item {
+    width: 100%
+}
 
-f
-
-.request-button.friend-index {
- border: none;
- position: absolute;
- top: 20px;
- right: 40px;
- text-shadow: inherit;
- line-height: normal;
- font-size: 20px;
- background: inherit;
+f .request-button.friend-index {
+    border: none;
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    text-shadow: inherit;
+    line-height: normal;
+    font-size: 20px;
+    background: inherit
 }
 
 .request-button.search-friend-button {
- float: right;
- padding: 2px;
- margin: 9px;
- border: 0px;
- position: relative;
- background: rgba(75, 96, 140, 1);
- color: white;
- border-radius: 2px;
+    float: right;
+    padding: 2px;
+    margin: 9px;
+    border: 0px;
+    position: relative;
+    background: #4b608c;
+    color: white;
+    border-radius: 2px
 }
 
 .request-button.search-friend-button:hover {
-
- box-shadow: 0 0 2px 2px rgba(75, 96, 140, 1);
-
+    box-shadow: 0 0 2px 2px #4b608c
 }
 
 .dropdown-button-overlay {
- position: absolute
+    position: absolute
 }
 
 .titlebar-thumbnail-container {
-  height: 32px;
-  width: 32px;
-  background: #ffffff;
-  margin: 5px;
+    height: 32px;
+    width: 32px;
+    background: #ffffff;
+    margin: 5px
 }
 
-.titlebar-thumbnail {height: 100%;width: 100%;}
+.titlebar-thumbnail {
+    height: 100%;
+    width: 100%
+}
 
 .titlebar-name {
- flex: 1;
+    flex: 1
 }
 
 .about-content {
- margin-top: 385px;
- width: 832px;
- display: flex;
- flex-wrap: wrap;
- border: 1px solid #D3D6DB;
-
+    margin-top: 385px;
+    width: 832px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #D3D6DB
 }
 
 .about-header {
- flex: 100%;
- background: #F6F7F9;
- border-bottom: 1px solid #D3D6DB;
- font-size: 24px;
- font-weight: 600;
- color: #4b4f56;
+    flex: 100%;
+    background: #F6F7F9;
+    border-bottom: 1px solid #D3D6DB;
+    font-size: 24px;
+    font-weight: 600;
+    color: #4b4f56
 }
+
 .about-sidebar {
- flex: 25%;
- height: 100px;
- background: #ffffff;
- border-right: 1px solid #cccccc;
+    flex: 25%;
+    height: 100px;
+    background: #ffffff;
+    border-right: 1px solid #cccccc
 }
 
 .about-main {
- flex: 74.7%;
- height: 100px;
- background: #ffffff;
+    flex: 74.7%;
+    height: 100px;
+    background: #ffffff
 }
 
 .about-title {
- padding: 10px;
-}
-
-.header-icon.about {
-
+    padding: 10px
 }
 
 .header-icon {
- float: left;
- margin: 10px;
- margin-top: 12px;
+    float: left;
+    margin: 10px;
+    margin-top: 12px
 }
