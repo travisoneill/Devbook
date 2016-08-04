@@ -42,6 +42,10 @@ const MutualFriends = React.createClass({
       return <IndexItem key={friend.id} user={friend} />;
     });
 
+    while(index.length < 9){
+      index.push(<div className="mutual-friend-container" />);
+    }
+
     return(
       <div className="mutual-friends">
         <Link to={`friends/${this.props.user.id}`}>

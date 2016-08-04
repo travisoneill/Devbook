@@ -568,7 +568,13 @@ body {
 .photo-upload-button {
     position: absolute;
     right: 5px;
-    top: 5px
+    top: 5px;
+}
+
+.undefined {
+    position: static;
+    flex: 1;
+    margin-right: 1%;
 }
 
 .profile-name {
@@ -586,7 +592,8 @@ body {
     background-color: white;
     border: 1px solid #E5E6E9;
     border-bottom: 1px solid #D0D1D4;
-    display: flex
+    display: flex;
+    /* align-items: center; */
 }
 
 .post-form-thumbnail {
@@ -598,16 +605,17 @@ body {
 
 .post-form {
     margin: 1%;
-    margin-left: 2%;
-    margin-right: 10%;
+    margin-left: 3%;
+    margin-right: 2%;
     flex: 8;
-    display: flex
+    /* flex: 1; */
+    display: flex;
 }
 
 .post-form-input {
     border: 1px solid #E9EAED;
-    flex: 1;
-    padding-left: 5px
+    flex: 4;
+    padding-left: 5px;
 }
 
 .post-form-input:hover {
@@ -628,7 +636,7 @@ body {
 
 .flex-img-container {
     display: flex;
-    flex: 1
+    flex: 1;
 }
 
 .flex-text-container2 {
@@ -822,7 +830,7 @@ body {
 .post-header-pic {
     flex: 1;
     height: 100%;
-    width: 100%
+    width: 100%;
 }
 
 .post-header-link {

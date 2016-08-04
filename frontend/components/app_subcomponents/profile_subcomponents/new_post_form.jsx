@@ -39,7 +39,6 @@ const NewPostForm = React.createClass({
         <div className='flex-img-container'>
           <img className="post-form-thumbnail" src={thumbnail} />
         </div>
-        <PhotoUploadButton action="post" />
         <form className="post-form" onSubmit={this.handleSubmit}>
           <input type="text"
                 className="post-form-input"
@@ -47,6 +46,7 @@ const NewPostForm = React.createClass({
                 onChange={this.bodyChange}
                 value={this.state.body} />
         </form>
+        <PhotoUploadButton action="post" />
       </div>
     );
   }
