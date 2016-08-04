@@ -42,8 +42,10 @@ const MutualFriends = React.createClass({
       return <IndexItem key={friend.id} user={friend} />;
     });
 
+    let i = 999999999999999;
     while(index.length < 9){
-      index.push(<div className="mutual-friend-container" />);
+      index.push(<div className="mutual-friend-container" key={i} />);
+      i++;
     }
 
     return(

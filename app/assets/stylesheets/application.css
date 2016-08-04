@@ -571,6 +571,10 @@ body {
     top: 5px;
 }
 
+.pub-container {
+  flex: 1;
+}
+
 .undefined {
     position: static;
     flex: 1;
@@ -734,7 +738,8 @@ body {
     border-right: 1px solid #DFE0E3;
     background: white;
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+    margin-bottom: 4%;
 }
 
 .mutual-friends-index {

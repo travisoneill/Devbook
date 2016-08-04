@@ -3,15 +3,9 @@ const ClientActions = require('../../actions/client_actions');
 const ServerActions = require('../../actions/server_actions');
 const URL = require('../../constants/defaults');
 const CurrentUserStore = require('../../stores/current_user_store');
+const SelectedUserStore = require('../../stores/selected_user_store');
 
 const PhotoUploadButton = React.createClass({
-
-  // getInitialState(){
-  //   let type = "general";
-  //   if(this.props.cover === true){ type = "cover" ;}
-  //   if(this.props.profile === true){ type = "profile" ;}
-  //   return {type: type };
-  // },
 
   upload(e){
     e.preventDefault();
@@ -29,11 +23,18 @@ const PhotoUploadButton = React.createClass({
   },
 
   render(){
+    let user1 = CurrentUserStore.get().id;
+    let user2 = SelectedUserStore.get().id;
+    let selector = true;
+    if(user1 !== user2){selector = false;}
+    if(this.props.location === 'post-form'){selector = true}
+    let button = (<button className={`photo-upload-button ${this.props.location}`}
+            onClick={this.upload}>
+      <img className="upload-image" src={URL.camera} />
+    </button>);
+    if(!selector){button = <div/>;}
     return(
-      <button className={`photo-upload-button ${this.props.location}`}
-              onClick={this.upload}>
-        <img className="upload-image" src={URL.camera} />
-      </button>
+      <div className='pub-container'>{button}</div>
     );
   }
 });

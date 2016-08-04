@@ -28,9 +28,6 @@ const ProfileTabBar = React.createClass({
           <button className="profile-tab-button timeline-tab"
                   onClick={this.handleClick}
                   disabled={this.checkStatus("timeline")}>Timeline</button>
-          <button className="profile-tab-button about-tab"
-                  onClick={this.handleClick}
-                  disabled={this.checkStatus("about")}>About</button>
           <button className="profile-tab-button friends-tab"
                   onClick={this.handleClick}
                   disabled={this.checkStatus("friends")}>Friends</button>
@@ -44,3 +41,7 @@ const ProfileTabBar = React.createClass({
 });
 
 module.exports = ProfileTabBar;
+
+// <button className="profile-tab-button about-tab"
+//   onClick={this.handleClick}
+//   disabled={this.checkStatus("about")}>About</button>

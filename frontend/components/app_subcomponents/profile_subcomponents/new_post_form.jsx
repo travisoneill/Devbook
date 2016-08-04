@@ -46,7 +46,7 @@ const NewPostForm = React.createClass({
                 onChange={this.bodyChange}
                 value={this.state.body} />
         </form>
-        <PhotoUploadButton action="post" />
+        <PhotoUploadButton action="post" location={'post-form'} />
       </div>
     );
   }
