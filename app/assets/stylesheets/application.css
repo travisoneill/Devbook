@@ -40,7 +40,7 @@ body {
 
 .search-link {
     display: flex;
-    flex: 1
+    flex: 1;
 }
 
 .comment-container {
@@ -186,6 +186,13 @@ body {
     height: 100%;
     width: 100%;
     box-sizing: border-box
+}
+
+.header-friend-button-container {
+    position: absolute;
+    bottom: 30%;
+    right: 30%;
+    display: flex;
 }
 
 .profile-tab-bar {
@@ -835,8 +842,8 @@ body {
 }
 
 .photo-index {
-    margin-top: 23px;
-    display: flex
+    /* margin-top: 23px; */
+    display: flex;
 }
 
 .photos-header-text {
@@ -847,7 +854,7 @@ body {
 }
 
 .photo-header-container {
-  
+
 }
 
 .friends-header-title {
@@ -960,7 +967,8 @@ body {
 
 .search-name {
     padding: 11px;
-    float: left
+    /* float: left */
+    flex: 1;
 }
 
 .search-list {
@@ -999,7 +1007,7 @@ body {
 .request-button {
     border: 1px solid black;
     margin-top: 30%;
-    text-shadow: inherit
+    text-shadow: inherit;
 }
 
 .request-button.friend-index {
@@ -1012,18 +1020,20 @@ body {
 
 .header-friend-button {
     position: absolute;
-    bottom: 35px;
-    right: 20px;
-    float: right;
-    padding: 2px;
-    margin: 9px;
-    border: 0px;
+    /* bottom: 35px; */
+    /* right: 20px; */
+    /* float: right; */
     padding: 5px;
-    padding-right: 15px;
-    padding-left: 15px;
-    background: #4b608c;
+    /* margin: 9px; */
+    border: 0px;
+    /* padding: 5px; */
+    /* padding-right: 15px; */
+    /* padding-left: 15px; */
+    background: #445D92;
     color: white;
-    border-radius: 2px
+    border-radius: 2px;
+    /* display: flex; */
+    white-space: nowrap;
 }
 
 .header-friend-button:hover {
@@ -1039,14 +1049,20 @@ body {
     background: white;
     padding: 5px;
     border: 1px solid #D4D6DA;
-    line-height: 0px
+    line-height: 0px;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
 }
 
 .photo-container {
     margin: 5px;
     color: transparent;
     position: relative;
-    border: 1px solid #EAEBEE
+    border: 1px solid #EAEBEE;
+    flex: 1;
+    /* padding: 10px; */
+    display: flex;
 }
 
 .photo-overlay {
@@ -1079,9 +1095,20 @@ body {
     position: relative
 }
 
+.photo-wall-item {
+    height: 100%;
+    width: 100%;
+}
+
 .photo-overlay {
-    color: inherit;
-    position: absolute
+    /* color: inherit; */
+    color: white;
+    font-size: 24px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-bottom: 20%; */
 }
 
 .friends-content {
@@ -1194,11 +1221,11 @@ f .request-button.friend-index {
 }
 
 .about-content {
-    margin-top: 385px;
-    width: 832px;
+    margin-top: 2%;
+    /* width: 832px; */
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid #D3D6DB
+    border: 1px solid #D3D6DB;
 }
 
 .about-header {
