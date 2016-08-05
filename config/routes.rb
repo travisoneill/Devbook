@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'comments/create'
-
-  get 'comments/delete'
-
   root "static_pages#root"
 
   namespace :api, defaults: { format: :json } do

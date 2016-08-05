@@ -18,32 +18,15 @@ class User < ActiveRecord::Base
   has_many :friends_test1, class_name: "User", through: :friendships1, source: :user2
   has_many :friends_test2, class_name: "User", through: :friendships2, source: :user1
 
-  # has_many :f1, ->{friends_test1 << friends_test2}, class_name: 'User'
+  attr_reader :password
 
 
-  # has_many :f3, ->{Friendship.where(user_id1: self.id).or(user_id2: self.id)}, class_name: 'Friendship'
-
-  # def self.method(id)
-  #   Friendship.unscoped.where('user_id1 = ? OR user_id2 = ?', id, id)
+  # def method2
+  #   friendships = Friendship.unscoped.where('user_id1 = ? OR user_id2 = ?', self.id, self.id)
+  #   preload_associations(friendships, [:user1, :user2])
+  #   return friendships
   # end
 
-
-
-
-
-  def method2
-    friendships = Friendship.unscoped.where('user_id1 = ? OR user_id2 = ?', self.id, self.id)
-    # preload_associations(friendships, [:user1, :user2])
-    # return friendships
-  end
-
-
-  # has_many :f3, ->{Friendship.unscoped.where('user_id1 = ? OR user_id2 = ?', self.id, self.id)}, class_name: "User"
-
-  # has_many :f1, ->{method2}, class_name: 'User'
-
-
-  attr_reader :password
 
   def password=(password)
     @password = password

@@ -1,7 +1,22 @@
 module.exports = {
+  //automates requests to the cloudinary API by splicing correct params
+  //into URL.  w = desired width in pixels, h = desired height
+  transformPic(url, w, h, params){
+    if(params === undefined){params = '';}
+    const query = `/upload/w_${w},h_${h},c_fill${params}`;
+    return url.split('/upload').join(query);
+  }
 
+  //commonly used thumbnail sizes are further automated to take a single
+  //argument of the url of the picture to be transformed
   profilePic(url){
     return this.transformPic(url, 250, 250);
+  },
+
+  //any additional Cloudinary API supported params can be added such as
+  //opacity and grayscale below.
+  friendWallBW(url){
+    return this.transformPic(url, 152, 152, ",o_50,e_grayscale");
   },
 
   profilePic2(url){
@@ -28,9 +43,6 @@ module.exports = {
     return this.transformPic(url, 152, 152);
   },
 
-  friendWallBW(url){
-    return this.transformPic(url, 152, 152, ",o_50,e_grayscale");
-  },
 
   titlebarLogo(url){
     return this.transformPic(url, 25, 25);
@@ -40,10 +52,5 @@ module.exports = {
     return this.transformPic(url, 400, 60);
   },
 
-  transformPic(url, w, h, params){
-    if(params === undefined){params = '';}
-    const query = `/upload/w_${w},h_${h},c_fill${params}`;
-    return url.split('/upload').join(query);
-  }
 
 };
