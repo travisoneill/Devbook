@@ -86,7 +86,6 @@ const ServerActions = {
     ServerActions.storeCurrentUser(resp);
     // let id = +window.location.hash.match(/\/\d*\?/).pop().slice(1,-1);
     // let selected = localStorage.selected;
-    // debugger;
     ServerActions.storeSelectedUser(resp);
   },
 

@@ -24,8 +24,3 @@ const Demo = React.createClass({
 });
 
 module.exports = Demo;
-
-// <div className="round-button-circle" onClick={this.demoLogin}>
-//   <p className="round-button">Demo Login</p>
-// </div>
-// <button className="demo-login-button" onClick={this.demoLogin}>Demo Login</button>

@@ -75,7 +75,6 @@ module.exports = {
   },
 
   userSearch(str){
-    // debugger;
     ApiCalls.userSearch(str, ServerActions.storeSearchResults);
   },
 
@@ -90,10 +89,5 @@ module.exports = {
   getRelations(user){
     ApiCalls.getRelations(user, ServerActions.setRelation);
   }
-
-  // buttonState(current, selected){
-  //   ApiCalls.buttonState(current, selected, )
-  // }
-
 
 };

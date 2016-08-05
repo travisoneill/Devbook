@@ -21,13 +21,14 @@ const Friends = require('./components/app_subcomponents/profile_subcomponents/fr
 const CurrentUserStore = require('./stores/current_user_store');
 const SelectedUserStore = require('./stores/selected_user_store');
 
+//works with Gon gem to setup bootstrapping
 const Setup = {
   currentUser(){
     let user = window.bootstrap.user;
     ServerActions.reload(user);
   }
 };
-
+//front end routes using react router
 const AppRouter = (
   <Router history={hashHistory} >
     <Route path="/" component={App} onEnter={_ensureLogin} >

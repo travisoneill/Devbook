@@ -11,6 +11,7 @@ class Api::CommentsController < ApplicationController
     end
   end
 
+  #recieves data from seed script /db/seeds.rb
   def seed(data)
     Comment.create!(data)
     Action.create!(initiator_id: data[:user_id], recipient_id: data[:post_id], action_type: 'comment')

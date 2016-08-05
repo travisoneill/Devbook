@@ -48,31 +48,31 @@ class User < ActiveRecord::Base
     user && user.is_password?(pw) ? user : nil
   end
 
-  def self.friends2(id)
-    friends_query = <<-SQL
-
-      SELECT u1.*
-      FROM users AS u2
-      JOIN friendships AS f
-        ON u2.id = f.user_id2
-      JOIN users AS u1
-        ON u1.id = f.user_id1
-      WHERE u2.id = #{id}
-
-      UNION
-
-      SELECT u2.*
-      FROM users AS u1
-      JOIN friendships AS f
-        ON u1.id = f.user_id1
-      JOIN users AS u2
-        ON u2.id = f.user_id2
-      WHERE u1.id = #{id};
-
-    SQL
-
-    User.find_by_sql(friends_query)
-  end
+  # def self.friends2(id)
+  #   friends_query = <<-SQL
+  #
+  #     SELECT u1.*
+  #     FROM users AS u2
+  #     JOIN friendships AS f
+  #       ON u2.id = f.user_id2
+  #     JOIN users AS u1
+  #       ON u1.id = f.user_id1
+  #     WHERE u2.id = #{id}
+  #
+  #     UNION
+  #
+  #     SELECT u2.*
+  #     FROM users AS u1
+  #     JOIN friendships AS f
+  #       ON u1.id = f.user_id1
+  #     JOIN users AS u2
+  #       ON u2.id = f.user_id2
+  #     WHERE u1.id = #{id};
+  #
+  #   SQL
+  #
+  #   User.find_by_sql(friends_query)
+  # end
 
   def friends
 
@@ -104,58 +104,58 @@ class User < ActiveRecord::Base
 
   end
 
-  def t2
+  # def t2
+  #
+  #   id = self.id
+  #
+  #   timeline_eager_load = <<-SQL
+  #     SELECT u1.*, p.*, c.*, u3.full_name, u3.profile_pic_url
+  #     FROM users AS u1
+  #     JOIN friendships AS f
+  #       ON u1.id = f.user_id1
+  #     JOIN users AS u2
+  #       ON u2.id = f.user_id2
+  #     JOIN posts AS p
+  #       ON u2.id = p.user_id
+  #     JOIN comments AS c
+  #       ON c.post_id = p.id
+  #     JOIN users as u3
+  #       ON c.user_id = u3.id
+  #     WHERE u1.id = 1
+  #
+  #     UNION
+  #
+  #     SELECT u1.*, p.*, c.*, u3.full_name, u3.profile_pic_url
+  #     FROM users AS u1
+  #     JOIN friendships AS f
+  #       ON u1.id = f.user_id2
+  #     JOIN users AS u2
+  #       ON u2.id = f.user_id1
+  #     JOIN posts AS p
+  #       ON u2.id = p.user_id
+  #     JOIN comments AS c
+  #       ON c.post_id = p.id
+  #     JOIN users as u3
+  #       ON c.user_id = u3.id
+  #     WHERE u1.id = 1
+  #     LIMIT 1
+  #   SQL
+  #   User.find_by_sql(timeline_eager_load)
+  # end
 
-    id = self.id
-
-    timeline_eager_load = <<-SQL
-      SELECT u1.*, p.*, c.*, u3.full_name, u3.profile_pic_url
-      FROM users AS u1
-      JOIN friendships AS f
-        ON u1.id = f.user_id1
-      JOIN users AS u2
-        ON u2.id = f.user_id2
-      JOIN posts AS p
-        ON u2.id = p.user_id
-      JOIN comments AS c
-        ON c.post_id = p.id
-      JOIN users as u3
-        ON c.user_id = u3.id
-      WHERE u1.id = 1
-
-      UNION
-
-      SELECT u1.*, p.*, c.*, u3.full_name, u3.profile_pic_url
-      FROM users AS u1
-      JOIN friendships AS f
-        ON u1.id = f.user_id2
-      JOIN users AS u2
-        ON u2.id = f.user_id1
-      JOIN posts AS p
-        ON u2.id = p.user_id
-      JOIN comments AS c
-        ON c.post_id = p.id
-      JOIN users as u3
-        ON c.user_id = u3.id
-      WHERE u1.id = 1
-      LIMIT 1
-    SQL
-    User.find_by_sql(timeline_eager_load)
-  end
-
-  def posts_query
-    posts_query = <<-SQL
-
-      SELECT u.profile_pic_url, u.full_name, c.*, p.*
-      FROM posts AS p
-      JOIN comments AS c
-        ON c.post_id = p.id
-      JOIN users AS u
-        ON u.id = p.user_id
-      WHERE p.id = #{id}
-
-    SQL
-  end
+  # def posts_query
+  #   posts_query = <<-SQL
+  #
+  #     SELECT u.profile_pic_url, u.full_name, c.*, p.*
+  #     FROM posts AS p
+  #     JOIN comments AS c
+  #       ON c.post_id = p.id
+  #     JOIN users AS u
+  #       ON u.id = p.user_id
+  #     WHERE p.id = #{id}
+  #
+  #   SQL
+  # end
 
   def timeline
       id = self.id
@@ -167,23 +167,16 @@ class User < ActiveRecord::Base
     Post.eager_load(comments: :user).where(user_id: f_ids).order(created_at: :desc).limit(n)
   end
 
+  #eliminates pw hash and session token from user object
   def remove_private
     self.session_token = nil
     self.password_digest = nil
     self
   end
 
+  #eager loads all posts and comments by the user
   def posts_plus_comments
     Post.eager_load(:user, comments: :user).where(user_id: self.id).limit(25)
-    # User.eager_load(posts: {comments: :user}).where(id: 1)
-  end
-
-  # def friend_posts_plus_comments
-  #   User.eager_load(:friends_test1: {posts: {comments: :user}}).where(user_id: self.id)
-  # end
-
-  def fff
-    User.eager_load(friends_test1: {posts: {comments: :user}}).where(user_id: self.id)
   end
 
   private

@@ -1,5 +1,5 @@
 class Api::FriendshipsController < ApplicationController
-
+  #creates friendship object and destroys corresponding request
   def create
     id1 = params[:id1]
     id2 = params[:id2]
@@ -12,7 +12,7 @@ class Api::FriendshipsController < ApplicationController
       flash[:errors] = "Error"
     end
   end
-
+  #recieves data from seeder script '/db/seeds.rb'
   def seed(data)
     Friendship.create!(data)
     Action.create!(initiator_id: data[:user_id1], recipient_id: data[:user_id2], action_type: "friendship")

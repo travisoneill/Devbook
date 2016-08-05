@@ -2,9 +2,7 @@ class Api::UsersController < ApplicationController
 
   attr_writer :user
 
-  def new
-  end
-
+  #gets mutual friends of the users specified in the params
   def mutual
     user1 = User.find(params[:id1])
     user2 = User.find(params[:id2])
@@ -14,6 +12,7 @@ class Api::UsersController < ApplicationController
     render json: @mutual
   end
 
+  #gets data from front end of from seeder script '/db/seeds.rb'
   def create
     if @user
       @user.profile_pic_url ||= DEFAULTS[:profile_pic]
@@ -27,7 +26,8 @@ class Api::UsersController < ApplicationController
       save_user
     end
   end
-
+  #makes searchable object to speed search and action objet to be userd later
+  #to build news feed.
   def make_associated_objects
     Searchable.create!(
       user_id: @user.id,
@@ -38,7 +38,7 @@ class Api::UsersController < ApplicationController
       )
     Action.create!(initiator_id: @user.id, action_type: "account_creation")
   end
-
+  #persists user in the db.
   def save_user
     if @user.save!
       make_associated_objects
@@ -49,9 +49,6 @@ class Api::UsersController < ApplicationController
       redirect_to root
     end
   end
-
-
-
 
   def show
     @user = User.find(params[:id])
@@ -69,6 +66,7 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  #destroys all objects associated with the user specified in params;
   def destroy
     id = params[:id]
     user = User.find(id)
@@ -89,10 +87,7 @@ class Api::UsersController < ApplicationController
       flash.now[:errors] = @user.errors.full_messages
     end
   end
-
-  def index
-  end
-
+  #DEPRECATED: gets bilateral relation between users to decide button functionality
   def button
     status = "none"
     @current = User.find(params[:id1])
@@ -121,6 +116,7 @@ class Api::UsersController < ApplicationController
     render json: @friends
   end
 
+  #gets all users who have sent incoming requests
   def incoming
     @user = User.find(params[:id])
     @incoming = @user.incoming.each {|f| f.remove_private}
