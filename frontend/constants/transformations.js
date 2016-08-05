@@ -5,8 +5,7 @@ module.exports = {
     if(params === undefined){params = '';}
     const query = `/upload/w_${w},h_${h},c_fill${params}`;
     return url.split('/upload').join(query);
-  }
-
+  },
   //commonly used thumbnail sizes are further automated to take a single
   //argument of the url of the picture to be transformed
   profilePic(url){
@@ -50,7 +49,7 @@ module.exports = {
 
   splashLogo(url){
     return this.transformPic(url, 400, 60);
-  },
+  }
 
 
 };
