@@ -78,7 +78,6 @@ const NewUserForm = React.createClass({
 
   handleSubmit(e){
     e.preventDefault();
-    debugger;
     let data = this.state;
     ClientActions.createUser(data);
   },

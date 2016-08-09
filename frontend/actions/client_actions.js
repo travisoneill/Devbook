@@ -7,7 +7,7 @@ const SelectedUserStore = require('../stores/selected_user_store');
 module.exports = {
 
   createUser(data){
-    ApiCalls.createUser(data, ServerActions.storeCurrentUser);
+    ApiCalls.createUser(data, ServerActions.login);
   },
 
   login(data){

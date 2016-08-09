@@ -12,7 +12,7 @@ module.exports = {
             email: data.email,
             password: data.password }},
       success(resp){
-        serverAction(resp);
+        serverAction(resp.user);
       }
     });
   },

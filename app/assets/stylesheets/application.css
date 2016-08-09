@@ -573,11 +573,15 @@ body {
 .photo-upload-button {
     position: absolute;
     right: 5px;
-    top: 5px
+    top: 5px;
 }
 
 .pub-container {
-    flex: 1
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2%;
 }
 
 .undefined {
@@ -631,6 +635,14 @@ body {
 
 .post-form-input:focus {
     box-shadow: 0 0 2px 2px rgba(62,124,205,0.7)
+}
+
+.post-form-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: auto;
+  right: auto;
 }
 
 .flex-text-container {
