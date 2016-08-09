@@ -509,7 +509,8 @@ body {
 }
 
 .splash-button:hover {
-    background: #000
+  background: #000;
+  box-shadow: inset 0px 0px 0px 2px;
 }
 
 .splash-form-container {

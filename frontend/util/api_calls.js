@@ -22,7 +22,7 @@ module.exports = {
       url: `api/users/${data.id}`,
       type: `PATCH`,
       dataType: `json`,
-      data: { user: data },
+      data: { user: data.params },
       success(resp){
         serverAction(resp);
       }

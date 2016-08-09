@@ -32,19 +32,21 @@ module.exports = {
 
   postProfilePic(image){
     let user = CurrentUserStore.get();
-    user.profile_pic_url = image.url;
-    ApiCalls.updateUser(user, ServerActions.storeCurrentUser);
+    user.profile_pic_url = image.secure_url;
+    const user_params = {id: user.id, params: { profile_pic_url: user.profile_pic_url }};
+    ApiCalls.updateUser(user_params, ServerActions.storeCurrentUser);
   },
 
   postCoverPhoto(image){
     let user = CurrentUserStore.get();
-    user.cover_pic_url = image.url;
-    ApiCalls.updateUser(user, ServerActions.storeCurrentUser);
+    user.cover_pic_url = image.secure_url;
+    const user_params = {id: user.id, params: { cover_pic_url: user.cover_pic_url }};
+    ApiCalls.updateUser(user_params, ServerActions.storeCurrentUser);
   },
 
   postImage(image){
     let id = CurrentUserStore.get().id;
-    const url = image.url;
+    const url = image.secure_url;
     const photo = {photo: {user_id: id, url: url} };
     ApiCalls.addPhoto(photo, ServerActions.storePhoto);
   },
