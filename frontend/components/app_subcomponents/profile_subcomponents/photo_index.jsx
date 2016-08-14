@@ -42,10 +42,10 @@ const PhotoIndex = React.createClass({
     if(CurrentUserStore.get().id === SelectedUserStore.get().id){
       index.unshift(component);
     }
-
+    //adds placeholder divs to keep columns equal for styling purposes
     let n = (3 - index.length % 3) % 3;
     for (let i = 0; i < n; i++){index.push(<div key={9999999999999999} className='photo-container'/>);}
-
+    //splits photos into 3 columns for display
     let arr1 = index.filter( (el, idx) => idx % 3 === 0);
     let arr2 = index.filter( (el, idx) => idx % 3 === 1);
     let arr3 = index.filter( (el, idx) => idx % 3 === 2);

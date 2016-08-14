@@ -2,6 +2,7 @@ const React = require('react');
 const Transform = require('../../../../constants/transformations');
 const PhotoUploadButton = require('../../../util/upload_button');
 
+//contains cover photo on profile header
 const CoverPhoto = React.createClass({
 
   render() {

@@ -2,6 +2,8 @@ const React = require('react');
 const PhotoIndex = require('./photo_index');
 const Default = require('../../../constants/defaults');
 
+//container for content on 'photos' tab recieves props from router
+//and renders header
 const Photos = React.createClass({
 
   render(){
@@ -18,5 +20,3 @@ const Photos = React.createClass({
 });
 
 module.exports = Photos;
-
-// <div className="photo-container"><p className="photo-overlay">Text</p></div>

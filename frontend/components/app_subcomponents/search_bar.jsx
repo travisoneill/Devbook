@@ -3,6 +3,7 @@ const ClientActions = require('../../actions/client_actions');
 const SearchStore = require('../../stores/search_store');
 const SearchIndexItem = require('./search_index_item');
 
+//handles sendin search qureries to the back end.  Probably should add debounce
 const SearchBar = React.createClass({
 
   getInitialState() {
@@ -56,8 +57,10 @@ const SearchBar = React.createClass({
   }
 });
 
+//dropdown menu that appears on serch entry
 const Dropdown = React.createClass({
 
+  //removes search dropdown on click on rest of page
   handleClick(evt){
     if(evt.target.id !== 'search-bar'){
       evt.preventDefault();

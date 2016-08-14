@@ -1,11 +1,11 @@
 const React = require('react');
 const Link = require('react-router').Link;
 const Transform = require('../../constants/transformations');
-const ClientActions = require('../../actions/client_actions');
 const ServerActions = require('../../actions/server_actions');
 const FriendButton = require('../util/add_friend');
 const CurrentUserStore = require('../../stores/current_user_store');
 
+//items in search dropdown
 const SearchIndexItem = React.createClass({
 
   handleClick(e){

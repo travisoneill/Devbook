@@ -44,6 +44,7 @@ const AppRouter = (
   </Router>
 );
 
+//onEnter hook redirects to splash if not logged in
 function _ensureLogin(nextState, replace) {
   if(!CurrentUserStore.get()){
     replace('/splash');

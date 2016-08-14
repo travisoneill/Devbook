@@ -4,16 +4,12 @@ const ServerActions = require('../../../actions/server_actions');
 const NewPostForm = require('./new_post_form');
 const TimelineIndex = require('./timeline/timeline_index');
 const TimelineSidebar = require('./timeline/sidebar');
-const SelectedUserStore = require('../../../stores/selected_user_store');
 
+//container for timeline component. recieves props from router and
+//passes to children
 const Timeline = React.createClass({
 
-  // getInitialState(){
-  //   return({user: SelectedUserStore.get()});
-  // },
-
   componentDidMount(){
-    // this.listener = SelectedUserStore.addListener(this._onChange);
     if(this.props.params.id){
       ClientActions.selectUser(this.props.params.id);
     }
@@ -26,12 +22,8 @@ const Timeline = React.createClass({
     }
   },
 
-  // _onChange(){
-  //   this.setState({user: SelectedUserStore.get()});
-  // },
-
+  //needs to empty on unmount or can be conflicts when rendering 'friends' component
   componentWillUnmount(){
-    // this.listener.remove();
     ServerActions.emptyFriends();
   },
 

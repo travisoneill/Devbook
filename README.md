@@ -1,6 +1,6 @@
 # Devbook
 
-[Heroku link][heroku] **Note:** This should be a link to your production site
+[Devbook Live][heroku]
 
 [heroku]: https://devbookcapstone.herokuapp.com/
 
