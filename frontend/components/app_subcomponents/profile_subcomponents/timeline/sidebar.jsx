@@ -1,16 +1,9 @@
 const React = require('react');
-const TimelineIndexItem = require('./timeline_index_item');
-const PostStore = require('../../../../stores/post_store');
-const PhotoStore = require('../../../../stores/friend_store');
-const SelectedUserStore = require('../../../../stores/selected_user_store');
-const CurrentUserStore = require('../../../../stores/current_user_store');
-const ClientActions = require('../../../../actions/client_actions');
 const MutualFriends = require('./mutual_friends');
 const RecentPhotos = require('./recent_photos');
 
+//contains mutual friends and recent photos components on right side of timeline
 const TimelineSidebar = React.createClass({
-
-
   render(){
 
     return(

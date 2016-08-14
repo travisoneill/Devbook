@@ -1,29 +1,12 @@
 const React = require('react');
-const FriendStore = require('../../../../stores/friend_store');
 const PhotoStore = require('../../../../stores/photo_store');
 const SelectedUserStore = require('../../../../stores/selected_user_store');
-const CurrentUserStore = require('../../../../stores/current_user_store');
 const ClientActions = require('../../../../actions/client_actions');
 const Transform = require('../../../../constants/transformations');
 const Default =  require('../../../../constants/defaults');
 const Link = require('react-router').Link;
 
-const IndexItem = React.createClass({
-
-  render(){
-    const photo = this.props.photo;
-    const url = Transform.transformPic(photo.url, 100, 100);
-
-    return(
-      <div className="mutual-friend-container">
-        <img src={url} className="mutual-friend-image" />
-        <div className="mutual-friend-overlay">
-        </div>
-      </div>
-    );
-  }
-});
-
+//recent photos wall on right side of timeline
 const RecentPhotos = React.createClass({
 
   getInitialState(){
@@ -50,7 +33,7 @@ const RecentPhotos = React.createClass({
   render(){
 
     let title = "Recent Photos:";
-
+    //takes 9 most recent photos
     const index = this.state.photos.slice(0, 9).map( (photo) => {
       return <IndexItem key={photo.id} photo={photo} />;
     });
@@ -78,5 +61,21 @@ const RecentPhotos = React.createClass({
   }
 });
 
+//each photo on recent photos wall on timeline
+const IndexItem = React.createClass({
+
+  render(){
+    const photo = this.props.photo;
+    const url = Transform.transformPic(photo.url, 100, 100);
+
+    return(
+      <div className="mutual-friend-container">
+        <img src={url} className="mutual-friend-image" />
+        <div className="mutual-friend-overlay">
+        </div>
+      </div>
+    );
+  }
+});
 
 module.exports = RecentPhotos;

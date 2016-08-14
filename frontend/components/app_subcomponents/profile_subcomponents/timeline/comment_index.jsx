@@ -3,9 +3,9 @@ const PostStore = require('../../../../stores/post_store');
 const Transform = require('../../../../constants/transformations');
 const Link = require('react-router').Link;
 
-
+//displays comment at bottom of posts
 const CommentIndexItem = React.createClass({
-
+  // turns timestamps into days/weeks... ago
   makeTimestamp(){
     const t0 = new Date (this.props.comment.created_at);
     const t1 = new Date();
@@ -45,6 +45,7 @@ const CommentIndexItem = React.createClass({
   }
 });
 
+//index to display all comments for each post
 const CommentIndex = React.createClass({
 
   getInitialState(){

@@ -1,14 +1,12 @@
 const React = require('react');
 const Transform = require('../../../../constants/transformations');
-// const SelectedUserStore = require('../../../../stores/selected_user_store');
 const CurrentUserStore = require('../../../../stores/current_user_store');
 const PostStore = require('../../../../stores/post_store');
 const Link = require('react-router').Link;
 const CommentIndex = require('./comment_index');
 const ClientActions = require('../../../../actions/client_actions');
 
-
-
+//displays each post on timeline
 const TimelineIndexItem = React.createClass({
 
   getInitialState(){
@@ -20,7 +18,7 @@ const TimelineIndexItem = React.createClass({
     const val = e.target.value;
     this.setState({comment: val});
   },
-
+  //adds comment to DB and simultaneously updates comments store
   handleSubmit(e){
     e.preventDefault();
     const post = this.props.post;
@@ -29,7 +27,7 @@ const TimelineIndexItem = React.createClass({
     ClientActions.addComment({body: this.state.comment, user_id: id, post_id: post.id});
     this.setState({comment: ''});
   },
-
+  //takes timestamp and turns into days/weeks... ago
   makeTimestamp(){
     const t0 = new Date (this.props.post.created_at);
     const t1 = new Date();
@@ -59,7 +57,7 @@ const TimelineIndexItem = React.createClass({
     }
 
     let photo = <div/>
-
+    //renders photo container if photo included with post
     if(url){
       photo = (<div className='flex-row image'>
           <img className="post-photo" src={Transform.postPic(url)} />

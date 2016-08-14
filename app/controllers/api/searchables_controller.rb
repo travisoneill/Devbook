@@ -1,4 +1,8 @@
 class Api::SearchablesController < ApplicationController
+  #finds first 10 matches in the following priority:
+  # 1) matches beginning of first name
+  # 2) matches beginning of last name
+  # 3) matches anywhere in full name 
   def search
     limit = 10
     query = params[:query].downcase

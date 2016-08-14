@@ -1,10 +1,10 @@
 const React = require('react');
 const TimelineIndexItem = require('./timeline_index_item');
 const PostStore = require('../../../../stores/post_store');
-const SelectedUserStore = require('../../../../stores/selected_user_store');
 const CurrentUserStore = require('../../../../stores/current_user_store');
 const ClientActions = require('../../../../actions/client_actions');
 
+//displays most recent posts in timeline
 const TimelineIndex = React.createClass({
   getInitialState(){
     return { posts: PostStore.all() };
@@ -12,12 +12,14 @@ const TimelineIndex = React.createClass({
 
   componentDidMount(){
     this.listener = PostStore.addListener(this._onChange);
+    //shows friends posts on own timeline but only users post on others
     const selector = this.props.user.id === CurrentUserStore.get().id;
     ClientActions.getTimeline(this.props.user.id, selector);
   },
 
   componentWillReceiveProps(newProps){
     if(newProps.user && this.props.user && newProps.user.id !== this.props.user.id){
+      //shows friends posts on own timeline but only users post on others
       const selector = newProps.user.id === CurrentUserStore.get().id;
       ClientActions.getTimeline(newProps.user.id, selector);
     }

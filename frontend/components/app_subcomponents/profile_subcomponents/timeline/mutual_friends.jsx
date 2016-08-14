@@ -37,11 +37,13 @@ const MutualFriends = React.createClass({
 
     let title = "Mutual Friends";
     let count = this.state.count;
+    //shows friends when on own profile
     if(this.props.user.id === CurrentUserStore.get().id){title = "Friends";}
+    //takes first 9 mutual friends for display
     const index = this.state.friends.slice(0, 9).map( (friend) => {
       return <IndexItem key={friend.id} user={friend} />;
     });
-
+    //if less than 9 adds blank placeholders for styling purposes
     let i = 999999999999999;
     while(index.length < 9){
       index.push(<div className="mutual-friend-container" key={i} />);
