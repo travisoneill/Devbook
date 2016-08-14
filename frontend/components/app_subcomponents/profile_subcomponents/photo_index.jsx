@@ -1,11 +1,13 @@
 const React = require('react');
 const PhotoStore = require('../../../stores/photo_store');
 const SelectedUserStore = require('../../../stores/selected_user_store');
+const CurrentUserStore = require('../../../stores/current_user_store');
 const PhotoIndexItem = require('./photo_index_item');
 const ClientActions = require('../../../actions/client_actions');
 const PhotoUploadButton = require('../../util/upload_button');
 const Defaults = require('../../../constants/defaults');
 
+//photo wall shown when on 'photos' tab
 const PhotoIndex = React.createClass({
 
   getInitialState(){
@@ -30,14 +32,16 @@ const PhotoIndex = React.createClass({
     const index = this.state.photos.map( (photo) => {
       return <PhotoIndexItem key={photo.id} photo={photo} />;
     });
-
+    //photo upload is default first item on photo wall
     let component = (<div key={888888888888888} className="photo-container first">
       <p className="photo-overlay">Add New Photo</p>
       <img className='photo-wall-item' src={Defaults.photo_wall} />
       <PhotoUploadButton location={"wall"} />
     </div>);
-
-    index.unshift(component);
+    //displays upload component only on own photo wall
+    if(CurrentUserStore.get().id === SelectedUserStore.get().id){
+      index.unshift(component);
+    }
 
     let n = (3 - index.length % 3) % 3;
     for (let i = 0; i < n; i++){index.push(<div key={9999999999999999} className='photo-container'/>);}
