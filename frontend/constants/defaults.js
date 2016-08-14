@@ -16,5 +16,6 @@ module.exports = {
   pm_icon: 'https://res.cloudinary.com/devbook/image/upload/v1469665377/devbook/app-images/photos-icon.png',
   mf_icon: 'https://res.cloudinary.com/devbook/image/upload/v1469665370/devbook/app-images/mutual-friends-icon.png',
   ph_icon: 'https://res.cloudinary.com/devbook/image/upload/v1469666681/devbook/app-images/ph_icon.png',
-  fh_icon: 'https://res.cloudinary.com/devbook/image/upload/v1469667312/devbook/app-images/friends_24.png'
+  fh_icon: 'https://res.cloudinary.com/devbook/image/upload/v1469667312/devbook/app-images/friends_24.png',
+  favicon: 'https://res.cloudinary.com/devbook/image/upload/v1471160530/devbook/app-images/dbfavicon.png'
 };
