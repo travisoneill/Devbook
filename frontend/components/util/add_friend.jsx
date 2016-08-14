@@ -1,12 +1,8 @@
 const React = require('react');
-const ClientActions = require('../../actions/client_actions');
 const Api = require('../../util/api_calls');
 const CurrentUserStore = require('../../stores/current_user_store');
 const SelectedUserStore = require('../../stores/selected_user_store');
-const FriendStore = require('../../stores/friend_store');
 const ServerActions = require('../../actions/server_actions');
-
-let renderCount = 0;
 
 const AddFriend = React.createClass({
 
@@ -30,24 +26,12 @@ const AddFriend = React.createClass({
     }
   },
 
-  componentWillUpdate(){
-
-  },
-
-  _onResponse(resp){
-    // console.log(resp);
-    if(this.isMounted()){
-      this.setState({status: resp[0]});
-    }
-  },
-
+  //gets friend or request status from relation object in store
   getStatus(current, selected){
-    // debugger;
     this.setState({status: CurrentUserStore.relation(selected.id)});
-    // Api.buttonState(current, selected, this._onResponse);
   },
 
-
+  //sends API call to create a Requesting object in the DB
   sendRequest(e){
     e.preventDefault();
     let id1 = this.props.current.id;
@@ -55,14 +39,15 @@ const AddFriend = React.createClass({
     const data = { request: { initiator_id: id1, recipient_id: id2 } };
     Api.sendRequest(data, this._handleState);
   },
-
+  //sends API call to destroy Requesting object
   withdrawRequest(e){
     e.preventDefault();
     let initiator = this.props.current.id;
     let target = this.props.selected.id;
     Api.withdrawRequest(initiator, target, this._handleState);
   },
-
+  //sends API call to create Friendship object in DB and destroy corresponding
+  //Requesting object
   acceptRequest(e){
     e.preventDefault();
     let initiator = this.props.current.id;
@@ -70,7 +55,7 @@ const AddFriend = React.createClass({
     ServerActions.acceptRequest(this.props.selected);
     Api.acceptRequest(initiator, target, this._handleState);
   },
-
+  //sends API call to destroy Friendship object in DB
   unfriend(e){
     e.preventDefault();
     let initiator = this.props.current.id;
@@ -81,9 +66,12 @@ const AddFriend = React.createClass({
 
   declineRequest(e){
     e.preventDefault();
-
+    //not yet implemented
   },
 
+  //changes button styling and functionality based on changed status
+  // based on button action.  Assumes backend has acted properly.  Maybe
+  // implement a check here.
   _handleState(){
     if(this.isMounted()){
       switch(this.state.status){
@@ -107,7 +95,7 @@ const AddFriend = React.createClass({
 
     let text = '';
     let action = '';
-
+    //stets styling and action based on friendship status
     switch(this.state.status){
       case "none":
         text = "Add Friend";
@@ -125,9 +113,8 @@ const AddFriend = React.createClass({
         text = "Withdraw Request";
         action = this.withdrawRequest;
         break;
-
     }
-
+    //appends this prop to the class to allow seperate styling based on caller
     let className = this.props.location;
 
     let component = (
@@ -136,7 +123,7 @@ const AddFriend = React.createClass({
 
     let current = this.props.current;
     let selected = this.props.selected;
-
+    //prevents button display on own profile
     if(current && selected && current.id === selected.id){
       component = <div className="empty" />;
     }
@@ -151,7 +138,3 @@ const AddFriend = React.createClass({
 });
 
 module.exports = AddFriend;
-//if friends -> Unfriend
-//if not friends -> Add Friend
-//request send -> Withdraw request
-//incoming req -> Accept Request

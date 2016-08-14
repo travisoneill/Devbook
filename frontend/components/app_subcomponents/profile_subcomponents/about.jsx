@@ -1,7 +1,8 @@
 const React = require('react');
 const Default = require('../../../constants/defaults');
-const About = React.createClass({
 
+//placeholder until compnent is implemented
+const About = React.createClass({
   render(){
     return(
       <div className="about-content">

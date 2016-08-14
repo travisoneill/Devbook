@@ -4,11 +4,8 @@ const SelectedUserStore = require('../../../stores/selected_user_store');
 const CurrentUserStore = require('../../../stores/current_user_store');
 const FriendIndexItem = require('./friend_index_item');
 const ClientActions = require('../../../actions/client_actions');
-const ServerActions = require('../../../actions/server_actions');
 
-// const FriendButton = require('../../util/friend_button');
-// const Defaults = require('../../../constants/defaults');
-
+//photo wall in 'friends tab'
 const FriendIndex = React.createClass({
 
   getInitialState(){
@@ -20,14 +17,22 @@ const FriendIndex = React.createClass({
     this.listener = FriendStore.addListener(this._onChange);
     this.listener2 = SelectedUserStore.addListener(this._onChange2)
     if(user){ClientActions.getAllFriends(user)};
+    //loads incoming requests only on own friend wall
     if(user.id === CurrentUserStore.get().id){
       ClientActions.getAllIncoming(user);
     }
   },
 
+  //Listener functionality:
+  //1. On change in 'selected user store' listener 1 loads all friends of
+  //   new user into 'friends store' and emits change
+  //2. Listener 1 fires on 'friends store' change gets all the friends
+  //  (and possibly incoming reqs), and sets state.
+
   componentWillReceiveProps(newProps){
     const user = SelectedUserStore.get();
     if(user){ClientActions.getAllFriends(user);}
+    //loads incoming requests only on own friend wall
     if(user.id === CurrentUserStore.get().id){
       ClientActions.getAllIncoming(user);
     }
@@ -58,11 +63,12 @@ const FriendIndex = React.createClass({
     let incoming = this.state.incoming.map( (user) => {
       return <FriendIndexItem key={`i${user.id}`} friend={user} request={true} />;
     });
-
+    //puts empty placeholder containers into wall to keep columns all
+    //same length for styling purposes
     let index = incoming.concat(friends);
     let n = (5 - index.length % 5) % 5;
     for (let i = 0; i < n; i++){index.push(<div key={9999999999999999} className='friend-container'/>);}
-
+    //splits array on index items into 5 columns for display
     let arr1 = index.filter( (el, idx) => idx % 5 === 0);
     let arr2 = index.filter( (el, idx) => idx % 5 === 1);
     let arr3 = index.filter( (el, idx) => idx % 5 === 2);

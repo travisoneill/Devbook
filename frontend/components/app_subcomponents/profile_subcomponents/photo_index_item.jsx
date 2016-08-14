@@ -2,10 +2,12 @@ const React = require('react');
 const Transform = require('../../../constants/transformations');
 const Defaults = require('../../../constants/defaults');
 
+//items on phot wall in 'photos' component
 const PhotoIndexItem = React.createClass({
 
   deletePhoto(e){
     e.preventDefault();
+    //not functional yet
   },
 
   render(){
@@ -22,8 +24,5 @@ const PhotoIndexItem = React.createClass({
     );
   }
 });
-// <p className="photo-overlay">Text</p>
 
 module.exports = PhotoIndexItem;
-
-// <div className="photo-container"><p className="photo-overlay">Text</p></div>

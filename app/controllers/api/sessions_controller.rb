@@ -16,7 +16,8 @@ class Api::SessionsController < ApplicationController
       redirect_to root
     end
   end
-
+  # sends map of all user relations to a store front end.  Reationship is
+  # checked by looking for inclusion on in the hash rather than firing a DB read.
   def relation
     @user = User.find(params[:id])
     @relation = {};

@@ -5,6 +5,7 @@ const ProfilePic = require('./header_subcomponents/profile_pic');
 const CurrentUserStore = require('../../../stores/current_user_store');
 const AddFriend = require('../../util/add_friend');
 
+//container for header component in the user profile
 const ProfileHeader = React.createClass({
 
   render(){
@@ -22,7 +23,3 @@ const ProfileHeader = React.createClass({
 });
 
 module.exports = ProfileHeader;
-
-
-//let div = document.getElementsByClassName('className')
-//window.getComputedStyle(div[0]).height

@@ -5,18 +5,19 @@ const CurrentUserStore = require('../../../stores/current_user_store');
 const SelectedUserStore = require('../../../stores/selected_user_store');
 const Link = require('react-router').Link;
 
-
+//each element on the 'friends tab'
 const FriendIndexItem = React.createClass({
   render(){
     let url = this.props.friend.profile_pic_url;
     if(this.props.request === true){
-      url = Transform.friendWallBW(url);
+      url = Transform.friendWallBW(url); //photo styling for incoming requests
     } else {
-      url = Transform.friendWall(url);
+      url = Transform.friendWall(url); //photo styling for friends
     }
     const name = this.props.friend.full_name;
     const current = CurrentUserStore.get();
     let button = <div />;
+    //displays add friend button 'components/util/add_friend' only if own profile
     if(current.id === SelectedUserStore.get().id){
       button = <FriendButton current={current} selected={this.props.friend} location={"friend-index"} />;
     }

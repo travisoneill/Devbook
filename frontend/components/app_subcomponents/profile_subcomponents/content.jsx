@@ -1,8 +1,9 @@
 const React = require('react');
-const ClientActions = require('../../../actions/client_actions');
 const NewPostForm = require('./new_post_form');
 const TimelineIndex = require('./timeline/timeline_index');
 
+//contains selected content of timeline.  Holdover from deprecated structure
+//should probably be refactored out.
 const ProfileContent = React.createClass({
   render(){
     return(

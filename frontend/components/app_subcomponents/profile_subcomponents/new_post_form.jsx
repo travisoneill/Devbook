@@ -6,6 +6,7 @@ const CurrentUserStore = require('../../../stores/current_user_store');
 const PhotoUrlStore = require('../../../stores/photo_url_store');
 const Transform = require('../../../constants/transformations');
 
+//form to create posts at top of timeline
 const NewPostForm = React.createClass({
 
   getInitialState() {
@@ -24,7 +25,7 @@ const NewPostForm = React.createClass({
       body: this.state.body,
       user_id: this.state.user.id,
       thumbnail_url: this.state.user.profile_pic_url,
-      photo_url: PhotoUrlStore.get()
+      photo_url: PhotoUrlStore.get() //stores url of uploaded photo until submit
     };
     this.setState({body: ""});
     ServerActions.resetUrl();
@@ -51,8 +52,5 @@ const NewPostForm = React.createClass({
     );
   }
 });
-
-// <input type="submit" value="Post" />
-
 
 module.exports = NewPostForm;

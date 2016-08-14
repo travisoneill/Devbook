@@ -5,7 +5,7 @@ const Default = require('../../../constants/defaults');
 const FriendIndex = require('./friend_index');
 const SelectedUserStore = require('../../../stores/selected_user_store');
 
-
+//container for photo wall in 'friends' component
 const Friends = React.createClass({
 
   getInitialState(){
@@ -24,6 +24,7 @@ const Friends = React.createClass({
   },
 
   componentWillReceiveProps(newProps){
+    //prevents re-render if no change in user
     if(newProps.params.id && this.props.params.id && newProps.params.id !== this.props.params.id){
       ClientActions.selectUser(newProps.params.id);
     }
