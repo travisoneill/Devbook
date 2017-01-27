@@ -10,15 +10,21 @@ module.exports = {
       {
         test: [/\.jsx?$/, /\.js?$/],
         exclude: /node_modules/,
-        loader: 'babel',
+        loader: 'babel-loader',
         query: {
           presets: ['react', 'es2015']
         }
       }
     ]
   },
-  resolve: {
-    extensions: ["", ".js", ".jsx"]
-  },
+  stats: {
+            colors: true,
+            modules: true,
+            reasons: true,
+            errorDetails: true
+          },
   devtool: 'source-map',
+  resolve: {
+    extensions: [".js", ".jsx"]
+  }
 };

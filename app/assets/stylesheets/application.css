@@ -40,6 +40,7 @@ body {
 
 .search-link {
     display: flex;
+    align-items: center;
     flex: 1
 }
 
@@ -612,7 +613,7 @@ body {
     margin: 10%;
     width: 100%;
     flex: 1;
-    height: 100%
+    height: 80%
 }
 
 .post-form {
@@ -999,7 +1000,6 @@ body {
 
 .search-thumbnail {
     margin-left: 4px;
-    height: 10%;
     width: 10%
 }
 
