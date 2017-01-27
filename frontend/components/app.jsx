@@ -1,7 +1,7 @@
 const React = require('react');
 const ClientActions = require('../actions/client_actions');
 const AppTitlebar = require('./app_subcomponents/titlebar');
-const AppSidebar = require('./app_subcomponents/sidebar');
+// const AppSidebar = require('./app_subcomponents/sidebar');
 const Profile = require('./app_subcomponents/profile');
 const CurrentUserStore = require('../stores/current_user_store');
 const SelectedUserStore = require('../stores/selected_user_store');
@@ -54,11 +54,11 @@ const App = React.createClass({
       <div className="app-container">
         <AppTitlebar user={currentUser} />
         {React.cloneElement(this.props.children, {user: selectedUser})}
-        <AppSidebar user={currentUser} />
       </div>
     );
   }
 });
+// <AppSidebar user={currentUser} />
 
 // <Profile user={selectedUser} />
 //

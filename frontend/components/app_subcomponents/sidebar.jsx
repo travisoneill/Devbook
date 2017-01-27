@@ -6,7 +6,6 @@ const AppSidebar = React.createClass({
   render(){
     return(
       <div className="app-sidebar">
-        <h4></h4>
       </div>
     );
   }

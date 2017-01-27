@@ -1,7 +1,7 @@
 const React = require('react');
 const ClientActions = require('../../actions/client_actions');
 const ProfileHeader = require('./profile_subcomponents/header');
-const ProfileSidebar = require('./profile_subcomponents/sidebar');
+// const ProfileSidebar = require('./profile_subcomponents/sidebar');
 const ProfileContent = require('./profile_subcomponents/content');
 const SelectedUserStore = require('../../stores/selected_user_store');
 

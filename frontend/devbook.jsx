@@ -52,6 +52,7 @@ function _ensureLogin(nextState, replace) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  console.log('HERE');
   Setup.currentUser();
   const content = document.getElementById('content');
   console.log("Welcome to the DevBook Console!");
