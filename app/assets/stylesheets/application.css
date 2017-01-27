@@ -212,6 +212,7 @@ body {
 
 .profile-tab-button {
     border-left: 1px solid #E9EAED;
+    cursor: pointer;
     display: flex;
     justify-content: center;
     height: 100%;
@@ -573,6 +574,7 @@ body {
 
 .photo-upload-button {
     position: absolute;
+    cursor: pointer;
     right: 5px;
     top: 5px;
 }

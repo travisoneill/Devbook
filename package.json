@@ -16,7 +16,7 @@
     "webpack": "webpack",
     "deploy": "webpack --config webpack.prod.config.js --progress -p",
     "watch": "webpack --watch",
-    "postinstall": "npm run deploy"
+    "postinstall": "deploy"
   },
   "keywords": [],
   "author": "",
